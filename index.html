@@ -1,17 +1,605 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MELT Laboratory</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Research | MELT</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050b14;
+      color: #e8eef8;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(0, 140, 255, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(0, 210, 255, 0.16), transparent 28%),
+        linear-gradient(135deg, #050b14 0%, #07111f 45%, #02050a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(100, 210, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 210, 255, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      animation: gridMove 18s linear infinite;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 85%);
+    }
+
+    @keyframes gridMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(46px); }
+    }
+
+    a {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 20, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(100, 210, 255, 0.16);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 15px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #39a8ff;
+      text-shadow: 0 0 14px rgba(57, 168, 255, 0.9);
+    }
+
+    .nav-links a {
+      margin-left: 22px;
+      color: #c7d4e8;
+      font-size: 0.95rem;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+
+    .melt-banner {
+      width: 100%;
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 38px 18px 30px;
+      text-align: center;
+      background:
+        linear-gradient(to bottom, rgba(3, 9, 20, 0.96), rgba(5, 11, 20, 0.65)),
+        radial-gradient(circle at center, rgba(0, 120, 255, 0.28), transparent 58%);
+      border-bottom: 1px solid rgba(100, 210, 255, 0.14);
+    }
+
+    .melt-title {
+      font-size: clamp(3rem, 12vw, 6rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #14df41;
+      line-height: 0.95;
+		text-shadow:
+		  0 0 8px rgba(20, 223, 65, 0.95),
+		  0 0 18px rgba(20, 223, 65, 0.85),
+		  0 0 40px rgba(20, 223, 65, 0.70),
+		  0 0 80px rgba(20, 223, 65, 0.50);
+      animation: meltThrob 2.2s ease-in-out infinite;
+    }
+
+    .melt-subtitle {
+      margin-top: 16px;
+      font-size: clamp(0.8rem, 2vw, 1.35rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #d7f4ff;
+      text-shadow:
+        0 0 8px rgba(125, 220, 255, 0.8),
+        0 0 18px rgba(0, 150, 255, 0.45);
+    }
+
+    @keyframes meltThrob {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow:
+		  0 0 8px rgba(20, 223, 65, 0.95),
+		  0 0 18px rgba(20, 223, 65, 0.85),
+		  0 0 40px rgba(20, 223, 65, 0.70),
+		  0 0 80px rgba(20, 223, 65, 0.50);
+      }
+
+      50% {
+        transform: scale(1.045);
+        text-shadow:
+		  0 0 8px rgba(20, 223, 65, 0.95),
+		  0 0 18px rgba(20, 223, 65, 0.85),
+		  0 0 40px rgba(20, 223, 65, 0.70),
+		  0 0 80px rgba(20, 223, 65, 0.50);
+      }
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+
+    section {
+      margin-bottom: 52px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 7px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(#64d2ff, #1b76ff);
+      box-shadow: 0 0 18px rgba(100, 210, 255, 0.8);
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      color: #ffffff;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    p,
+    li {
+      color: #c2cfdf;
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    ol,
+    ul {
+      padding-left: 24px;
+    }
+
+    .card,
+    .mini-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .card:hover,
+    .mini-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(100, 210, 255, 0.45);
+      background:
+        linear-gradient(145deg, rgba(100,210,255,0.10), rgba(255,255,255,0.045));
+    }
+
+
+    .grant-list li {
+      margin-bottom: 14px;
+    }
+
+    .funding-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      align-items: center;
+    }
+
+    .funding-logos img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      padding: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .funding-logos img:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 0 24px rgba(100, 210, 255, 0.35);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 22px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 38px 24px;
+      color: #98a7bb;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(3, 9, 20, 0.55);
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      color: #98a7bb;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 46px 20px;
+      }
+
+      .melt-banner {
+        min-height: 230px;
+      }
+
+      .melt-title {
+        letter-spacing: 0.04em;
+      }
+
+      .melt-subtitle {
+        letter-spacing: 0.12em;
+        max-width: 92%;
+      }
+    }
+	
+	.morse-box {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(100,210,255,0.18);
+}
+
+.equation {
+  overflow-x: auto;
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(100,210,255,0.16);
+
+  font-size: 1.6rem;   /* increase equation size */
+  font-weight: 700;    /* bold */
+}
+
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(100, 210, 255, 0.22);
+  box-shadow: 0 0 24px rgba(20, 223, 65, 0.10);
+}
+
+.morse-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(5, 11, 20, 0.92);
+  color: #e8eef8;
+  overflow: hidden;
+}
+
+.morse-table th,
+.morse-table td {
+  border: 1px solid rgba(100, 210, 255, 0.18);
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.morse-table th {
+  font-weight: 800;
+  color: #14df41;
+  background: rgba(20, 223, 65, 0.10);
+  text-shadow: 0 0 10px rgba(20, 223, 65, 0.45);
+}
+
+.morse-table td {
+  color: #d7f4ff;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.morse-table tbody tr:hover td {
+  background: rgba(20, 223, 65, 0.08);
+}
+
+
+  </style>
+  
+  
+  <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  
 </head>
+
+
+
 <body>
 
-<h1>MELT Laboratory</h1>
+  <header>
+    <nav>
+      <div class="logo"><span>MELT</span> Laboratory</div>
 
-<p>
-Multiscale Engineering Lab for Thermofluids
-</p>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="teaching.html">Teaching</a>
+      </div>
+    </nav>
+  </header>
 
-<a href="research.html">Research</a>
+  <div class="melt-banner">
+    <div class="melt-title">MELT</div>
+    <div class="melt-subtitle">Multiscale Engineering Lab for Thermofluids</div>
+  </div>
+
+  <main>
+
+    <section>
+      <div class="section-title">
+        <h2>Research Vision</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          Our research focuses on force-field development and multiscale modeling of water,
+          interfaces, evaporation, and biomolecular assembly. We use molecular dynamics (MD)
+          simulations, coarse-grained molecular dynamics (CGMD), density functional theory (DFT)
+          calculations, machine learning (ML), and optimization techniques to study interfacial
+          heat and mass transfer, water–surface interactions, nanoscale evaporation, fibrin clot
+          behavior, and venous thromboembolism.
+        </p>
+
+        <p>
+          At MELT, we are also committed to education and mentorship. Graduate and undergraduate
+          students gain hands-on experience in high-performance computing (HPC), molecular simulation,
+          first-principles calculations, data analysis, and interdisciplinary problem-solving.
+        </p>
+
+        <p>
+          Through this work, we aim to contribute to thermofluid sciences, nanotechnology, and
+          computational biomedicine by combining theory, simulation, and practical application.
+        </p>
+      </div>
+    </section>
+
+    <section>
+  <div class="section-title">
+    <h2>Notable work: Force Field Development for Water</h2>
+  </div>
+
+  <div class="morse-box">
+  <h3>Morse-D Parameters</h3>
+    <p>
+      Morse-D is an upgraded CGMD model for water that I developed based on an optimization
+      technique. A detailed discussion is given in the paper:
+      Yesudasan, S., Averett, R., & Chacko, S. (2020). Machine Learned Coarse Grain Water
+      Models for Evaporation Studies. Preprints.
+      <a href="https://doi.org/10.20944/preprints202007.0126.v1">DOI link</a>.
+    </p>
+	
+ <div class="equation">
+  \[
+  \phi = D_0 \left[e^{-2\alpha(r-r_0)} - 2e^{-\alpha(r-r_0)}\right]
+  \]
+</div>
+
+<div class="equation">
+  \[
+  E = \phi(r) - \phi(r_{cut}) - (r-r_{cut})
+  \left.\frac{d\phi}{dr}\right|_{r=r_{cut}}
+  \]
+</div>
+
+  <div class="table-wrap">
+    <table class="morse-table">
+      <thead>
+        <tr>
+          <th>CGMD Model</th>
+          <th>D<sub>0</sub> (kcal/mol)</th>
+          <th>α (1/Å)</th>
+          <th>r<sub>0</sub> (Å)</th>
+          <th>r<sub>cut</sub> (nm)</th>
+          <th>dt (fs)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Morse-D</td>
+          <td>1.686345</td>
+          <td>0.625349</td>
+          <td>5.8106</td>
+          <td>1.2</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Funding Agencies</h2>
+  </div>
+
+  <div class="card funding-logos">
+    <img src="images/1215.png" alt="12-15 Molecular Diagnostics">
+    <img src="images/ctspace.png" alt="NASA CT Space Grant">
+    <img src="images/nrc.png" alt="US Nuclear Regulatory Commission">
+    <img src="images/shsu.png" alt="Sam Houston State University">
+    <img src="images/stem.png" alt="STEM Center">
+  </div>
+</section>
+
+    <section>
+      <div class="section-title">
+        <h2>Research Grants</h2>
+      </div>
+
+      <p>Awarded from 2021 to till date.</p>
+
+      <div class="card">
+        <ol class="grant-list">
+          <li>Sumith Yesudasan (PI), Summer 2025, Summer Research Grant, Funding Agency: University of New Haven.</li>
+          <li>Sumith Yesudasan (PI), Summer 2025, Research Fund Award, Funding Agency: University of New Haven.</li>
+          <li>Sumith Yesudasan (PI), Fall 2024, “Thermal design of Biomedical Device for DNA detection”, Funding Agency: 12-15 Molecular Diagnostics.</li>
+          <li>Sumith Yesudasan (PI), Thomas Filburn, Spring 2024, Nuclear Fellowship Program, Funding Agency: US Nuclear Regulatory Commission.</li>
+          <li>Sumith Yesudasan (PI), Fall 2023, “Testing Passive Radiative Cooling for Spacecraft Thermal Protection”, Funding Agency: NASA CT Space Grant.</li>
+          <li>Sumith Yesudasan (PI), Fall 2023, Entrepreneurial-Minded Learning project, Funding Agency: University of New Haven.</li>
+          <li>Sumith Yesudasan (PI), Spring 2023, “Experimental Investigation of Cooling Efficiency of Liquid Cooling Computers”, Funding Agency: SHSU.</li>
+          <li>Sumith Yesudasan (PI), Fall 2021, “Interfacing Arduino Microcontroller with Mechatronics Systems”, Funding agency: STEM center, SHSU.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Past Research</h2>
+      </div>
+
+      <div class="research-grid">
+        <div class="mini-card">
+          <h3>Multiscale Modeling of Thrombosis</h3>
+          <p>
+            Understanding the mechanics behind the formation of thrombo-embolisms can improve
+            thrombolytic therapies and help treat patients with deep vein thrombosis.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Reactive Coarse Grain MD Method for Fibrin</h3>
+          <p>
+            We developed a reactive molecular dynamics method for coarse grain fibrinogen molecules
+            to simulate fibrin clot formation, branching, and continuous fiber formation.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Molecular Mechanics of Fibrinogen and Hemoglobin</h3>
+          <p>
+            We characterized molecular-level mechanical properties of hemoglobin and related
+            biomolecular systems, including anisotropic mechanical behavior.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Self Assembly and Spontaneous Sickle Fiber Formation</h3>
+          <p>
+            We developed coarse grain models of sickle hemoglobin to simulate spontaneous nucleus
+            formation, self-assembly, and deformation related to sickling of red blood cells.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Solid-Liquid Heat Transfer in MD Simulations</h3>
+          <p>
+            Molecular dynamics simulations are used to study high heat flux removal and nanoscale
+            heat transfer at liquid–solid interfaces.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Fast Local Pressure Estimation for LAMMPS</h3>
+          <p>
+            We developed an efficient 2D local pressure estimation algorithm as a post-processing
+            tool for LAMMPS simulations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Professional Memberships</h2>
+      </div>
+
+      <div class="card">
+        <ol>
+          <li>2014–2023 Member of American Society of Mechanical Engineers (ASME).</li>
+          <li>Life Member of Society for Mathematical Biology (SMB).</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>MELT Laboratory | Multiscale Engineering Lab for Thermofluids</p>
+    <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
+  </footer>
 
 </body>
 </html>
