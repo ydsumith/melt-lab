@@ -4,27 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | MELT Laboratory</title>
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #07111f;
       color: #e8eef8;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a { color: #64d2ff; text-decoration: none; }
 
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      width: 100%;
       z-index: 1000;
-      background: rgba(7, 17, 31, 0.88);
+      background: rgba(7, 17, 31, 0.92);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     nav {
@@ -36,10 +34,10 @@
       align-items: center;
     }
 
-    .logo { font-weight: 700; font-size: 1.2rem; }
+    .logo { font-weight: 700; font-size: 1.15rem; color: white; }
 
     .nav-links a {
-      margin-left: 24px;
+      margin-left: 22px;
       color: #c7d4e8;
       font-size: 0.95rem;
     }
@@ -47,13 +45,13 @@
     .nav-links a:hover { color: #64d2ff; }
 
     .hero {
-      min-height: 100vh;
-      padding: 150px 24px 80px;
+      min-height: 75vh;
       display: flex;
       align-items: center;
+      padding: 90px 24px;
       background:
-        linear-gradient(rgba(7,17,31,0.75), rgba(7,17,31,0.95)),
-        url("images/hero-simulation.jpg") center/cover no-repeat;
+        linear-gradient(rgba(7,17,31,0.62), rgba(7,17,31,0.94)),
+        url("images/main_banner.png") center/cover no-repeat;
       position: relative;
       overflow: hidden;
     }
@@ -61,21 +59,21 @@
     .hero::after {
       content: "";
       position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,200,255,0.22), transparent 65%);
-      right: -120px;
-      top: 120px;
+      width: 520px;
+      height: 520px;
+      right: -150px;
+      top: 80px;
+      background: radial-gradient(circle, rgba(100,210,255,0.22), transparent 65%);
       animation: pulse 6s infinite alternate;
     }
 
     @keyframes pulse {
-      from { transform: scale(0.85); opacity: 0.5; }
-      to { transform: scale(1.2); opacity: 0.9; }
+      from { transform: scale(0.85); opacity: 0.45; }
+      to { transform: scale(1.18); opacity: 0.9; }
     }
 
     .hero-content {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
       position: relative;
       z-index: 2;
@@ -86,140 +84,86 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 0.85rem;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 6vw, 5.5rem);
-      line-height: 1.05;
-      max-width: 950px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.08;
+      max-width: 1000px;
       margin-bottom: 24px;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 850px;
       font-size: 1.15rem;
-      color: #c7d4e8;
-      margin-bottom: 32px;
+      color: #d6e2f2;
     }
-
-    .button {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 999px;
-      background: #64d2ff;
-      color: #07111f;
-      font-weight: 700;
-      margin-right: 12px;
-      transition: 0.25s;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: #e8eef8;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .button:hover { transform: translateY(-3px); }
 
     section {
-      max-width: 1200px;
+      max-width: 1150px;
       margin: auto;
-      padding: 90px 24px;
+      padding: 70px 24px;
     }
 
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
+    h2 {
+      font-size: 2.1rem;
+      margin-bottom: 22px;
+      color: white;
     }
 
-    .section-subtitle {
-      color: #aebbd0;
-      max-width: 780px;
-      margin-bottom: 40px;
+    h3 {
+      font-size: 1.35rem;
+      margin: 28px 0 12px;
+      color: #ffffff;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 24px;
+    p, li {
+      color: #c2cfdf;
+      font-size: 1rem;
+      margin-bottom: 14px;
     }
+
+    ol, ul { padding-left: 24px; }
 
     .card {
       background: rgba(255,255,255,0.055);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 22px;
-      padding: 28px;
-      transition: 0.25s;
+      padding: 30px;
+      margin-bottom: 24px;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(100,210,255,0.55);
-      background: rgba(255,255,255,0.085);
+    .grant-list li { margin-bottom: 14px; }
+
+    .funding-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 22px;
+      align-items: center;
+      margin-top: 28px;
     }
 
-    .card h3 {
-      color: #ffffff;
-      margin-bottom: 12px;
-      font-size: 1.25rem;
-    }
-
-    .card p, .card li {
-      color: #b9c6d8;
-      font-size: 0.96rem;
-    }
-
-    .card ul { padding-left: 18px; }
-
-    .media-box {
-      margin-top: 30px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #000;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    video, iframe {
+    .funding-logos img {
       width: 100%;
-      display: block;
-      aspect-ratio: 16 / 9;
-      border: 0;
+      max-height: 95px;
+      object-fit: contain;
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
     }
 
-    .publication {
-      display: flex;
-      gap: 18px;
-      padding: 22px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 18px;
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
     }
 
-    .pub-year {
-      color: #64d2ff;
-      font-weight: 700;
-      min-width: 60px;
-    }
-
-    .interactive {
-      background: linear-gradient(135deg, rgba(100,210,255,0.12), rgba(255,255,255,0.04));
-      border-radius: 28px;
-      padding: 34px;
-      text-align: center;
-    }
-
-    #sliderValue {
-      color: #64d2ff;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-top: 12px;
-    }
-
-    input[type="range"] {
-      width: 80%;
-      margin-top: 24px;
+    .mini-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 20px;
+      padding: 24px;
     }
 
     footer {
@@ -231,8 +175,7 @@
 
     @media (max-width: 760px) {
       .nav-links { display: none; }
-      .hero { padding-top: 120px; }
-      .publication { flex-direction: column; }
+      .hero { min-height: 65vh; }
     }
   </style>
 </head>
@@ -248,7 +191,6 @@
       <a href="publications.html">Publications</a>
       <a href="people.html">People</a>
       <a href="teaching.html">Teaching</a>
-      <a href="contact.html">Contact</a>
     </div>
   </nav>
 </header>
@@ -256,167 +198,155 @@
 <section class="hero">
   <div class="hero-content">
     <div class="tagline">Multiscale Engineering Lab for Thermofluids</div>
-    <h1>Simulation-driven discovery in thermofluids, interfaces, and biomedical systems.</h1>
+    <h1>Computational thermofluids, molecular simulation, and multiscale biomedical modeling.</h1>
     <p>
-      The MELT Laboratory develops computational models that connect molecular-scale physics,
-      nanoscale heat transfer, interfacial transport, and biomedical mechanics.
+      At MELT, we advance computational research at the intersection of molecular dynamics,
+      nanoscale heat transfer, surface–fluid interactions, and biomedical engineering.
     </p>
-    <a class="button" href="#research-areas">Explore Research</a>
-    <a class="button secondary" href="#videos">View Simulations</a>
   </div>
 </section>
 
-<section id="overview">
-  <h2 class="section-title">Research Vision</h2>
-  <p class="section-subtitle">
-    At the MELT Lab, we advance computational research at the intersection of molecular dynamics,
-    nanoscale heat transfer, thermofluids, and biomedical engineering.
-  </p>
+<section>
+  <h2>Research Vision</h2>
+  <div class="card">
+    <p>
+      Our research focuses on force-field development and multiscale modeling of water,
+      interfaces, evaporation, and biomolecular assembly. We use molecular dynamics (MD)
+      simulations, coarse-grained molecular dynamics (CGMD), density functional theory (DFT)
+      calculations, machine learning (ML), and optimization techniques to study interfacial
+      heat and mass transfer, water–surface interactions, nanoscale evaporation, fibrin clot
+      behavior, and venous thromboembolism.
+    </p>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Molecular Dynamics</h3>
-      <p>Atomistic and coarse-grained simulations for water, interfaces, evaporation, and biomolecular systems.</p>
-    </div>
+    <p>
+      At MELT, we are also committed to education and mentorship. Graduate and undergraduate
+      students gain hands-on experience in high-performance computing (HPC), molecular simulation,
+      first-principles calculations, data analysis, and interdisciplinary problem-solving.
+    </p>
 
-    <div class="card">
-      <h3>Thermofluids</h3>
-      <p>Multiscale modeling of heat transfer, evaporation, pressure distributions, and interfacial transport.</p>
-    </div>
-
-    <div class="card">
-      <h3>Biomedical Mechanics</h3>
-      <p>Computational studies of fibrin, thrombosis, clot mechanics, and biomolecular assembly.</p>
-    </div>
-
-    <div class="card">
-      <h3>AI-Driven Modeling</h3>
-      <p>Machine learning and optimization methods for force-field development and simulation analysis.</p>
-    </div>
+    <p>
+      Through this work, we aim to contribute to thermofluid sciences, nanotechnology, and
+      computational biomedicine by combining theory, simulation, and practical application.
+    </p>
   </div>
 </section>
 
-<section id="research-areas">
-  <h2 class="section-title">Research Areas</h2>
-  <p class="section-subtitle">
-    Current and past projects span water force-field development, nanoscale evaporation, thrombus mechanics,
-    fibrin polymerization, and local thermodynamic property estimation.
-  </p>
+<section>
+  <h2>Force Field Development for Water</h2>
+  <div class="card">
+    <p>
+      Morse-D is an upgraded CGMD model for water that I developed based on an optimization
+      technique. A detailed discussion is given in the paper:
+      Yesudasan, S., Averett, R., & Chacko, S. (2020). Machine Learned Coarse Grain Water
+      Models for Evaporation Studies. Preprints.
+      <a href="https://doi.org/10.20944/preprints202007.0126.v1">DOI link</a>.
+    </p>
+  </div>
+</section>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Force Field Development for Water</h3>
+<section>
+  <h2>Research Grants</h2>
+  <p>Awarded from 2021 to till date.</p>
+
+  <div class="card">
+    <ol class="grant-list">
+      <li>Sumith Yesudasan (PI), Summer 2025, Summer Research Grant, Funding Agency: University of New Haven.</li>
+      <li>Sumith Yesudasan (PI), Summer 2025, Research Fund Award, Funding Agency: University of New Haven.</li>
+      <li>Sumith Yesudasan (PI), Fall 2024, “Thermal design of Biomedical Device for DNA detection”, Funding Agency: 12-15 Molecular Diagnostics.</li>
+      <li>Sumith Yesudasan (PI), Thomas Filburn, Spring 2024, “University of New Haven/University of Hartford and Industrial Partners Collaborative Nuclear Fellowship Program Applied Research in Fabrication, Testing and Simulation of Nuclear Power Systems.” Funding Agency: US Nuclear Regulatory Commission ($400k).</li>
+      <li>Sumith Yesudasan (PI), Fall 2023, “Testing Passive Radiative Cooling for Spacecraft Thermal Protection”, Funding Agency: NASA CT Space Grant.</li>
+      <li>Sumith Yesudasan (PI), Fall 2023, “Incorporating the philosophy of Entrepreneurial-Minded Learning (EML) by emphasizing the concept of learning through failure in Instrumentation Course.” Funding Agency: Office of the Dean, Tagliatela College of Engineering, University of New Haven.</li>
+      <li>Sumith Yesudasan (PI), Spring 2023, “Experimental Investigation of Cooling Efficiency of Liquid Cooling Computers”, Funding Agency: Office of Research and Sponsored Programs, SHSU.</li>
+      <li>Sumith Yesudasan (PI), Fall 2021, “Interfacing Arduino Microcontroller with Mechatronics Systems”, Funding agency: STEM center, SHSU.</li>
+      <li>Ulan Dakeev (PI), Sumith Yesudasan (Co-PI) and Elizabeth Gross (Co-PI), 2021–22, “Navigation through AR: Development of Augmented Reality Application (ARNavi) to Improve Navigation in Gresham Library”, Funding agency: Office of Research and Sponsored Programs, SHSU.</li>
+      <li>Reg Pecen (PI), Sumith Yesudasan (Co-PI), Faruk Yildiz (Co-PI), Ulan Dakeev (Co-PI), 2021–2022, “Design and Implementation of Senior Design (Capstone) Curriculum for Engineering Technology Majors”, Funding agency: Professional & Academic Center for Excellence, SHSU.</li>
+      <li>Sumith Yesudasan (PI), Spring 2021, “Smart Heating and Ventilation System development for urban Houses”, Funding agency: STEM center, SHSU.</li>
+      <li>Actively contributed to the NSF funded proposal #1454450 as a PhD candidate, “Experimental and Numerical Study of Nanoscale Evaporation Heat Transfer for Passive-Flow Driven High-Heat Flux Devices”, 2015. NSF ID: 000804582. Status: Funded.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Funding Agencies</h2>
+  <div class="funding-logos">
+    <img src="images/1215.png" alt="12-15 Molecular Diagnostics">
+    <img src="images/ctspace.png" alt="NASA CT Space Grant">
+    <img src="images/nrc.png" alt="US Nuclear Regulatory Commission">
+    <img src="images/shsu.png" alt="Sam Houston State University">
+    <img src="images/stem.png" alt="STEM Center">
+  </div>
+</section>
+
+<section>
+  <h2>Past Research</h2>
+
+  <div class="research-grid">
+    <div class="mini-card">
+      <h3>Multiscale Modeling of Thrombosis</h3>
       <p>
-        Development of coarse-grained and atomistic water models for evaporation and interfacial transport.
+        Understanding the mechanics behind the formation of thrombo-embolisms can improve
+        the existing thrombolytic therapies and can be helpful in treating patients with deep
+        vein thrombosis and hyper-coagulable blood. Our objective was to develop models integrating
+        molecular scales and continuum scales to predict ablation of the thrombus from vascular walls
+        and its relation to embolism formation.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Nanoscale Heat Transfer</h3>
+    <div class="mini-card">
+      <h3>Reactive Coarse Grain MD Method for Fibrin</h3>
       <p>
-        Molecular simulations of liquid–solid interfaces, high heat flux removal, and passive-flow cooling.
+        As the first step towards the multiscale model of thrombosis, we created a reactive molecular
+        dynamics method for coarse grain fibrinogen molecules. This customized force field could simulate
+        fibrin clot formation, branching, and continuous fiber formation in qualitative agreement with
+        experimental results.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Thrombus and Fibrin Mechanics</h3>
+    <div class="mini-card">
+      <h3>Molecular Mechanics of Fibrinogen and Hemoglobin</h3>
       <p>
-        Reactive coarse-grained models of fibrinogen polymerization, clot formation, and clot deformation.
+        Mechanical properties play an important role in determining the state of a blood clot, which can
+        embolize or dissolve normally during vascular injury. We characterized molecular-level mechanical
+        properties of hemoglobin and found anisotropic behavior.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Local Pressure Estimation</h3>
+    <div class="mini-card">
+      <h3>Self Assembly and Spontaneous Sickle Fiber Formation</h3>
       <p>
-        Efficient post-processing algorithms for density, pressure, surface tension, and local continuum properties.
+        Sickle cell disease is caused by mutation of hemoglobin, leading to polymerization into long strands.
+        We developed coarse grain models of sickle hemoglobin to simulate spontaneous nucleus formation,
+        self-assembly, and deformation related to sickling of red blood cells.
+      </p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Solid-Liquid Heat Transfer in MD Simulations</h3>
+      <p>
+        Ultra-fast heat removal is important in solar thermal conversion and integrated chip cooling.
+        Molecular dynamics studies can help estimate high heat flux removal from hot surfaces using
+        passive flows.
+      </p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Fast Local Pressure Estimation for LAMMPS</h3>
+      <p>
+        Estimating local continuum properties such as pressure, density, surface tension, and temperature
+        is essential for coupling molecular simulations with continuum-scale simulations. We developed an
+        efficient 2D local pressure estimation algorithm as a post-processing tool for LAMMPS.
       </p>
     </div>
   </div>
 </section>
 
-<section id="videos">
-  <h2 class="section-title">Simulation Gallery</h2>
-  <p class="section-subtitle">
-    This section can show molecular dynamics movies, evaporation animations, fibrin network formation,
-    or interactive simulation clips.
-  </p>
-
-  <div class="media-box">
-    <video controls poster="images/simulation-poster.jpg">
-      <source src="videos/simulation.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</section>
-
-<section id="interactive">
-  <h2 class="section-title">Interactive Figure Demo</h2>
-  <p class="section-subtitle">
-    Example interactive element. Later this can be replaced with Plotly charts, 3D molecular viewers,
-    or simulation parameter visualizations.
-  </p>
-
-  <div class="interactive">
-    <h3>Electric Field Strength</h3>
-    <p>Move the slider to mimic an interactive simulation parameter.</p>
-    <input type="range" min="0" max="100" value="25" id="fieldSlider">
-    <div id="sliderValue">0.25 V/Å</div>
-  </div>
-</section>
-
-<section id="publications">
-  <h2 class="section-title">Selected Publications</h2>
-  <p class="section-subtitle">
-    Add your most important publications here with DOI links, journal names, and short impact statements.
-  </p>
-
-  <div class="publication">
-    <div class="pub-year">2024</div>
-    <div>
-      <strong>Machine-learned and simulation-driven models for water and interfacial transport.</strong>
-      <p>Force-field development, evaporation modeling, and molecular simulation of water systems.</p>
-    </div>
-  </div>
-
-  <div class="publication">
-    <div class="pub-year">2023</div>
-    <div>
-      <strong>Multiscale computational modeling of fibrin and thrombus mechanics.</strong>
-      <p>Reactive coarse-grained molecular dynamics and clot structure–mechanics relationships.</p>
-    </div>
-  </div>
-
-  <div class="publication">
-    <div class="pub-year">2020</div>
-    <div>
-      <strong>Machine Learned Coarse Grain Water Models for Evaporation Studies.</strong>
-      <p>Development of Morse-D coarse-grained water model for evaporation simulations.</p>
-    </div>
-  </div>
-</section>
-
-<section id="students">
-  <h2 class="section-title">Student Research and Training</h2>
-  <p class="section-subtitle">
-    MELT Lab students gain experience in high-performance computing, molecular simulations,
-    data analysis, visualization, and interdisciplinary engineering research.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Undergraduate Research</h3>
-      <p>Students contribute to simulation analysis, visualization, coding, and literature-based research projects.</p>
-    </div>
-
-    <div class="card">
-      <h3>Graduate Research</h3>
-      <p>Graduate students work on MD simulations, force-field development, AI-based analysis, and manuscript preparation.</p>
-    </div>
-
-    <div class="card">
-      <h3>Open Positions</h3>
-      <p>Motivated students interested in computational thermofluids, MD, AI, or biomedical simulations are encouraged to contact the lab.</p>
-    </div>
+<section>
+  <h2>Professional Memberships</h2>
+  <div class="card">
+    <ol>
+      <li>2014–2023 Member of American Society of Mechanical Engineers (ASME).</li>
+      <li>Life Member of Society for Mathematical Biology (SMB).</li>
+    </ol>
   </div>
 </section>
 
@@ -424,16 +354,6 @@
   <p>MELT Laboratory | Multiscale Engineering Lab for Thermofluids</p>
   <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
 </footer>
-
-<script>
-  const slider = document.getElementById("fieldSlider");
-  const value = document.getElementById("sliderValue");
-
-  slider.addEventListener("input", function () {
-    const field = (slider.value / 100).toFixed(2);
-    value.textContent = field + " V/Å";
-  });
-</script>
 
 </body>
 </html>
