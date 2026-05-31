@@ -281,49 +281,58 @@
       gap: 18px;
     }
 
-    .publication-card {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 18px;
-      align-items: start;
-    }
+.year-divider {
+  margin-top: 42px;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
 
-    .pub-number {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(20, 223, 65, 0.10);
-      border: 1px solid rgba(20, 223, 65, 0.28);
-      color: #14df41;
-      font-weight: 900;
-      box-shadow: 0 0 18px rgba(20, 223, 65, 0.12);
-    }
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #14df41;
 
-    .pub-title {
-      color: #ffffff;
-      font-weight: 800;
-    }
+  border-bottom: 2px solid rgba(20, 223, 65, 0.22);
 
-    .pub-meta {
-      color: #d7f4ff;
-    }
+  text-shadow:
+    0 0 8px rgba(20, 223, 65, 0.45);
+}
 
-    .tag {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      color: #14df41;
-      background: rgba(20, 223, 65, 0.10);
-      border: 1px solid rgba(20, 223, 65, 0.25);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
+.publication-card {
+  display: block;
+  padding: 18px 22px;
+}
+
+.publication-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.pub-title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.pub-number {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 223, 65, 0.10);
+  border: 1px solid rgba(20, 223, 65, 0.25);
+  color: #14df41;
+  font-weight: 800;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.tag {
+  margin-left: 12px;
+  padding: 4px 9px;
+  font-size: 0.72rem;
+}
 
     /* =========================================================
        REVIEWER LISTS
@@ -412,7 +421,7 @@
        PAGE HERO
   ========================================================== -->
   <div class="page-hero">
-    <h1>Publications</h1>
+    <h1>MELT</h1>
     <p>Journal Articles • Conference Papers • Talks • Peer Review</p>
   </div>
 
@@ -437,7 +446,7 @@
           </p>
         </div>
 
-        <a class="scholar-button" href="https://scholar.google.com/citations?user=RIqmwV4AAAAJ&hl=en" target="_blank">
+        <a class="scholar-button" href="https://scholar.google.com/citations?hl=en&user=P9SuMksAAAAJ" target="_blank">
           Open Google Scholar
         </a>
       </div>
@@ -447,7 +456,7 @@
         <p>
           <span class="pub-title">Molecular Dynamics Study of Solid-Liquid Heat Transfer and Passive Liquid Flow.</span>
           Sumith Yesudasan, 2016, Syracuse University.
-          <a href="https://surface.syr.edu/etd/602/" target="_blank">Thesis link</a>
+          <a href="https://surface.syr.edu/etd/632/" target="_blank">Thesis link</a>
         </p>
       </div>
     </section>
@@ -455,61 +464,368 @@
     <!-- =======================================================
          PEER REVIEWED JOURNAL PUBLICATIONS
     ======================================================== -->
-    <section>
-      <div class="section-title">
-        <h2>Peer Reviewed Journal Publications</h2>
-      </div>
 
-      <div class="publication-list">
+<section>
+  <div class="section-title">
+    <h2>Peer Reviewed Journal Publications (26)</h2>
+  </div>
 
-        <div class="publication-card"><div class="pub-number">1</div><div><p>Amir Mokhammad, Afrida Malik, Anas Wheba, Sumith Yesudasan, Oluwanifemi Olagunju, Sean X Gu, Timur O Yarovinsky, John Hwa, E Vincent S Faustino, Juliane Nguyen, Kagya Amoako, (2025), <span class="pub-title">Enhancing Nucleic Acid Delivery via Lipid Nanoparticles: Integrating Artificial Intelligence for Predictive Modeling in Formulation Design</span>, Frontiers in Medical Technology, 7, 1591119.</p><span class="tag">2025</span></div></div>
+  <div class="publication-list">
 
-        <div class="publication-card"><div class="pub-number">2</div><div><p>Sumith Yesudasan, (2025), <span class="pub-title">Evaporation Characteristics of Heat Pipes with Sub-Critical Nanopores</span>, Molecular Physics. DOI: <a href="https://doi.org/10.1080/00268976.2025.2472975" target="_blank">10.1080/00268976.2025.2472975</a> (<a href="https://arxiv.org/" target="_blank">arXiv link</a>).</p><span class="tag">2025</span></div></div>
+    <!-- =======================================================
+         2026
+    ======================================================== -->
 
-        <div class="publication-card"><div class="pub-number">3</div><div><p>Sumith Yesudasan, (2022), <span class="pub-title">Critical Diameter for Continuous Evaporation is between 3 nm and 4 nm for Hydrophilic Nanopores</span>, Langmuir. DOI: <a href="https://doi.org/10.1021/acs.langmuir.2c00159" target="_blank">10.1021/acs.langmuir.2c00159</a>.</p><span class="tag">2022</span></div></div>
+    <div class="year-divider">2026</div>
 
-        <div class="publication-card"><div class="pub-number">4</div><div><p>Sumith Yesudasan & Rodney D. Averett, (2021), <span class="pub-title">Fracture Mechanics Analysis of Fibrin Fibers using Mesoscale and Continuum Level Methods</span>, Informatics in Medicine Unlocked, Vol. 23, 100524.</p><span class="tag">2021</span></div></div>
+    <div class="publication-card">
+      <p>
+        1. Sumith Yesudasan, Diana-Andra Borca-Tasciuc,
+        <span class="pub-title">
+          Molecular Dynamics Study Comparing the Enthalpy of Vaporization
+          of Water under Electric Fields in Bulk and Interfacial Systems
+        </span>,
+        Journal of Heat and Mass Transfer (in production), 2026.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">5</div><div><p>Edwin Babu, Sumith Yesudasan, & Sibi Chacko, (2021), <span class="pub-title">Cymatics Inspired Self-Cleaning Mechanism for Solar Panels</span>, Microsystem Technologies, Vol. 27, 853–861.</p><span class="tag">2021</span></div></div>
+    <!-- =======================================================
+         2025
+    ======================================================== -->
 
-        <div class="publication-card"><div class="pub-number">6</div><div><p>Vaibhav Hotchandani, Bobby Mathew, Sumith Yesudasan & Sibi Chacko, (2021), <span class="pub-title">Thermo-hydraulic Characteristics of Novel MEMS Heat Sink</span>, Microsystem Technologies, Vol. 27, 145–157.</p><span class="tag">2021</span></div></div>
+    <div class="year-divider">2025</div>
 
-        <div class="publication-card"><div class="pub-number">7</div><div><p>Adil Mohammed, Sumith Yesudasan & Sibi Chacko, (2020), <span class="pub-title">A Multilayered Photonic Emitter for High-Performance Daytime Radiative Cooling</span>, Microsystem Technologies.</p><span class="tag">2020</span></div></div>
+    <div class="publication-card">
+      <p>
+        2. Sumith Yesudasan, Mohammed Mamshad, Joseph Marcello, Mark Taylor,
+        <span class="pub-title">
+          Evaporation Behavior of Water in Confined Nanochannels Using Molecular Dynamics Simulation
+        </span>,
+        Journal of Nuclear Engineering, 6(4), 43.
+        DOI:
+        <a href="https://doi.org/10.3390/jne6040043">
+          10.3390/jne6040043
+        </a>.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">8</div><div><p>Sumith Yesudasan & Rodney D. Averett, (2020), <span class="pub-title">Multiscale Network Modeling of Fibrin Fibers and Fibrin Clots with Protofibril Binding Mechanics</span>, Polymers, Vol. 12(6), 1223.</p><span class="tag">2020</span></div></div>
+    <div class="publication-card">
+      <p>
+        3. Sumith Yesudasan,
+        <span class="pub-title">
+          Thermostating Strategies and Interaction Potentials in Interfacial Water Simulations:
+          Are They Really Needed?
+        </span>,
+        Frontiers in Mechanical Engineering, 11.
+        DOI:
+        <a href="https://doi.org/10.3389/fmech.2025.1690974">
+          10.3389/fmech.2025.1690974
+        </a>.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">9</div><div><p>Bevan Noronha, Sumith Yesudasan & Sibi Chacko, (2020), <span class="pub-title">Static and Dynamic Analysis of Automotive Leaf Spring—A Comparative Study of Various Materials Using ANSYS</span>, Journal of Failure Analysis and Prevention, Vol. 20, 804–818.</p><span class="tag">2020</span></div></div>
+    <div class="publication-card">
+      <p>
+        4. Amir Mokhammad et al.,
+        <span class="pub-title">
+          Enhancing Nucleic Acid Delivery via Lipid Nanoparticles:
+          Integrating Artificial Intelligence for Predictive Modeling in Formulation Design
+        </span>,
+        Frontiers in Medical Technology, 7, 1591119.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">10</div><div><p>Sumith Yesudasan, (2019), <span class="pub-title">Extended MARTINI Water Model for Heat Transfer Studies</span>, Molecular Physics, Taylor & Francis, Vol. 118(13), e1692151.</p><span class="tag">2019</span></div></div>
+    <div class="publication-card">
+      <p>
+        5. Sumith Yesudasan,
+        <span class="pub-title">
+          Evaporation Characteristics of Heat Pipes with Sub-Critical Nanopores
+        </span>,
+        Molecular Physics.
+        DOI:
+        <a href="https://doi.org/10.1080/00268976.2025.2472975">
+          10.1080/00268976.2025.2472975
+        </a>.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">11</div><div><p>Sumith Yesudasan & Rodney D. Averett, (2019), <span class="pub-title">Recent Advances in Computational Modeling of Fibrin Clot Formation: A Review</span>, Computational Biology and Chemistry, Vol. 83, 107148.</p><span class="tag">2019</span></div></div>
+    <!-- =======================================================
+         2022
+    ======================================================== -->
 
-        <div class="publication-card"><div class="pub-number">12</div><div><p>Sumith Yesudasan, (2019), <span class="pub-title">Thin Film Pressure Estimation of Argon and Water using LAMMPS</span>, International Journal of Engineering, Vol. 12, Issue 1, 1–10.</p><span class="tag">2019</span></div></div>
+    <div class="year-divider">2022</div>
 
-        <div class="publication-card"><div class="pub-number">13</div><div><p>Jacob E. Hood, Sumith Yesudasan, & Rodney D. Averett, (2018), <span class="pub-title">Glucose Concentration Affects Fibrin Clot Structure and Morphology as Evidenced by Fluorescence Imaging and Molecular Simulations</span>, Biomechanics and Modeling in Mechanobiology, Vol. 24(9), 104S–116S.</p><span class="tag">2018</span></div></div>
+    <div class="publication-card">
+      <p>
+        6. Sumith Yesudasan,
+        <span class="pub-title">
+          Critical Diameter for Continuous Evaporation is between 3 nm and 4 nm
+          for Hydrophilic Nanopores
+        </span>,
+        Langmuir.
+        DOI:
+        <a href="https://doi.org/10.1021/acs.langmuir.2c00159">
+          10.1021/acs.langmuir.2c00159
+        </a>.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">14</div><div><p>Sumith Yesudasan, Xianqiao Wang, & Rodney D. Averett, (2018), <span class="pub-title">Fibrin Polymerization Simulation using a Reactive Dissipative Particle Dynamics Method</span>, Biomechanics and Modeling in Mechanobiology, Vol. 17(5), 1389–1403.</p><span class="tag">2018</span></div></div>
+    <!-- =======================================================
+         2021
+    ======================================================== -->
 
-        <div class="publication-card"><div class="pub-number">15</div><div><p>Sumith Yesudasan, Simone A. Douglas, Manu O. Platt, Xianqiao Wang & Rodney D. Averett, (2018), <span class="pub-title">Molecular Insights into the Irreversible Mechanical Behavior of Sickle Hemoglobin</span>, Journal of Biomolecular Structure and Dynamics, Vol. 37(5), 1270–1281.</p><span class="tag">2018</span></div></div>
+    <div class="year-divider">2021</div>
 
-        <div class="publication-card"><div class="pub-number">16</div><div><p>Sumith Yesudasan, Xianqiao Wang, & Rodney D. Averett, (2018), <span class="pub-title">Coarse Grain Molecular Dynamics Simulations of Fibrin Polymerization: Effects of Thrombin Concentration on Fibrin Clot Structure</span>, Journal of Molecular Modeling, Vol. 24, 109.</p><span class="tag">2018</span></div></div>
+    <div class="publication-card">
+      <p>
+        7. Sumith Yesudasan & Rodney D. Averett,
+        <span class="pub-title">
+          Fracture Mechanics Analysis of Fibrin Fibers using Mesoscale
+          and Continuum Level Methods
+        </span>,
+        Informatics in Medicine Unlocked, 23, 100524.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">17</div><div><p>Tyler Scogin, Sumith Yesudasan, Mitchell L. R. Walker, Rodney D. Averett, (2017), <span class="pub-title">Electromagnetically induced distortion of a fibrin matrix with embedded microparticles</span>, Journal of Mechanics in Medicine and Biology, Vol. 18(02), 1850016.</p><span class="tag">2017</span></div></div>
+    <div class="publication-card">
+      <p>
+        8. Edwin Babu, Sumith Yesudasan & Sibi Chacko,
+        <span class="pub-title">
+          Cymatics Inspired Self-Cleaning Mechanism for Solar Panels
+        </span>,
+        Microsystem Technologies, 27, 853–861.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">18</div><div><p>Sumith Yesudasan, Xianqiao Wang & Rodney D. Averett, (2017), <span class="pub-title">Molecular dynamics simulations indicate that deoxyhemoglobin, oxyhemoglobin, carboxyhemoglobin, and glycated hemoglobin under compression and shear exhibit an anisotropic mechanical behavior</span>, Journal of Biomolecular Structure and Dynamics, Vol. 36(6), 1417–1429.</p><span class="tag">2017</span></div></div>
+    <div class="publication-card">
+      <p>
+        9. Vaibhav Hotchandani, Bobby Mathew, Sumith Yesudasan & Sibi Chacko,
+        <span class="pub-title">
+          Thermo-hydraulic Characteristics of Novel MEMS Heat Sink
+        </span>,
+        Microsystem Technologies, 27, 145–157.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">19</div><div><p>Sumith Yesudasan & Shalabh C. Maroo, (2017), <span class="pub-title">A Direct Two-Dimensional Pressure Formulation in Molecular Dynamics</span>, Journal of Molecular Graphics and Modeling, Vol. 79, 230–234.</p><span class="tag">2017</span></div></div>
+    <!-- =======================================================
+         2020
+    ======================================================== -->
 
-        <div class="publication-card"><div class="pub-number">20</div><div><p>Sumith Yesudasan & Shalabh C. Maroo, (2017), <span class="pub-title">A Robust Algorithm for Contact Angle and Interface Detection of Water and Argon Droplets</span>, Heat Transfer Engineering, Taylor and Francis, Vol. 38(14–15), 1343–1353.</p><span class="tag">2017</span></div></div>
+    <div class="year-divider">2020</div>
 
-        <div class="publication-card"><div class="pub-number">21</div><div><p>Sumith YD & Shalabh C. Maroo, (2016), <span class="pub-title">Origin of Surface-Driven Passive Liquid Flows</span>, Langmuir, Vol. 32(34), 8593–8597.</p><span class="tag">2016</span></div></div>
+    <div class="publication-card">
+      <p>
+        10. Adil Mohammed, Sumith Yesudasan & Sibi Chacko,
+        <span class="pub-title">
+          A Multilayered Photonic Emitter for High-Performance Daytime Radiative Cooling
+        </span>,
+        Microsystem Technologies.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">22</div><div><p>Sumith YD & Shalabh C. Maroo, (2015), <span class="pub-title">Surface-Heating Algorithm for Water at Nanoscale</span>, Journal of Physical Chemistry Letters, Vol. 6(18), 3765–3769.</p><span class="tag">2015</span></div></div>
+    <div class="publication-card">
+      <p>
+        11. Sumith Yesudasan & Rodney D. Averett,
+        <span class="pub-title">
+          Multiscale Network Modeling of Fibrin Fibers and Fibrin Clots
+          with Protofibril Binding Mechanics
+        </span>,
+        Polymers, 12(6), 1223.
+      </p>
+    </div>
 
-        <div class="publication-card"><div class="pub-number">23</div><div><p>Sumith Yesudasan, (2015), <span class="pub-title">An Efficient Algorithm for Contact Angle Estimation in Molecular Dynamics Simulations</span>, International Journal of Engineering, Vol. 9(1), 1.</p><span class="tag">2015</span></div></div>
+    <div class="publication-card">
+      <p>
+        12. Bevan Noronha, Sumith Yesudasan & Sibi Chacko,
+        <span class="pub-title">
+          Static and Dynamic Analysis of Automotive Leaf Spring
+          — A Comparative Study of Various Materials Using ANSYS
+        </span>,
+        Journal of Failure Analysis and Prevention, 20, 804–818.
+      </p>
+    </div>
 
-      </div>
-    </section>
+    <!-- =======================================================
+         2019
+    ======================================================== -->
+
+    <div class="year-divider">2019</div>
+
+    <div class="publication-card">
+      <p>
+        13. Sumith Yesudasan,
+        <span class="pub-title">
+          Extended MARTINI Water Model for Heat Transfer Studies
+        </span>,
+        Molecular Physics, 118(13), e1692151.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        14. Sumith Yesudasan & Rodney D. Averett,
+        <span class="pub-title">
+          Recent Advances in Computational Modeling of Fibrin Clot Formation:
+          A Review
+        </span>,
+        Computational Biology and Chemistry, 83, 107148.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        15. Sumith Yesudasan,
+        <span class="pub-title">
+          Thin Film Pressure Estimation of Argon and Water using LAMMPS
+        </span>,
+        International Journal of Engineering, 12(1), 1–10.
+      </p>
+    </div>
+
+    <!-- =======================================================
+         2018
+    ======================================================== -->
+
+    <div class="year-divider">2018</div>
+
+    <div class="publication-card">
+      <p>
+        16. Jacob E. Hood, Sumith Yesudasan & Rodney D. Averett,
+        <span class="pub-title">
+          Glucose Concentration Affects Fibrin Clot Structure and Morphology
+          as Evidenced by Fluorescence Imaging and Molecular Simulations
+        </span>,
+        Biomechanics and Modeling in Mechanobiology.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        17. Sumith Yesudasan, Xianqiao Wang & Rodney D. Averett,
+        <span class="pub-title">
+          Fibrin Polymerization Simulation using a Reactive Dissipative
+          Particle Dynamics Method
+        </span>,
+        Biomechanics and Modeling in Mechanobiology, 17(5), 1389–1403.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        18. Sumith Yesudasan, Simone A. Douglas, Manu O. Platt,
+        Xianqiao Wang & Rodney D. Averett,
+        <span class="pub-title">
+          Molecular Insights into the Irreversible Mechanical Behavior
+          of Sickle Hemoglobin
+        </span>,
+        Journal of Biomolecular Structure and Dynamics, 37(5), 1270–1281.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        19. Sumith Yesudasan, Xianqiao Wang & Rodney D. Averett,
+        <span class="pub-title">
+          Coarse Grain Molecular Dynamics Simulations of Fibrin Polymerization:
+          Effects of Thrombin Concentration on Fibrin Clot Structure
+        </span>,
+        Journal of Molecular Modeling, 24, 109.
+      </p>
+    </div>
+
+    <!-- =======================================================
+         2017
+    ======================================================== -->
+
+    <div class="year-divider">2017</div>
+
+    <div class="publication-card">
+      <p>
+        20. Tyler Scogin, Sumith Yesudasan, Mitchell Walker & Rodney D. Averett,
+        <span class="pub-title">
+          Electromagnetically Induced Distortion of a Fibrin Matrix
+          with Embedded Microparticles
+        </span>,
+        Journal of Mechanics in Medicine and Biology.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        21. Sumith Yesudasan, Xianqiao Wang & Rodney D. Averett,
+        <span class="pub-title">
+          Mechanical Behavior of Hemoglobin Variants Under Compression and Shear
+        </span>,
+        Journal of Biomolecular Structure and Dynamics.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        22. Sumith Yesudasan & Shalabh C. Maroo,
+        <span class="pub-title">
+          A Direct Two-Dimensional Pressure Formulation in Molecular Dynamics
+        </span>,
+        Journal of Molecular Graphics and Modelling, 79, 230–234.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        23. Sumith Yesudasan & Shalabh C. Maroo,
+        <span class="pub-title">
+          A Robust Algorithm for Contact Angle and Interface Detection
+          of Water and Argon Droplets
+        </span>,
+        Heat Transfer Engineering, 38(14–15), 1343–1353.
+      </p>
+    </div>
+
+    <!-- =======================================================
+         2016
+    ======================================================== -->
+
+    <div class="year-divider">2016</div>
+
+    <div class="publication-card">
+      <p>
+        24. Sumith YD & Shalabh C. Maroo,
+        <span class="pub-title">
+          Origin of Surface-Driven Passive Liquid Flows
+        </span>,
+        Langmuir, 32(34), 8593–8597.
+      </p>
+    </div>
+
+    <!-- =======================================================
+         2015
+    ======================================================== -->
+
+    <div class="year-divider">2015</div>
+
+    <div class="publication-card">
+      <p>
+        25. Sumith YD & Shalabh C. Maroo,
+        <span class="pub-title">
+          Surface-Heating Algorithm for Water at Nanoscale
+        </span>,
+        Journal of Physical Chemistry Letters, 6(18), 3765–3769.
+      </p>
+    </div>
+
+    <div class="publication-card">
+      <p>
+        26. Sumith Yesudasan,
+        <span class="pub-title">
+          An Efficient Algorithm for Contact Angle Estimation
+          in Molecular Dynamics Simulations
+        </span>,
+        International Journal of Engineering, 9(1), 1.
+      </p>
+    </div>
+
+  </div>
+</section>
 
     <!-- =======================================================
          INVITED TALKS / LECTURES
@@ -583,31 +899,7 @@
       </div>
     </section>
 
-    <!-- =======================================================
-         OPEN ACCESS NOTE
-    ======================================================== -->
-    <section>
-      <div class="section-title">
-        <h2>Note on Open Access</h2>
-      </div>
 
-      <div class="card open-access-note">
-        <p>
-          Every day, countless scientists and researchers, myself included, contribute to the growing body
-          of knowledge by submitting our research work, both funded and non-funded, in the form of papers.
-          Ironically, while the authors of these crucial discoveries do not receive any form of royalty,
-          the majority of these papers are only accessible through costly subscriptions, placing them out
-          of reach for many.
-        </p>
-
-        <p>
-          This practice, which began in the late 1990s, has created a somewhat exclusive domain, often
-          reserving knowledge for those with the financial means. However, the advent of open-access
-          journals and peer-reviewed preprints has started to challenge this norm, providing a more
-          inclusive platform for sharing research.
-        </p>
-      </div>
-    </section>
 
     <!-- =======================================================
          PEER REVIEWER SERVICE
@@ -631,22 +923,7 @@
           </ol>
         </div>
 
-        <div class="card review-card">
-          <h3>Past Before 2019</h3>
-          <ol>
-            <li>Entropy (MDPI)</li>
-            <li>Journal of Mechanics in Medicine and Biology (World Scientific)</li>
-            <li>Journal of Biomolecular Structure and Dynamics (Taylor and Francis)</li>
-            <li>Heat and Mass Transfer (Springer)</li>
-            <li>Physical Chemistry Chemical Physics (Royal Society of Chemistry)</li>
-            <li>Applied Mathematics Modelling (Elsevier)</li>
-            <li>International Journal of Multiphase Flow (Elsevier)</li>
-            <li>Journal of Chemical Theory and Computation (ACS Publications)</li>
-            <li>ASME Power and Energy Conference, FL, USA, 2018</li>
-            <li>ASME Power Conference and Nuclear Forum, UT, USA, 2019</li>
-          </ol>
-        </div>
-      </div>
+     </div>
     </section>
 
   </main>
