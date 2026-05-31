@@ -1,0 +1,752 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- =========================================================
+       BASIC PAGE SETTINGS
+  ========================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About Me | Dr. Sumith Yesudasan</title>
+
+  <!-- =========================================================
+       GOOGLE FONT
+  ========================================================== -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- =========================================================
+       PAGE STYLES
+  ========================================================== -->
+  <style>
+
+    /* =========================================================
+       GLOBAL RESET
+    ========================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #050b14;
+      color: #e8eef8;
+      font-family: "Rajdhani", sans-serif;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* =========================================================
+       ANIMATED BACKGROUND
+    ========================================================== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+
+      background:
+        radial-gradient(circle at 20% 15%, rgba(20,223,65,0.12), transparent 30%),
+        radial-gradient(circle at 80% 25%, rgba(0,180,255,0.12), transparent 28%),
+        linear-gradient(135deg, #050b14 0%, #07111f 45%, #02050a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+
+      background-image:
+        linear-gradient(rgba(100,210,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,210,255,0.04) 1px, transparent 1px);
+
+      background-size: 44px 44px;
+
+      animation: gridMove 18s linear infinite;
+    }
+
+    @keyframes gridMove {
+      from { transform: translateY(0px); }
+      to   { transform: translateY(44px); }
+    }
+
+    /* =========================================================
+       LINKS
+    ========================================================== */
+
+    a {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(5,11,20,0.82);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(100,210,255,0.14);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+
+      padding: 16px 24px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.08em;
+    }
+
+    .logo span {
+      color: #14df41;
+
+      text-shadow:
+        0 0 8px rgba(20,223,65,0.95),
+        0 0 18px rgba(20,223,65,0.85),
+        0 0 40px rgba(20,223,65,0.60);
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      color: #d7f4ff;
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #14df41;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       HERO SECTION
+    ========================================================== */
+
+    .hero {
+      min-height: 340px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      padding: 70px 20px 60px;
+
+      background:
+        linear-gradient(to bottom, rgba(3,9,20,0.95), rgba(5,11,20,0.70)),
+        radial-gradient(circle at center, rgba(20,223,65,0.16), transparent 58%);
+
+      border-bottom: 1px solid rgba(100,210,255,0.12);
+    }
+
+    .hero h1 {
+      font-family: "Orbitron", sans-serif;
+
+      font-size: clamp(2.8rem, 8vw, 6rem);
+
+      letter-spacing: 0.08em;
+
+      color: #14df41;
+
+      text-shadow:
+        0 0 8px rgba(20,223,65,0.95),
+        0 0 18px rgba(20,223,65,0.85),
+        0 0 40px rgba(20,223,65,0.70),
+        0 0 80px rgba(20,223,65,0.50);
+
+      animation: meltGlow 2.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes meltGlow {
+
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.02);
+      }
+    }
+
+    .hero p {
+      margin-top: 16px;
+
+      color: #d7f4ff;
+
+      font-size: 1.2rem;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       MAIN LAYOUT
+    ========================================================== */
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+
+      padding: 70px 24px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* =========================================================
+       SECTION TITLES
+    ========================================================== */
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      margin-bottom: 24px;
+    }
+
+    .section-title::before {
+      content: "";
+
+      width: 7px;
+      height: 34px;
+
+      border-radius: 999px;
+
+      background: linear-gradient(#14df41, #1b76ff);
+
+      box-shadow: 0 0 18px rgba(20,223,65,0.7);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       CARD STYLING
+    ========================================================== */
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.03)
+        );
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      border-radius: 24px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.28);
+
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(20,223,65,0.45);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20,223,65,0.07),
+          rgba(255,255,255,0.04)
+        );
+    }
+
+    p {
+      color: #c9d5e5;
+      margin-bottom: 18px;
+      font-size: 1.06rem;
+    }
+
+    /* =========================================================
+       TIMELINE STYLE
+    ========================================================== */
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      padding: 18px 20px;
+
+      border-left: 3px solid rgba(20,223,65,0.45);
+
+      background: rgba(255,255,255,0.03);
+
+      border-radius: 0 18px 18px 0;
+    }
+
+    .timeline-item strong {
+      color: #14df41;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       CONTACT SECTION
+    ========================================================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.035);
+
+      border: 1px solid rgba(100,210,255,0.12);
+
+      border-radius: 20px;
+
+      padding: 22px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 10px;
+      color: #14df41;
+    }
+
+    /* =========================================================
+       EMPLOYER IMAGE
+    ========================================================== */
+
+    .employer-banner img {
+      width: 100%;
+      height: auto;
+
+      display: block;
+
+      border-radius: 24px;
+
+      border: 1px solid rgba(100,210,255,0.16);
+
+      box-shadow:
+        0 0 30px rgba(20,223,65,0.10);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================== */
+
+    footer {
+      text-align: center;
+
+      padding: 40px 24px;
+
+      color: #98a7bb;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+      background: rgba(3,9,20,0.55);
+    }
+
+    /* =========================================================
+       MOBILE RESPONSIVENESS
+    ========================================================== */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 50px 20px;
+      }
+
+      .hero {
+        min-height: 280px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HEADER / NAVIGATION
+  ========================================================== -->
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        <span>MELT</span> Laboratory
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="aboutme.html">About me</a>
+      </div>
+
+    </nav>
+
+  </header>
+
+  <!-- =========================================================
+       HERO SECTION
+  ========================================================== -->
+
+  <section class="hero">
+
+    <h1>MELT</h1>
+
+    <p>
+      Research • Engineering • Simulation • Discovery
+    </p>
+
+  </section>
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+
+  <main>
+
+    <!-- =======================================================
+         BIOGRAPHY
+    ======================================================== -->
+
+    <section>
+
+      <div class="section-title">
+        <h2>Biography</h2>
+      </div>
+
+      <div class="card">
+
+        <p>
+          I was born in India during the vibrant 1980s in a small,
+          close-knit community surrounded by open fields and wooded landscapes.
+          My childhood was filled with friendships, exploration, games,
+          and curiosity about how things worked.
+        </p>
+
+        <p>
+          During my college years, I developed a deep passion for computer
+          programming. I enjoyed building games, creating engineering tools,
+          and developing simulation software capable of transforming ideas
+          into practical solutions.
+        </p>
+
+        <p>
+          My academic journey eventually led me to mechanical engineering.
+          After completing my Master's degree at the National Institute of
+          Technology Calicut, I began my professional career at General Electric
+          and later at Delphi Automotive, where I gained valuable industrial
+          engineering experience.
+        </p>
+
+        <p>
+          Although I enjoyed industry, I was strongly drawn toward deeper
+          scientific understanding and advanced research. This motivation
+          brought me back to academia, where years of research and laboratory
+          work ultimately led to my doctoral degree in Mechanical and Aerospace
+          Engineering.
+        </p>
+
+        <p>
+          Today, I serve as an Assistant Professor engaged in research involving
+          molecular simulations, machine learning, nanoscale heat transfer,
+          and computational biomedicine. My work combines physics-based
+          simulations and AI-driven methods to study evaporation, water-material
+          interactions, thermal management systems, and blood clot mechanics.
+        </p>
+
+        <p>
+          Through research, teaching, and mentorship, my goal is to continue
+          learning while inspiring future generations of engineers and scientists
+          to explore the beauty of science, computation, and innovation.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         EDUCATION
+    ======================================================== -->
+
+    <section>
+
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+
+      <div class="card timeline">
+
+        <div class="timeline-item">
+          <strong>2016</strong><br>
+          Ph.D. in Mechanical and Aerospace Engineering<br>
+          Syracuse University, USA
+        </div>
+
+        <div class="timeline-item">
+          <strong>2007</strong><br>
+          M.Tech. in Manufacturing Technology<br>
+          National Institute of Technology Calicut, India
+        </div>
+
+        <div class="timeline-item">
+          <strong>2005</strong><br>
+          B.Tech. in Mechanical Engineering<br>
+          University of Kerala, India
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         EMPLOYMENT
+    ======================================================== -->
+
+    <section>
+
+      <div class="section-title">
+        <h2>Employment</h2>
+      </div>
+
+      <div class="card timeline">
+
+        <div class="timeline-item">
+          <strong>2023 – Present</strong><br>
+          Assistant Professor<br>
+          University of New Haven, CT, USA
+        </div>
+
+        <div class="timeline-item">
+          <strong>2020 – 2023</strong><br>
+          Assistant Professor<br>
+          Sam Houston State University, TX, USA
+        </div>
+
+        <div class="timeline-item">
+          <strong>2018 – 2020</strong><br>
+          Assistant Professor<br>
+          University of Jamestown, ND, USA
+        </div>
+
+        <div class="timeline-item">
+          <strong>2016 – 2018</strong><br>
+          Postdoctoral Research Associate<br>
+          University of Georgia, GA, USA
+        </div>
+
+        <div class="timeline-item">
+          <strong>2012 – 2016</strong><br>
+          Teaching and Research Assistant<br>
+          Syracuse University, NY, USA
+        </div>
+
+        <div class="timeline-item">
+          <strong>2011 – 2012</strong><br>
+          Advanced Analysis Engineer<br>
+          DELPHI Automotive, India
+        </div>
+
+        <div class="timeline-item">
+          <strong>2007 – 2011</strong><br>
+          Mechanical Engineer<br>
+          General Electric Company, India
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         ADDITIONAL ROLES
+    ======================================================== -->
+
+    <section>
+
+      <div class="section-title">
+        <h2>Additional Roles</h2>
+      </div>
+
+      <div class="card timeline">
+
+        <div class="timeline-item">
+          <strong>2024 – 2025</strong><br>
+          Director and Coordinator of BS in Mechanical Engineering Program<br>
+          University of New Haven
+        </div>
+
+        <div class="timeline-item">
+          <strong>2023 – 2024</strong><br>
+          Director and Coordinator of MS in Mechanical Engineering Program<br>
+          University of New Haven
+        </div>
+
+        <div class="timeline-item">
+          <strong>2020</strong><br>
+          Faculty Search Committee Chair<br>
+          University of Jamestown
+        </div>
+
+        <div class="timeline-item">
+          <strong>2017 – 2018</strong><br>
+          Group Manager, AVERETT Lab<br>
+          University of Georgia
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         CONTACT
+    ======================================================== -->
+
+    <section>
+
+      <div class="section-title">
+        <h2>Contact and Profiles</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Contact</h3>
+
+          <p>
+            Dr. Sumith Yesudasan<br>
+            Assistant Professor<br>
+            Mechanical and Industrial Engineering Department<br>
+            University of New Haven<br>
+            West Haven, CT 06516
+          </p>
+
+          <p>
+            E:
+            <a href="mailto:sumith@newhaven.edu">
+              sumith@newhaven.edu
+            </a>
+          </p>
+
+          <p>
+            Official Faculty Page:<br>
+            <a href="https://www.newhaven.edu/engineering/graduate-programs/mechanical-engineering/faculty.php">
+              University of New Haven
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Profiles</h3>
+
+          <p><a href="https://www.linkedin.com/in/ydsumith/">LinkedIn</a></p>
+
+          <p><a href="https://scholar.google.com/citations?user=P9SuMksAAAAJ&hl=en">Google Scholar</a></p>
+
+          <p><a href="http://orcid.org/0000-0001-6379-2138">ORCID</a></p>
+
+          <p><a href="http://www.researcherid.com/rid/O-2707-2017">ResearcherID</a></p>
+
+          <p><a href="https://github.com/ydsumith">GitHub</a></p>
+
+          <p><a href="https://publons.com/researcher/2317069/sumith-yesudasan/">Publons</a></p>
+
+          <p><a href="https://account.ncees.org/rn/2076891-1456111-a5ed58c">NCEES Record</a></p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Communication</h3>
+
+          <p>
+            I no longer answer queries related to NAMD and LAMMPS
+            simulations through email.
+          </p>
+
+          <p>
+            Please post technical questions directly in the
+            official mailing lists and community forums.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         EMPLOYER / UNIVERSITY IMAGE
+    ======================================================== -->
+
+    <section class="employer-banner">
+
+      <div class="section-title">
+        <h2>Institutions and Organizations</h2>
+      </div>
+
+      <img src="images/employers.png" alt="Institutions and organizations">
+
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <p>
+      MELT Laboratory | Multiscale Engineering Lab for Thermofluids
+    </p>
+
+    <p>
+      Dr. Sumith Yesudasan | University of New Haven
+    </p>
+
+  </footer>
+
+</body>
+</html>
+```
