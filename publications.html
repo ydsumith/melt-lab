@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- =========================================================
+       BASIC PAGE SETTINGS
+  ========================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Publications | MELT</title>
+
+  <!-- =========================================================
+       PAGE STYLES
+  ========================================================== -->
+  <style>
+    /* ---------- Global reset ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050b14;
+      color: #e8eef8;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ---------- Animated background ---------- */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(20, 223, 65, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(0, 210, 255, 0.14), transparent 28%),
+        linear-gradient(135deg, #050b14 0%, #07111f 45%, #02050a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(100, 210, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 210, 255, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      animation: gridMove 18s linear infinite;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 85%);
+    }
+
+    @keyframes gridMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(46px); }
+    }
+
+    /* ---------- Links ---------- */
+    a {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 20, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(100, 210, 255, 0.16);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 15px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #14df41;
+      text-shadow: 0 0 14px rgba(20, 223, 65, 0.9);
+    }
+
+    .nav-links a {
+      margin-left: 22px;
+      color: #c7d4e8;
+      font-size: 0.95rem;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #14df41;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       HERO SECTION
+    ========================================================== */
+    .page-hero {
+      width: 100%;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 44px 20px;
+      background:
+        linear-gradient(to bottom, rgba(3, 9, 20, 0.96), rgba(5, 11, 20, 0.65)),
+        radial-gradient(circle at center, rgba(20, 223, 65, 0.18), transparent 58%);
+      border-bottom: 1px solid rgba(100, 210, 255, 0.14);
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      color: #14df41;
+      letter-spacing: 0.06em;
+      text-shadow:
+        0 0 8px rgba(20, 223, 65, 0.95),
+        0 0 18px rgba(20, 223, 65, 0.85),
+        0 0 40px rgba(20, 223, 65, 0.55);
+      animation: softGlow 2.4s ease-in-out infinite alternate;
+    }
+
+    .page-hero p {
+      margin-top: 12px;
+      color: #d7f4ff;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes softGlow {
+      from {
+        transform: scale(1);
+        text-shadow:
+          0 0 8px rgba(20, 223, 65, 0.75),
+          0 0 18px rgba(20, 223, 65, 0.55);
+      }
+
+      to {
+        transform: scale(1.025);
+        text-shadow:
+          0 0 12px rgba(20, 223, 65, 1),
+          0 0 32px rgba(20, 223, 65, 0.9),
+          0 0 70px rgba(20, 223, 65, 0.5);
+      }
+    }
+
+    /* =========================================================
+       MAIN LAYOUT
+    ========================================================== */
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 7px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(#14df41, #1b76ff);
+      box-shadow: 0 0 18px rgba(20, 223, 65, 0.7);
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      color: #ffffff;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    p,
+    li {
+      color: #c2cfdf;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    ol {
+      padding-left: 24px;
+    }
+
+    /* =========================================================
+       CARD STYLES
+    ========================================================== */
+    .card,
+    .publication-card {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .card:hover,
+    .publication-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(20, 223, 65, 0.45);
+      background:
+        linear-gradient(145deg, rgba(20, 223, 65, 0.08), rgba(255, 255, 255, 0.045));
+    }
+
+    /* =========================================================
+       GOOGLE SCHOLAR TEXT BUTTON
+    ========================================================== */
+    .scholar-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .scholar-button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      color: #050b14;
+      background: #14df41;
+      font-weight: 800;
+      box-shadow: 0 0 18px rgba(20, 223, 65, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .scholar-button:hover {
+      transform: translateY(-3px);
+      text-decoration: none;
+      box-shadow: 0 0 28px rgba(20, 223, 65, 0.75);
+    }
+
+    /* =========================================================
+       PUBLICATION LIST
+    ========================================================== */
+    .publication-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .pub-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(20, 223, 65, 0.10);
+      border: 1px solid rgba(20, 223, 65, 0.28);
+      color: #14df41;
+      font-weight: 900;
+      box-shadow: 0 0 18px rgba(20, 223, 65, 0.12);
+    }
+
+    .pub-title {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .pub-meta {
+      color: #d7f4ff;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #14df41;
+      background: rgba(20, 223, 65, 0.10);
+      border: 1px solid rgba(20, 223, 65, 0.25);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       REVIEWER LISTS
+    ========================================================== */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .review-card ol {
+      padding-left: 22px;
+    }
+
+    /* =========================================================
+       OPEN ACCESS NOTE
+    ========================================================== */
+    .open-access-note {
+      border-color: rgba(20, 223, 65, 0.35);
+      box-shadow: 0 0 28px rgba(20, 223, 65, 0.10);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================== */
+    footer {
+      text-align: center;
+      padding: 38px 24px;
+      color: #98a7bb;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(3, 9, 20, 0.55);
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      color: #98a7bb;
+    }
+
+    /* =========================================================
+       MOBILE RESPONSIVENESS
+    ========================================================== */
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 46px 20px;
+      }
+
+      .page-hero {
+        min-height: 210px;
+      }
+
+      .publication-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-number {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HEADER / NAVIGATION
+  ========================================================== -->
+  <header>
+    <nav>
+      <div class="logo"><span>MELT</span> Laboratory</div>
+
+      <div class="nav-links">
+        <a href="index.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="teaching.html">Teaching</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       PAGE HERO
+  ========================================================== -->
+  <div class="page-hero">
+    <h1>Publications</h1>
+    <p>Journal Articles • Conference Papers • Talks • Peer Review</p>
+  </div>
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+  <main>
+
+    <!-- =======================================================
+         GOOGLE SCHOLAR / THESIS
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Scholar Profile and Thesis</h2>
+      </div>
+
+      <div class="card scholar-box">
+        <div>
+          <h3>Google Scholar Profile</h3>
+          <p>
+            View the updated citation record, publication list, and scholarly profile.
+          </p>
+        </div>
+
+        <a class="scholar-button" href="https://scholar.google.com/citations?user=RIqmwV4AAAAJ&hl=en" target="_blank">
+          Open Google Scholar
+        </a>
+      </div>
+
+      <div class="card" style="margin-top: 22px;">
+        <h3>Ph.D. Thesis</h3>
+        <p>
+          <span class="pub-title">Molecular Dynamics Study of Solid-Liquid Heat Transfer and Passive Liquid Flow.</span>
+          Sumith Yesudasan, 2016, Syracuse University.
+          <a href="https://surface.syr.edu/etd/602/" target="_blank">Thesis link</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PEER REVIEWED JOURNAL PUBLICATIONS
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Peer Reviewed Journal Publications</h2>
+      </div>
+
+      <div class="publication-list">
+
+        <div class="publication-card"><div class="pub-number">1</div><div><p>Amir Mokhammad, Afrida Malik, Anas Wheba, Sumith Yesudasan, Oluwanifemi Olagunju, Sean X Gu, Timur O Yarovinsky, John Hwa, E Vincent S Faustino, Juliane Nguyen, Kagya Amoako, (2025), <span class="pub-title">Enhancing Nucleic Acid Delivery via Lipid Nanoparticles: Integrating Artificial Intelligence for Predictive Modeling in Formulation Design</span>, Frontiers in Medical Technology, 7, 1591119.</p><span class="tag">2025</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">2</div><div><p>Sumith Yesudasan, (2025), <span class="pub-title">Evaporation Characteristics of Heat Pipes with Sub-Critical Nanopores</span>, Molecular Physics. DOI: <a href="https://doi.org/10.1080/00268976.2025.2472975" target="_blank">10.1080/00268976.2025.2472975</a> (<a href="https://arxiv.org/" target="_blank">arXiv link</a>).</p><span class="tag">2025</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">3</div><div><p>Sumith Yesudasan, (2022), <span class="pub-title">Critical Diameter for Continuous Evaporation is between 3 nm and 4 nm for Hydrophilic Nanopores</span>, Langmuir. DOI: <a href="https://doi.org/10.1021/acs.langmuir.2c00159" target="_blank">10.1021/acs.langmuir.2c00159</a>.</p><span class="tag">2022</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">4</div><div><p>Sumith Yesudasan & Rodney D. Averett, (2021), <span class="pub-title">Fracture Mechanics Analysis of Fibrin Fibers using Mesoscale and Continuum Level Methods</span>, Informatics in Medicine Unlocked, Vol. 23, 100524.</p><span class="tag">2021</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">5</div><div><p>Edwin Babu, Sumith Yesudasan, & Sibi Chacko, (2021), <span class="pub-title">Cymatics Inspired Self-Cleaning Mechanism for Solar Panels</span>, Microsystem Technologies, Vol. 27, 853–861.</p><span class="tag">2021</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">6</div><div><p>Vaibhav Hotchandani, Bobby Mathew, Sumith Yesudasan & Sibi Chacko, (2021), <span class="pub-title">Thermo-hydraulic Characteristics of Novel MEMS Heat Sink</span>, Microsystem Technologies, Vol. 27, 145–157.</p><span class="tag">2021</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">7</div><div><p>Adil Mohammed, Sumith Yesudasan & Sibi Chacko, (2020), <span class="pub-title">A Multilayered Photonic Emitter for High-Performance Daytime Radiative Cooling</span>, Microsystem Technologies.</p><span class="tag">2020</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">8</div><div><p>Sumith Yesudasan & Rodney D. Averett, (2020), <span class="pub-title">Multiscale Network Modeling of Fibrin Fibers and Fibrin Clots with Protofibril Binding Mechanics</span>, Polymers, Vol. 12(6), 1223.</p><span class="tag">2020</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">9</div><div><p>Bevan Noronha, Sumith Yesudasan & Sibi Chacko, (2020), <span class="pub-title">Static and Dynamic Analysis of Automotive Leaf Spring—A Comparative Study of Various Materials Using ANSYS</span>, Journal of Failure Analysis and Prevention, Vol. 20, 804–818.</p><span class="tag">2020</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">10</div><div><p>Sumith Yesudasan, (2019), <span class="pub-title">Extended MARTINI Water Model for Heat Transfer Studies</span>, Molecular Physics, Taylor & Francis, Vol. 118(13), e1692151.</p><span class="tag">2019</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">11</div><div><p>Sumith Yesudasan & Rodney D. Averett, (2019), <span class="pub-title">Recent Advances in Computational Modeling of Fibrin Clot Formation: A Review</span>, Computational Biology and Chemistry, Vol. 83, 107148.</p><span class="tag">2019</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">12</div><div><p>Sumith Yesudasan, (2019), <span class="pub-title">Thin Film Pressure Estimation of Argon and Water using LAMMPS</span>, International Journal of Engineering, Vol. 12, Issue 1, 1–10.</p><span class="tag">2019</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">13</div><div><p>Jacob E. Hood, Sumith Yesudasan, & Rodney D. Averett, (2018), <span class="pub-title">Glucose Concentration Affects Fibrin Clot Structure and Morphology as Evidenced by Fluorescence Imaging and Molecular Simulations</span>, Biomechanics and Modeling in Mechanobiology, Vol. 24(9), 104S–116S.</p><span class="tag">2018</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">14</div><div><p>Sumith Yesudasan, Xianqiao Wang, & Rodney D. Averett, (2018), <span class="pub-title">Fibrin Polymerization Simulation using a Reactive Dissipative Particle Dynamics Method</span>, Biomechanics and Modeling in Mechanobiology, Vol. 17(5), 1389–1403.</p><span class="tag">2018</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">15</div><div><p>Sumith Yesudasan, Simone A. Douglas, Manu O. Platt, Xianqiao Wang & Rodney D. Averett, (2018), <span class="pub-title">Molecular Insights into the Irreversible Mechanical Behavior of Sickle Hemoglobin</span>, Journal of Biomolecular Structure and Dynamics, Vol. 37(5), 1270–1281.</p><span class="tag">2018</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">16</div><div><p>Sumith Yesudasan, Xianqiao Wang, & Rodney D. Averett, (2018), <span class="pub-title">Coarse Grain Molecular Dynamics Simulations of Fibrin Polymerization: Effects of Thrombin Concentration on Fibrin Clot Structure</span>, Journal of Molecular Modeling, Vol. 24, 109.</p><span class="tag">2018</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">17</div><div><p>Tyler Scogin, Sumith Yesudasan, Mitchell L. R. Walker, Rodney D. Averett, (2017), <span class="pub-title">Electromagnetically induced distortion of a fibrin matrix with embedded microparticles</span>, Journal of Mechanics in Medicine and Biology, Vol. 18(02), 1850016.</p><span class="tag">2017</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">18</div><div><p>Sumith Yesudasan, Xianqiao Wang & Rodney D. Averett, (2017), <span class="pub-title">Molecular dynamics simulations indicate that deoxyhemoglobin, oxyhemoglobin, carboxyhemoglobin, and glycated hemoglobin under compression and shear exhibit an anisotropic mechanical behavior</span>, Journal of Biomolecular Structure and Dynamics, Vol. 36(6), 1417–1429.</p><span class="tag">2017</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">19</div><div><p>Sumith Yesudasan & Shalabh C. Maroo, (2017), <span class="pub-title">A Direct Two-Dimensional Pressure Formulation in Molecular Dynamics</span>, Journal of Molecular Graphics and Modeling, Vol. 79, 230–234.</p><span class="tag">2017</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">20</div><div><p>Sumith Yesudasan & Shalabh C. Maroo, (2017), <span class="pub-title">A Robust Algorithm for Contact Angle and Interface Detection of Water and Argon Droplets</span>, Heat Transfer Engineering, Taylor and Francis, Vol. 38(14–15), 1343–1353.</p><span class="tag">2017</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">21</div><div><p>Sumith YD & Shalabh C. Maroo, (2016), <span class="pub-title">Origin of Surface-Driven Passive Liquid Flows</span>, Langmuir, Vol. 32(34), 8593–8597.</p><span class="tag">2016</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">22</div><div><p>Sumith YD & Shalabh C. Maroo, (2015), <span class="pub-title">Surface-Heating Algorithm for Water at Nanoscale</span>, Journal of Physical Chemistry Letters, Vol. 6(18), 3765–3769.</p><span class="tag">2015</span></div></div>
+
+        <div class="publication-card"><div class="pub-number">23</div><div><p>Sumith Yesudasan, (2015), <span class="pub-title">An Efficient Algorithm for Contact Angle Estimation in Molecular Dynamics Simulations</span>, International Journal of Engineering, Vol. 9(1), 1.</p><span class="tag">2015</span></div></div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================
+         INVITED TALKS / LECTURES
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Invited Talks / Lectures</h2>
+      </div>
+
+      <div class="card">
+        <ol>
+          <li>"Coarse Grained Force Field Optimization using Machine Learning Methods", Frontiers in Biomedical Innovation (FBMI), Fall 2023 Symposium, University of New Haven, Nov. 9, 2023.</li>
+          <li>"A Coarse-grained Molecular Model of Fibrin Polymerization and Characterization", Virtual Symposium by Society for Mathematical Biology, University of California Riverside, June 13–17, 2021.</li>
+          <li>"Simulation of Fibrin Polymerization using Reactive Dissipative Particle Dynamics", Graduate Seminar-BCHE 8980, University of Georgia, March 2018.</li>
+          <li>"Bio-Inspired Chip Cooling and Bio-Mechanics of Blood Clots", Graduate Seminar-BCHE 8980, University of Georgia, November 2016.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         CONFERENCE TALKS AND PAPERS
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Conference Talks and Papers</h2>
+      </div>
+
+      <div class="card">
+        <ol reversed>
+          <li>"Wicking characteristics of a heat pipe at nanoscale", ASME Summer Heat Transfer Conference, July 15–17, Anaheim, CA, USA, Sumith Yesudasan, 2024.</li>
+          <li>"STEM Course Enhancement - Animated Safety modules for Freshman Circuit Class", IEEE Frontiers in Education Conference, October 17–21, College Station, Texas, USA, Iftekhar Basith, Suleiman Obeidat, Vajih Khan, and Sumith Yesudasan, 2023.</li>
+          <li>"WIP - Bachelor of Science in Engineering Technology with Biomedical Concentration Curriculum Development", 2023 ASEE Annual Conference & Exposition, Biomedical Engineering Division, 2023. DOI: 10.18260/1-2--42826.</li>
+          <li>"Work in Progress: Certification and Training for Robot and PLC Integration", ASEE Annual Conference and Exposition, Faculty Development Division, June 25–28, Baltimore, MD, 2023. DOI: 10.18260/1-2--44185.</li>
+          <li>"WIP-Certification for Adult Learners and Industry Professionals for Continuous Professional Development", ASEE Annual Conference and Exposition, Continuing Professional Development Division, June 25–28, Baltimore, MD, 2023. DOI: <a href="https://doi.org/10.18260/1-2--44070" target="_blank">10.18260/1-2--44070</a>.</li>
+          <li>"Evaporation of Water Using Coarse Grain Molecular Dynamics", ASME IMECE, Oct. 30–Nov. 3, Columbus, OH, USA, Sumith Yesudasan, 2022.</li>
+          <li>"A Coarse-grained Molecular Model of Fibrin Polymerization and Characterization", 15th U.S. National Congress on Computational Mechanics, Austin, TX, USA, Sumith Yesudasan and Xianqiao Wang, 2019.</li>
+          <li>"Fast Local Pressure Estimation for Two Dimensional Systems from Molecular Dynamics Simulations", ASME Power & Energy Conference and Exhibition, Florida, USA, Sumith Yesudasan and Sibi K. Chacko, 2018.</li>
+          <li>"Water Droplet Evaporation and Substrate Heating using Molecular Dynamics", ASME HT/FE/ICNNM, Washington, DC, USA, Sumith Yesudasan and Shalabh C. Maroo, 2016.</li>
+          <li>"Passive Flow and Negative Pressure at Nanoscales using Molecular Dynamics", ASME HT/FE/ICNNM, Washington, DC, USA, Sumith Yesudasan and Shalabh C. Maroo, 2016.</li>
+          <li>"A New Algorithm for Contact Angle Estimation in Molecular Dynamics Simulations", ASME InterPACK, San Francisco, CA, USA, Sumith Yesudasan and Shalabh C. Maroo, 2015.</li>
+          <li>"Evaporation of Water Droplets on Platinum using Molecular Dynamics", ASME InterPACK, San Francisco, CA, USA, Sumith Yesudasan and Shalabh C. Maroo, 2015.</li>
+          <li>"Continuum Simulations of Salt Solution Flow in TMV-based Biological Membrane for Water Desalination", ASME InterPACK, San Francisco, CA, USA, Sumith Yesudasan and Shalabh C. Maroo, 2015.</li>
+          <li>"Molecular Dynamics simulation of water evaporation", 9th International Conference on Boiling and Condensation Heat Transfer, Boulder, CO, USA, Sumith Yesudasan and Shalabh C. Maroo, 2015.</li>
+          <li>"Molecular dynamics simulations of water evaporation by substrate heating", ASME International Mechanical Engineering Congress and Exposition, Montreal, Canada, Sumith Yesudasan and Shalabh C. Maroo, 2014.</li>
+          <li>"Solid-Liquid Interfacial Heating of Water using Molecular Dynamics", ASME Summer Heat Transfer Conference, Sumith Yesudasan and Shalabh C. Maroo, 2013.</li>
+          <li>"Dynamic analysis of a turbo-alternator shaft using finite element method", International Conference on Advances in Mechanical Engineering, Malaysia, Sumith Yesudasan and Sibi K. Chacko, 2009.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         NON PEER-REVIEWED ARTICLES
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Non Peer-Reviewed Journal Articles</h2>
+      </div>
+
+      <div class="card">
+        <ol>
+          <li>Sumith Yesudasan, "Critical Diameter for Continuous Evaporation is between 3 nm and 4 nm for Hydrophilic Nanopores", (2022), arXiv:2201.08945, <a href="https://arxiv.org/abs/2201.08945" target="_blank">arXiv link</a>.</li>
+          <li>Sumith Yesudasan, "Generating and Managing Strong Passwords using Hotel Mnemonic", (2021), arXiv:2110.01038, <a href="https://arxiv.org/abs/2110.01038" target="_blank">arXiv link</a>.</li>
+          <li>Sumith Yesudasan, "Achilles: A Tool for Contact Angle Estimation from Molecular Dynamics Simulations", Preprints (2021), 2021010148.</li>
+          <li>Sumith Yesudasan, Rodney D. Averett and Sibi Chacko, "Machine Learned Coarse Grain Water Models for Evaporation Studies", Preprints (2020), 2020070126.</li>
+          <li>Junior Sundar, Sumith Yesudasan and Sibi Chacko, "A Cooperative Multi-Agent Based Path-Planning and Optimization Strategy for Dynamic Environment", Preprints (2020), 2020120307.</li>
+          <li>Abdullah Hussain, M.; Sumith Yesudasan and Sibi Chacko, "Nanofluids for Solar Thermal Collection and Energy Conversion", Preprints (2020), 2020120259.</li>
+          <li>Sumith Yesudasan, "Practical Implementation of Molecular Dynamics Code for Beginners Using Python", Preprints (2020), 2020120179.</li>
+          <li>Sumith Yesudasan, (2015), "Fast Geometric Fit Algorithm for Sphere Using Exact Solution", arXiv:1506.02776v1.</li>
+          <li>Sumith Yesudasan and Sibi Chacko, "Nonlinear Vibration System Identification using Wavelets", ResearchGate, DOI: 10.13140/2.1.3971.6803, 2007.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         OPEN ACCESS NOTE
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Note on Open Access</h2>
+      </div>
+
+      <div class="card open-access-note">
+        <p>
+          Every day, countless scientists and researchers, myself included, contribute to the growing body
+          of knowledge by submitting our research work, both funded and non-funded, in the form of papers.
+          Ironically, while the authors of these crucial discoveries do not receive any form of royalty,
+          the majority of these papers are only accessible through costly subscriptions, placing them out
+          of reach for many.
+        </p>
+
+        <p>
+          This practice, which began in the late 1990s, has created a somewhat exclusive domain, often
+          reserving knowledge for those with the financial means. However, the advent of open-access
+          journals and peer-reviewed preprints has started to challenge this norm, providing a more
+          inclusive platform for sharing research.
+        </p>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PEER REVIEWER SERVICE
+    ======================================================== -->
+    <section>
+      <div class="section-title">
+        <h2>Peer Reviewer For</h2>
+      </div>
+
+      <div class="review-grid">
+        <div class="card review-card">
+          <h3>Current / Recent</h3>
+          <ol>
+            <li>Journal of Applied Physics (AIP)</li>
+            <li>Journal of Molecular Graphics and Modelling (ScienceDirect)</li>
+            <li>Journal of Mechanical Science and Technology (Springer)</li>
+            <li>Nano Letters (ACS)</li>
+            <li>Microsystem Technologies (Springer)</li>
+            <li>Journal of Vibration and Control (SAGE Journals)</li>
+            <li>Journal of Chemical Information Modeling (ACS)</li>
+          </ol>
+        </div>
+
+        <div class="card review-card">
+          <h3>Past Before 2019</h3>
+          <ol>
+            <li>Entropy (MDPI)</li>
+            <li>Journal of Mechanics in Medicine and Biology (World Scientific)</li>
+            <li>Journal of Biomolecular Structure and Dynamics (Taylor and Francis)</li>
+            <li>Heat and Mass Transfer (Springer)</li>
+            <li>Physical Chemistry Chemical Physics (Royal Society of Chemistry)</li>
+            <li>Applied Mathematics Modelling (Elsevier)</li>
+            <li>International Journal of Multiphase Flow (Elsevier)</li>
+            <li>Journal of Chemical Theory and Computation (ACS Publications)</li>
+            <li>ASME Power and Energy Conference, FL, USA, 2018</li>
+            <li>ASME Power Conference and Nuclear Forum, UT, USA, 2019</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer>
+    <p>MELT Laboratory | Multiscale Engineering Lab for Thermofluids</p>
+    <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
+  </footer>
+
+</body>
+</html>
