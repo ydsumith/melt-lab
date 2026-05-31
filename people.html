@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- =========================================================
+       BASIC PAGE SETTINGS
+  ========================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>People | MELT</title>
 
+  <!-- =========================================================
+       PAGE STYLES
+  ========================================================== -->
   <style>
+    /* ---------- Global reset ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -25,6 +33,7 @@
       overflow-x: hidden;
     }
 
+    /* ---------- Animated background ---------- */
     body::before {
       content: "";
       position: fixed;
@@ -46,7 +55,7 @@
         linear-gradient(90deg, rgba(100, 210, 255, 0.045) 1px, transparent 1px);
       background-size: 46px 46px;
       animation: gridMove 18s linear infinite;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 85%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 85%);
     }
 
     @keyframes gridMove {
@@ -54,6 +63,7 @@
       to { transform: translateY(46px); }
     }
 
+    /* ---------- Links ---------- */
     a {
       color: #64d2ff;
       text-decoration: none;
@@ -63,6 +73,9 @@
       text-decoration: underline;
     }
 
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================== */
     header {
       position: sticky;
       top: 0;
@@ -105,6 +118,9 @@
       text-decoration: none;
     }
 
+    /* =========================================================
+       HERO SECTION
+    ========================================================== */
     .page-hero {
       width: 100%;
       min-height: 250px;
@@ -121,7 +137,7 @@
     }
 
     .page-hero h1 {
-      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-size: clamp(2.4rem, 5vw, 4rem);
       color: #14df41;
       letter-spacing: 0.06em;
       text-shadow:
@@ -146,6 +162,7 @@
           0 0 8px rgba(20, 223, 65, 0.75),
           0 0 18px rgba(20, 223, 65, 0.55);
       }
+
       to {
         transform: scale(1.025);
         text-shadow:
@@ -155,6 +172,9 @@
       }
     }
 
+    /* =========================================================
+       MAIN PAGE LAYOUT
+    ========================================================== */
     main {
       max-width: 1180px;
       margin: auto;
@@ -199,10 +219,13 @@
       margin-bottom: 12px;
     }
 
+    /* =========================================================
+       CARD STYLES
+    ========================================================== */
     .card,
     .person-card {
       background:
-        linear-gradient(145deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+        linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
       border: 1px solid rgba(255, 255, 255, 0.11);
       border-radius: 24px;
       padding: 28px;
@@ -215,37 +238,29 @@
       transform: translateY(-5px);
       border-color: rgba(20, 223, 65, 0.45);
       background:
-        linear-gradient(145deg, rgba(20,223,65,0.08), rgba(255,255,255,0.045));
+        linear-gradient(145deg, rgba(20, 223, 65, 0.08), rgba(255, 255, 255, 0.045));
     }
 
+    /* =========================================================
+       PRINCIPAL INVESTIGATOR CARD
+    ========================================================== */
     .pi-card {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
-  align-items: center;
-}
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
 
-.pi-photo {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 2px solid rgba(20, 223, 65, 0.45);
-  box-shadow:
-    0 0 18px rgba(20, 223, 65, 0.35),
-    0 0 40px rgba(0, 180, 255, 0.18);
-}
-
-@media (max-width: 700px) {
-  .pi-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .pi-photo {
-    margin: 0 auto;
-  }
-}
+    .pi-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 2px solid rgba(20, 223, 65, 0.45);
+      box-shadow:
+        0 0 18px rgba(20, 223, 65, 0.35),
+        0 0 40px rgba(0, 180, 255, 0.18);
+    }
 
     .role {
       color: #14df41;
@@ -258,6 +273,9 @@
       margin-bottom: 6px;
     }
 
+    /* =========================================================
+       PEOPLE GRID
+    ========================================================== */
     .people-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -278,6 +296,9 @@
       text-transform: uppercase;
     }
 
+    /* =========================================================
+       FOOTER
+    ========================================================== */
     footer {
       text-align: center;
       padding: 38px 24px;
@@ -291,6 +312,9 @@
       color: #98a7bb;
     }
 
+    /* =========================================================
+       MOBILE RESPONSIVENESS
+    ========================================================== */
     @media (max-width: 850px) {
       .nav-links {
         display: none;
@@ -304,11 +328,25 @@
         min-height: 210px;
       }
     }
+
+    @media (max-width: 700px) {
+      .pi-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .pi-photo {
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- =========================================================
+       HEADER / NAVIGATION
+  ========================================================== -->
   <header>
     <nav>
       <div class="logo"><span>MELT</span> Laboratory</div>
@@ -317,41 +355,53 @@
         <a href="index.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
-        <a href="teaching.html">Teaching</a>
+        <a href="aboutme.html">About me</a>
       </div>
     </nav>
   </header>
 
+  <!-- =========================================================
+       PAGE HERO
+  ========================================================== -->
   <div class="page-hero">
-    <h1>Group Members</h1>
+    <h1>MELT</h1>
     <p>Multiscale Engineering Lab for Thermofluids</p>
   </div>
 
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
   <main>
 
+    <!-- =======================================================
+         PRINCIPAL INVESTIGATOR
+    ======================================================== -->
     <section>
       <div class="section-title">
         <h2>Principal Investigator</h2>
       </div>
 
       <div class="card pi-card">
-  <div class="pi-photo-wrap">
-    <img src="images/sumith.jpg" alt="Dr. Sumith Yesudasan" class="pi-photo">
-  </div>
+        <div class="pi-photo-wrap">
+          <img src="images/sumith.jpg" alt="Dr. Sumith Yesudasan" class="pi-photo">
+        </div>
 
-  <div class="pi-info">
-    <h3>Dr. Sumith Yesudasan</h3>
-    <p class="role">Assistant Professor</p>
-    <p class="meta">Mechanical and Industrial Engineering Department</p>
-    <p class="meta">University of New Haven</p>
-    <p>300 Boston Post Rd. West Haven, CT 06516</p>
-    <p>T: (203) 479-4797</p>
-    <p>E: sumith@newhaven.edu</p>
-    <p>W: <a href="http://sumith.uk/">sumith.uk</a></p>
-  </div>
-</div>
+        <div class="pi-info">
+          <h3>Dr. Sumith Yesudasan</h3>
+          <p class="role">Assistant Professor</p>
+          <p class="meta">Mechanical and Industrial Engineering Department</p>
+          <p class="meta">University of New Haven</p>
+          <p>300 Boston Post Rd. West Haven, CT 06516</p>
+          <p>T: (203) 479-4797</p>
+          <p>E: sumith@newhaven.edu</p>
+          <p>W: <a href="http://sumith.uk/">sumith.uk</a></p>
+        </div>
+      </div>
     </section>
 
+    <!-- =======================================================
+         FUNDING / FELLOWSHIP INFORMATION
+    ======================================================== -->
     <section>
       <div class="section-title">
         <h2>Partially Funded Master's Program with Fellowship</h2>
@@ -370,47 +420,60 @@
       </div>
     </section>
 
+    <!-- =======================================================
+         CURRENT GRADUATE STUDENT RESEARCHERS
+    ======================================================== -->
     <section>
       <div class="section-title">
         <h2>Graduate Student Researchers</h2>
       </div>
 
-      <div class="people-grid">
+	<div class="people-grid">
+			<div class="person-card">
+			  <h3>Ryan Barry</h3>
+			  <p class="role">MS in Mechanical Engineering</p>
+			  <span class="status-badge">Graduate Researcher</span>
+			</div>
+
         <div class="person-card">
           <h3>Joseph Marcelo</h3>
-          <p class="role">MS in Mechanical Engineering</p>
-          <p>Nanoscale evaporation techniques using molecular dynamics simulations.</p>
+          <p class="role">MS in Mechanical Engineering</p>       
           <span class="status-badge">Graduate Researcher</span>
         </div>
       </div>
+
     </section>
 
+    <!-- =======================================================
+         CURRENT UNDERGRADUATE STUDENT RESEARCHERS
+    ======================================================== -->
     <section>
       <div class="section-title">
         <h2>Undergraduate Student Researchers</h2>
       </div>
-
+		
       <div class="people-grid">
-        <div class="person-card">
-          <h3>Ryan Barry</h3>
+		<div class="person-card">
+          <h3>Mark Taylor</h3>
           <p class="role">BS in Mechanical Engineering</p>
-          <p>Ryan will be working on the thermal analysis of the pyrolysis machine.</p>
           <span class="status-badge">Undergraduate Researcher</span>
         </div>
       </div>
+	  
+	  
     </section>
 
+    <!-- =======================================================
+         ALUMNI
+    ======================================================== -->
     <section>
       <div class="section-title">
         <h2>Alumni</h2>
       </div>
 
       <div class="people-grid">
-        <div class="person-card">
-          <h3>Mark Taylor</h3>
-          <p class="role">BS in Mechanical Engineering</p>
-          <span class="status-badge">Alumni</span>
-        </div>
+
+        
 
         <div class="person-card">
           <h3>Christopher Brown</h3>
@@ -541,11 +604,15 @@
           <p>Matthew Lamacchia worked on efficient cooling and power harvesting using solar panels for high-rise buildings.</p>
           <span class="status-badge">Alumni</span>
         </div>
+
       </div>
     </section>
 
   </main>
 
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
   <footer>
     <p>MELT Laboratory | Multiscale Engineering Lab for Thermofluids</p>
     <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
