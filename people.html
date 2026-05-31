@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>People | MELT</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050b14;
+      color: #e8eef8;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(20, 223, 65, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(0, 210, 255, 0.14), transparent 28%),
+        linear-gradient(135deg, #050b14 0%, #07111f 45%, #02050a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(100, 210, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 210, 255, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      animation: gridMove 18s linear infinite;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 85%);
+    }
+
+    @keyframes gridMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(46px); }
+    }
+
+    a {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 20, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(100, 210, 255, 0.16);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 15px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #14df41;
+      text-shadow: 0 0 14px rgba(20, 223, 65, 0.9);
+    }
+
+    .nav-links a {
+      margin-left: 22px;
+      color: #c7d4e8;
+      font-size: 0.95rem;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #14df41;
+      text-decoration: none;
+    }
+
+    .page-hero {
+      width: 100%;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 44px 20px;
+      background:
+        linear-gradient(to bottom, rgba(3, 9, 20, 0.96), rgba(5, 11, 20, 0.65)),
+        radial-gradient(circle at center, rgba(20, 223, 65, 0.18), transparent 58%);
+      border-bottom: 1px solid rgba(100, 210, 255, 0.14);
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      color: #14df41;
+      letter-spacing: 0.06em;
+      text-shadow:
+        0 0 8px rgba(20, 223, 65, 0.95),
+        0 0 18px rgba(20, 223, 65, 0.85),
+        0 0 40px rgba(20, 223, 65, 0.55);
+      animation: softGlow 2.4s ease-in-out infinite alternate;
+    }
+
+    .page-hero p {
+      margin-top: 12px;
+      color: #d7f4ff;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes softGlow {
+      from {
+        transform: scale(1);
+        text-shadow:
+          0 0 8px rgba(20, 223, 65, 0.75),
+          0 0 18px rgba(20, 223, 65, 0.55);
+      }
+      to {
+        transform: scale(1.025);
+        text-shadow:
+          0 0 12px rgba(20, 223, 65, 1),
+          0 0 32px rgba(20, 223, 65, 0.9),
+          0 0 70px rgba(20, 223, 65, 0.5);
+      }
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 7px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(#14df41, #1b76ff);
+      box-shadow: 0 0 18px rgba(20, 223, 65, 0.7);
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      color: #ffffff;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    p,
+    li {
+      color: #c2cfdf;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .card,
+    .person-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .card:hover,
+    .person-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(20, 223, 65, 0.45);
+      background:
+        linear-gradient(145deg, rgba(20,223,65,0.08), rgba(255,255,255,0.045));
+    }
+
+    .pi-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.pi-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid rgba(20, 223, 65, 0.45);
+  box-shadow:
+    0 0 18px rgba(20, 223, 65, 0.35),
+    0 0 40px rgba(0, 180, 255, 0.18);
+}
+
+@media (max-width: 700px) {
+  .pi-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pi-photo {
+    margin: 0 auto;
+  }
+}
+
+    .role {
+      color: #14df41;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      color: #d7f4ff;
+      margin-bottom: 6px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #14df41;
+      background: rgba(20, 223, 65, 0.10);
+      border: 1px solid rgba(20, 223, 65, 0.25);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      padding: 38px 24px;
+      color: #98a7bb;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(3, 9, 20, 0.55);
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      color: #98a7bb;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 46px 20px;
+      }
+
+      .page-hero {
+        min-height: 210px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo"><span>MELT</span> Laboratory</div>
+
+      <div class="nav-links">
+        <a href="index.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="teaching.html">Teaching</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Group Members</h1>
+    <p>Multiscale Engineering Lab for Thermofluids</p>
+  </div>
+
+  <main>
+
+    <section>
+      <div class="section-title">
+        <h2>Principal Investigator</h2>
+      </div>
+
+      <div class="card pi-card">
+  <div class="pi-photo-wrap">
+    <img src="images/sumith.jpg" alt="Dr. Sumith Yesudasan" class="pi-photo">
+  </div>
+
+  <div class="pi-info">
+    <h3>Dr. Sumith Yesudasan</h3>
+    <p class="role">Assistant Professor</p>
+    <p class="meta">Mechanical and Industrial Engineering Department</p>
+    <p class="meta">University of New Haven</p>
+    <p>300 Boston Post Rd. West Haven, CT 06516</p>
+    <p>T: (203) 479-4797</p>
+    <p>E: sumith@newhaven.edu</p>
+    <p>W: <a href="http://sumith.uk/">sumith.uk</a></p>
+  </div>
+</div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Partially Funded Master's Program with Fellowship</h2>
+      </div>
+
+      <div class="card">
+        <p>
+          There are numerous avenues to engage in our research initiatives while receiving financial support.
+          Several scholarships not only cover tuition fees but also offer stipends. One of the most prevalent
+          opportunities available is the Graduate Research Assistant position. For a comprehensive overview,
+          please visit
+          <a href="https://www.newhaven.edu/admissions/graduate/assistantships-scholarships.php">
+            the University of New Haven's Graduate Assistantships and Scholarships page
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Graduate Student Researchers</h2>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card">
+          <h3>Joseph Marcelo</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>Nanoscale evaporation techniques using molecular dynamics simulations.</p>
+          <span class="status-badge">Graduate Researcher</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Undergraduate Student Researchers</h2>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card">
+          <h3>Ryan Barry</h3>
+          <p class="role">BS in Mechanical Engineering</p>
+          <p>Ryan will be working on the thermal analysis of the pyrolysis machine.</p>
+          <span class="status-badge">Undergraduate Researcher</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Alumni</h2>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card">
+          <h3>Mark Taylor</h3>
+          <p class="role">BS in Mechanical Engineering</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Christopher Brown</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>
+            He worked on a Nuclear Regulatory Commission (NRC) funded project related to analysis
+            of shock and impact resilience of Multi-Mission Radioisotope Thermoelectric Generators
+            during Martian landings to ensure structural integrity and reliable power generation.
+          </p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Alexis Fernandez</h3>
+          <p class="role">BS in Mechanical Engineering</p>
+          <p>Alexis worked on the thermal design of a pyrolysis machine.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Pradyumna Iyer</h3>
+          <p class="role">MS in Biomedical Engineering</p>
+          <p>He worked on docking studies of advanced glycation end products with various blood factors.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Mamshad Musharaf Mohammed</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>
+            Mamshad worked on molecular dynamics studies of evaporation in nanopores.
+            Mamshad is a recipient of University of New Haven Provost Scholarship.
+          </p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Evan Lima</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>
+            Evan worked on a Nuclear Regulatory Commission (NRC) funded project related to
+            cooling system design for Multi-Mission Radioisotope Thermoelectric Generators.
+          </p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Jai Tej Diddi</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>
+            Jai investigated the binding characteristics of heparin with antithrombin through
+            molecular dynamics simulations. He previously worked on an external industry-funded
+            project related to thermo-electric management of medical devices and successfully
+            completed it.
+          </p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Yashwanth Kanthala</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>
+            Yashwanth investigated the binding characteristics of heparin with fibrinogen through
+            molecular dynamics simulations.
+          </p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Pavan Kumar Kandhala</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>TBD</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Timothy Silva</h3>
+          <p class="role">BS in Mechanical Engineering</p>
+          <p>Tim worked on a NASA-funded project related to radiation measurement experimentation.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Ella Nenoff</h3>
+          <p class="role">BS in Mechanical Engineering</p>
+          <p>Ella worked on a NASA-funded project related to radiation simulation.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Alish Regmi</h3>
+          <p class="role">MS in Mechanical Engineering</p>
+          <p>Alish worked on phase-change-based cooling techniques for space electronics.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Jeffrey Benavides</h3>
+          <p class="role">BS in Mechanical Engineering</p>
+          <p>Jeffrey worked on modeling of solar radiation measurement using earth-based devices.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Allen Jeffery</h3>
+          <p class="role">BS in Mechanical Engineering Technology, Class of 2024, Sam Houston State University</p>
+          <p>Allen worked on combined radiative cooling simulation of spacecraft electronics.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Nabethse Gomez</h3>
+          <p class="role">BS in Electronics and Computer Engineering Technology, Sam Houston State University</p>
+          <p>Nabethse worked on data acquisition of liquid cooling experimentation.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Rodolfo Esquivel</h3>
+          <p class="role">BS in Mechanical Engineering Technology, Class of 2024, Sam Houston State University</p>
+          <p>Rodolfo worked on thermal management of computer chips using jet impingement cooling.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+
+        <div class="person-card">
+          <h3>Matthew Lamacchia</h3>
+          <p class="role">BS in Mechanical Engineering Technology, Class of 2023, Sam Houston State University</p>
+          <p>Matthew Lamacchia worked on efficient cooling and power harvesting using solar panels for high-rise buildings.</p>
+          <span class="status-badge">Alumni</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>MELT Laboratory | Multiscale Engineering Lab for Thermofluids</p>
+    <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
+  </footer>
+
+</body>
+</html>
