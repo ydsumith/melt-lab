@@ -631,5 +631,417 @@
       "Percent yield = \\(\\frac{8.2}{12} \\times 100 = 68\\%\\).",
       "So the percent yield is 68%."
     ]
+  },
+   {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "easy",
+    "question": "Why are coefficients important in balancing chemical equations?",
+    "choices": [
+      "They change the identity of the compounds.",
+      "They show the physical state of each substance.",
+      "They make the number of each type of atom equal on both sides.",
+      "They change subscripts inside formulas."
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Coefficients are the numbers placed in front of chemical formulas.",
+      "They tell how many molecules, atoms, or formula units take part in the reaction.",
+      "Balanced equations must have the same number of each type of atom on both sides.",
+      "This follows the law of conservation of mass."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "medium",
+    "question": "Balance the equation: \\(\\ce{C6H14(l) + O2(g) -> CO2(g) + H2O(l)}\\)",
+    "choices": [
+      "\\(\\ce{C6H14 + O2 -> CO2 + H2O}\\)",
+      "\\(\\ce{2C6H14 + 19O2 -> 12CO2 + 14H2O}\\)",
+      "\\(\\ce{C6H14 + 6O2 -> 6CO2 + 7H2O}\\)",
+      "\\(\\ce{2C6H14 + 7O2 -> 12CO2 + 14H2O}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Balance carbon first: 2 molecules of \\(\\ce{C6H14}\\) contain 12 carbon atoms, so use \\(\\ce{12CO2}\\).",
+      "Balance hydrogen next: 2 molecules of \\(\\ce{C6H14}\\) contain 28 hydrogen atoms, so use \\(\\ce{14H2O}\\).",
+      "Now count oxygen on the product side: \\(\\ce{12CO2}\\) has 24 O atoms and \\(\\ce{14H2O}\\) has 14 O atoms.",
+      "Total oxygen atoms = 38, so use \\(\\ce{19O2}\\).",
+      "Final answer: \\(\\ce{2C6H14 + 19O2 -> 12CO2 + 14H2O}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "medium",
+    "question": "Balance the equation: \\(\\ce{Al(s) + HCl(g) -> AlCl3(s) + H2(g)}\\)",
+    "choices": [
+      "\\(\\ce{Al + HCl -> AlCl3 + H2}\\)",
+      "\\(\\ce{2Al + 6HCl -> 2AlCl3 + 3H2}\\)",
+      "\\(\\ce{Al + 3HCl -> AlCl3 + H2}\\)",
+      "\\(\\ce{2Al + 3HCl -> 2AlCl3 + 3H2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Balance aluminum first: use \\(\\ce{2Al}\\) and \\(\\ce{2AlCl3}\\).",
+      "\\(\\ce{2AlCl3}\\) contains 6 chlorine atoms, so use \\(\\ce{6HCl}\\).",
+      "\\(\\ce{6HCl}\\) also gives 6 hydrogen atoms.",
+      "Six hydrogen atoms form \\(\\ce{3H2}\\).",
+      "Final answer: \\(\\ce{2Al + 6HCl -> 2AlCl3 + 3H2}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "easy",
+    "question": "Oxidation is defined as:",
+    "choices": [
+      "Gain of electrons",
+      "Loss of electrons",
+      "Gain of neutrons",
+      "Loss of protons"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Oxidation means loss of electrons.",
+      "A helpful memory aid is OIL RIG: Oxidation Is Loss, Reduction Is Gain."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "easy",
+    "question": "Reduction is defined as:",
+    "choices": [
+      "Loss of electrons",
+      "Gain of electrons",
+      "Loss of neutrons",
+      "Gain of protons"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Reduction means gain of electrons.",
+      "A helpful memory aid is OIL RIG: Oxidation Is Loss, Reduction Is Gain."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In \\(\\ce{Ca(s) + 2H+(aq) -> Ca^{2+}(aq) + H2(g)}\\), what is the oxidizing agent?",
+    "choices": [
+      "\\(\\ce{Ca}\\)",
+      "\\(\\ce{H+}\\)",
+      "\\(\\ce{Ca^{2+}}\\)",
+      "\\(\\ce{H2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "The oxidizing agent is reduced.",
+      "\\(\\ce{H+}\\) gains electrons to become \\(\\ce{H2}\\).",
+      "Gain of electrons is reduction.",
+      "Therefore, \\(\\ce{H+}\\) is the oxidizing agent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In \\(\\ce{Ca(s) + 2H+(aq) -> Ca^{2+}(aq) + H2(g)}\\), what is the reducing agent?",
+    "choices": [
+      "\\(\\ce{Ca}\\)",
+      "\\(\\ce{H+}\\)",
+      "\\(\\ce{Ca^{2+}}\\)",
+      "\\(\\ce{H2}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "The reducing agent is oxidized.",
+      "\\(\\ce{Ca}\\) loses electrons to become \\(\\ce{Ca^{2+}}\\).",
+      "Loss of electrons is oxidation.",
+      "Therefore, \\(\\ce{Ca}\\) is the reducing agent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In \\(\\ce{Fe(s) + Cu^{2+}(aq) -> Cu(s) + Fe^{2+}(aq)}\\), what is the oxidizing agent?",
+    "choices": [
+      "\\(\\ce{Fe}\\)",
+      "\\(\\ce{Cu^{2+}}\\)",
+      "\\(\\ce{Cu}\\)",
+      "\\(\\ce{Fe^{2+}}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "The oxidizing agent is reduced.",
+      "\\(\\ce{Cu^{2+}}\\) gains electrons to become \\(\\ce{Cu}\\).",
+      "Therefore, \\(\\ce{Cu^{2+}}\\) is the oxidizing agent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In \\(\\ce{Fe(s) + Cu^{2+}(aq) -> Cu(s) + Fe^{2+}(aq)}\\), what is the reducing agent?",
+    "choices": [
+      "\\(\\ce{Fe}\\)",
+      "\\(\\ce{Cu^{2+}}\\)",
+      "\\(\\ce{Cu}\\)",
+      "\\(\\ce{Fe^{2+}}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "The reducing agent is oxidized.",
+      "\\(\\ce{Fe}\\) loses electrons to become \\(\\ce{Fe^{2+}}\\).",
+      "Therefore, \\(\\ce{Fe}\\) is the reducing agent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Limiting Reagent",
+    "difficulty": "hard",
+    "question": "In the reaction \\(\\ce{N2(g) + 3H2(g) -> 2NH3(g)}\\), 22.0 g of \\(\\ce{N2}\\) are mixed with 7.00 g of \\(\\ce{H2}\\). What is the limiting reagent?",
+    "choices": [
+      "\\(\\ce{N2}\\)",
+      "\\(\\ce{H2}\\)",
+      "\\(\\ce{NH3}\\)",
+      "There is no limiting reagent"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "Convert \\(\\ce{N2}\\) to moles: \\(22.0 \\div 28.0 = 0.786\\) mol \\(\\ce{N2}\\).",
+      "Convert \\(\\ce{H2}\\) to moles: \\(7.00 \\div 2.016 = 3.47\\) mol \\(\\ce{H2}\\).",
+      "The reaction needs 3 mol \\(\\ce{H2}\\) for every 1 mol \\(\\ce{N2}\\).",
+      "To use 0.786 mol \\(\\ce{N2}\\), the reaction needs \\(0.786 \\times 3 = 2.36\\) mol \\(\\ce{H2}\\).",
+      "Since 3.47 mol \\(\\ce{H2}\\) is available, \\(\\ce{H2}\\) is excess.",
+      "Therefore, \\(\\ce{N2}\\) is the limiting reagent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Theoretical Yield",
+    "difficulty": "hard",
+    "question": "In the reaction \\(\\ce{N2(g) + 3H2(g) -> 2NH3(g)}\\), 22.0 g of \\(\\ce{N2}\\) are mixed with 7.00 g of \\(\\ce{H2}\\). What is the theoretical yield of \\(\\ce{NH3}\\)?",
+    "choices": [
+      "13.4 g \\(\\ce{NH3}\\)",
+      "26.7 g \\(\\ce{NH3}\\)",
+      "39.3 g \\(\\ce{NH3}\\)",
+      "78.6 g \\(\\ce{NH3}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{N2}\\) is the limiting reagent.",
+      "Moles of \\(\\ce{N2}\\): \\(22.0 \\div 28.0 = 0.786\\) mol.",
+      "From the balanced equation, 1 mol \\(\\ce{N2}\\) produces 2 mol \\(\\ce{NH3}\\).",
+      "Moles of \\(\\ce{NH3}\\): \\(0.786 \\times 2 = 1.57\\) mol.",
+      "Molar mass of \\(\\ce{NH3}\\) is about 17.0 g/mol.",
+      "Mass of \\(\\ce{NH3}\\): \\(1.57 \\times 17.0 = 26.7\\) g.",
+      "So the theoretical yield is 26.7 g \\(\\ce{NH3}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Limiting Reagent",
+    "difficulty": "hard",
+    "question": "In \\(\\ce{V2O5(l) + 5Ca(l) -> 2V(s) + 5CaO(s)}\\), 10.0 mol of \\(\\ce{V2O5}\\) are mixed with 10.0 mol of \\(\\ce{Ca}\\). What is the limiting reagent?",
+    "choices": [
+      "\\(\\ce{V2O5}\\)",
+      "\\(\\ce{Ca}\\)",
+      "\\(\\ce{V}\\)",
+      "\\(\\ce{CaO}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "The balanced equation shows that 1 mol \\(\\ce{V2O5}\\) needs 5 mol \\(\\ce{Ca}\\).",
+      "To react with 10.0 mol \\(\\ce{V2O5}\\), we would need 50.0 mol \\(\\ce{Ca}\\).",
+      "Only 10.0 mol \\(\\ce{Ca}\\) is available.",
+      "Therefore, \\(\\ce{Ca}\\) is the limiting reagent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Theoretical Yield",
+    "difficulty": "hard",
+    "question": "In \\(\\ce{V2O5(l) + 5Ca(l) -> 2V(s) + 5CaO(s)}\\), 10.0 mol of \\(\\ce{V2O5}\\) are mixed with 10.0 mol of \\(\\ce{Ca}\\). What is the theoretical yield of \\(\\ce{CaO}\\) in grams?",
+    "choices": [
+      "112 g \\(\\ce{CaO}\\)",
+      "281 g \\(\\ce{CaO}\\)",
+      "561 g \\(\\ce{CaO}\\)",
+      "1122 g \\(\\ce{CaO}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "\\(\\ce{Ca}\\) is the limiting reagent.",
+      "From the balanced equation, 5 mol \\(\\ce{Ca}\\) produces 5 mol \\(\\ce{CaO}\\).",
+      "So 10.0 mol \\(\\ce{Ca}\\) produces 10.0 mol \\(\\ce{CaO}\\).",
+      "Molar mass of \\(\\ce{CaO}\\) is about 56.1 g/mol.",
+      "Mass = \\(10.0 \\times 56.1 = 561\\) g.",
+      "So the theoretical yield is 561 g \\(\\ce{CaO}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Limiting Reagent",
+    "difficulty": "hard",
+    "question": "In \\(\\ce{2Al(s) + Fe2O3(s) -> 2Fe(s) + Al2O3(s)}\\), 60.0 g of \\(\\ce{Al}\\) are mixed with 150.0 g of \\(\\ce{Fe2O3}\\). What is the limiting reagent?",
+    "choices": [
+      "\\(\\ce{Al}\\)",
+      "\\(\\ce{Fe2O3}\\)",
+      "\\(\\ce{Fe}\\)",
+      "\\(\\ce{Al2O3}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert Al to moles: \\(60.0 \\div 26.98 = 2.22\\) mol Al.",
+      "Convert \\(\\ce{Fe2O3}\\) to moles: \\(150.0 \\div 159.7 = 0.939\\) mol \\(\\ce{Fe2O3}\\).",
+      "The balanced equation requires 2 mol Al for every 1 mol \\(\\ce{Fe2O3}\\).",
+      "To react with 0.939 mol \\(\\ce{Fe2O3}\\), we need \\(0.939 \\times 2 = 1.88\\) mol Al.",
+      "Since 2.22 mol Al is available, Al is excess.",
+      "Therefore, \\(\\ce{Fe2O3}\\) is the limiting reagent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Theoretical Yield",
+    "difficulty": "hard",
+    "question": "In \\(\\ce{2Al(s) + Fe2O3(s) -> 2Fe(s) + Al2O3(s)}\\), 60.0 g of \\(\\ce{Al}\\) are mixed with 150.0 g of \\(\\ce{Fe2O3}\\). What is the theoretical yield of \\(\\ce{Al2O3}\\) in grams?",
+    "choices": [
+      "60.0 g \\(\\ce{Al2O3}\\)",
+      "95.8 g \\(\\ce{Al2O3}\\)",
+      "150.0 g \\(\\ce{Al2O3}\\)",
+      "191.6 g \\(\\ce{Al2O3}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{Fe2O3}\\) is the limiting reagent.",
+      "Moles of \\(\\ce{Fe2O3}\\): \\(150.0 \\div 159.7 = 0.939\\) mol.",
+      "From the balanced equation, 1 mol \\(\\ce{Fe2O3}\\) produces 1 mol \\(\\ce{Al2O3}\\).",
+      "So moles of \\(\\ce{Al2O3}\\) = 0.939 mol.",
+      "Molar mass of \\(\\ce{Al2O3}\\) is about 102.0 g/mol.",
+      "Mass = \\(0.939 \\times 102.0 = 95.8\\) g.",
+      "So the theoretical yield is 95.8 g \\(\\ce{Al2O3}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molar Mass",
+    "difficulty": "medium",
+    "question": "Calculate the molar mass of \\(\\ce{FeCl3}\\).",
+    "choices": [
+      "91.30 g/mol",
+      "126.75 g/mol",
+      "162.20 g/mol",
+      "197.65 g/mol"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "\\(\\ce{FeCl3}\\) contains 1 Fe atom and 3 Cl atoms.",
+      "Use Fe = 55.85 g/mol and Cl = 35.45 g/mol.",
+      "Molar mass = \\(55.85 + 3(35.45)\\).",
+      "Molar mass = \\(55.85 + 106.35 = 162.20\\) g/mol."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molar Mass",
+    "difficulty": "medium",
+    "question": "Calculate the molar mass of \\(\\ce{NI3}\\).",
+    "choices": [
+      "394.71 g/mol",
+      "253.81 g/mol",
+      "140.91 g/mol",
+      "521.61 g/mol"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{NI3}\\) contains 1 N atom and 3 I atoms.",
+      "Use N = 14.01 g/mol and I = 126.90 g/mol.",
+      "Molar mass = \\(14.01 + 3(126.90)\\).",
+      "Molar mass = \\(14.01 + 380.70 = 394.71\\) g/mol."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molar Mass",
+    "difficulty": "medium",
+    "question": "Calculate the molar mass of \\(\\ce{(NH4)2SO4}\\).",
+    "choices": [
+      "96.06 g/mol",
+      "114.15 g/mol",
+      "132.17 g/mol",
+      "150.25 g/mol"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "\\(\\ce{(NH4)2SO4}\\) contains 2 N atoms, 8 H atoms, 1 S atom, and 4 O atoms.",
+      "Use N = 14.01, H = 1.008, S = 32.06, and O = 16.00 g/mol.",
+      "Molar mass = \\(2(14.01) + 8(1.008) + 32.06 + 4(16.00)\\).",
+      "Molar mass = \\(28.02 + 8.064 + 32.06 + 64.00 = 132.17\\) g/mol."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Moles to Grams",
+    "difficulty": "medium",
+    "question": "Calculate the mass of 4.00 moles of \\(\\ce{I2}\\).",
+    "choices": [
+      "\\(2.54 \\times 10^2\\) g \\(\\ce{I2}\\)",
+      "\\(5.08 \\times 10^2\\) g \\(\\ce{I2}\\)",
+      "\\(1.02 \\times 10^3\\) g \\(\\ce{I2}\\)",
+      "\\(2.03 \\times 10^3\\) g \\(\\ce{I2}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "\\(\\ce{I2}\\) contains two iodine atoms.",
+      "Molar mass of \\(\\ce{I2}\\) = \\(2(126.90) = 253.8\\) g/mol.",
+      "Mass = moles multiplied by molar mass.",
+      "Mass = \\(4.00 \\times 253.8 = 1015.2\\) g.",
+      "Rounded to three significant figures: \\(1.02 \\times 10^3\\) g \\(\\ce{I2}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molecules to Grams",
+    "difficulty": "hard",
+    "question": "What is the mass of \\(6.99 \\times 10^{19}\\) molecules of \\(\\ce{UF6}\\)?",
+    "choices": [
+      "0.00409 g \\(\\ce{UF6}\\)",
+      "0.0409 g \\(\\ce{UF6}\\)",
+      "0.409 g \\(\\ce{UF6}\\)",
+      "4.09 g \\(\\ce{UF6}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "First convert molecules to moles using Avogadro's number.",
+      "Moles = \\((6.99 \\times 10^{19}) \\div (6.022 \\times 10^{23})\\).",
+      "Moles = \\(1.16 \\times 10^{-4}\\) mol \\(\\ce{UF6}\\).",
+      "Molar mass of \\(\\ce{UF6}\\) = \\(238.03 + 6(19.00) = 352.03\\) g/mol.",
+      "Mass = \\((1.16 \\times 10^{-4}) \\times 352.03 = 0.0409\\) g.",
+      "So the mass is 0.0409 g \\(\\ce{UF6}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molecules to Grams",
+    "difficulty": "hard",
+    "question": "What is the mass of \\(2.45 \\times 10^{23}\\) molecules of \\(\\ce{CH4}\\)?",
+    "choices": [
+      "3.26 g \\(\\ce{CH4}\\)",
+      "6.53 g \\(\\ce{CH4}\\)",
+      "13.1 g \\(\\ce{CH4}\\)",
+      "16.0 g \\(\\ce{CH4}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "First convert molecules to moles using Avogadro's number.",
+      "Moles = \\((2.45 \\times 10^{23}) \\div (6.022 \\times 10^{23})\\).",
+      "Moles = 0.407 mol \\(\\ce{CH4}\\).",
+      "Molar mass of \\(\\ce{CH4}\\) is about 16.04 g/mol.",
+      "Mass = \\(0.407 \\times 16.04 = 6.53\\) g.",
+      "So the mass is 6.53 g \\(\\ce{CH4}\\)."
+    ]
   }
 ]
