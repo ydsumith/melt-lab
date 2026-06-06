@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chemistry Practice</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
 
   <script>
     MathJax = {
@@ -13,70 +16,320 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
+      min-height: 100vh;
+      background: #050b14;
+      color: #e8eef8;
+      font-family: "Rajdhani", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(20,223,65,0.12), transparent 30%),
+        radial-gradient(circle at 80% 25%, rgba(0,180,255,0.12), transparent 28%),
+        linear-gradient(135deg, #050b14 0%, #07111f 45%, #02050a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(100,210,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,210,255,0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    a {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,11,20,0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(100,210,255,0.14);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.08em;
+    }
+
+    .logo span {
+      color: #14df41;
+      text-shadow:
+        0 0 8px rgba(20,223,65,0.95),
+        0 0 18px rgba(20,223,65,0.85),
+        0 0 40px rgba(20,223,65,0.60);
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      color: #d7f4ff;
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #14df41;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 920px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+
+    .page-title {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      color: #14df41;
+      letter-spacing: 0.08em;
+      text-shadow:
+        0 0 8px rgba(20,223,65,0.95),
+        0 0 18px rgba(20,223,65,0.85),
+        0 0 40px rgba(20,223,65,0.60);
+    }
+
+    .page-title p {
+      margin-top: 8px;
+      color: #d7f4ff;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .quiz-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.03)
+        );
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+    }
+
+    h2,
+    h3 {
+      color: #ffffff;
+      margin-top: 18px;
+      margin-bottom: 12px;
+    }
+
+    #topic {
+      color: #14df41;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .choice {
       margin: 12px 0;
       font-size: 18px;
+      color: #dce8f7;
+    }
+
+    .choice label {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid rgba(100,210,255,0.16);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.035);
+      cursor: pointer;
+    }
+
+    .choice label:hover {
+      border-color: rgba(20,223,65,0.45);
+      background: rgba(20,223,65,0.07);
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
     }
 
     button {
       padding: 10px 16px;
       margin: 10px 8px 10px 0;
       cursor: pointer;
+      border: 1px solid rgba(20,223,65,0.65);
+      border-radius: 8px;
+      background: rgba(20,223,65,0.12);
+      color: #ffffff;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    button:hover {
+      background: rgba(20,223,65,0.24);
+      box-shadow: 0 0 22px rgba(20,223,65,0.28);
     }
 
     .correct {
-      color: green;
+      color: #14df41;
       font-weight: bold;
     }
 
     .wrong {
-      color: red;
+      color: #ff6b6b;
       font-weight: bold;
     }
 
     .box {
-      border: 1px solid #ddd;
+      border: 1px solid rgba(100,210,255,0.16);
       padding: 16px;
       border-radius: 8px;
       margin-top: 15px;
+      background: rgba(255,255,255,0.035);
+      color: #e8eef8;
+    }
+
+    #result {
+      min-height: 32px;
+      margin-top: 8px;
+      font-size: 1.15rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 24px;
+      color: #98a7bb;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(3,9,20,0.55);
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 44px 18px;
+      }
+
+      .quiz-card {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>Chemistry Practice</h1>
+  <header>
+    <nav>
+      <div class="logo">
+        <span>MELT</span> Laboratory
+      </div>
 
-  <p id="topic"></p>
-  <h2>Question</h2>
-  <div id="question" class="box"></div>
+      <div class="nav-links">
+        <a href="index.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="chemistryquiz.html" class="active">Chemistry Practice</a>
+        <a href="aboutme.html">About me</a>
+      </div>
+    </nav>
+  </header>
 
-  <h3>Choose the correct answer:</h3>
-  <div id="choices"></div>
+  <main>
+    <div class="page-title">
+      <h1>Chemistry Practice</h1>
+      <p>Interactive questions with worked explanations</p>
+    </div>
 
-  <button onclick="checkAnswer()">Check Answer</button>
-  <button onclick="nextQuestion()">Next Question</button>
+    <div class="quiz-card">
+      <p id="topic"></p>
+      <h2>Question</h2>
+      <div id="question" class="box"></div>
 
-  <p id="result"></p>
-  <div id="explanation"></div>
+      <h3>Choose the correct answer:</h3>
+      <div id="choices"></div>
+
+      <button onclick="checkAnswer()">Check Answer</button>
+      <button onclick="nextQuestion()">Next Question</button>
+
+      <p id="result"></p>
+      <div id="explanation"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="aboutme.html">Back to About Me</a>
+    </p>
+  </footer>
 
   <script>
     let questions = [];
     let current = 0;
 
     async function loadQuestions() {
-      const response = await fetch("questions.json");
-      questions = await response.json();
-      loadQuestion();
+      try {
+        const response = await fetch("questions.json");
+
+        if (!response.ok) {
+          throw new Error("Unable to load questions.json");
+        }
+
+        questions = await response.json();
+        loadQuestion();
+      } catch (error) {
+        document.getElementById("topic").innerText = "Question bank unavailable";
+        document.getElementById("question").innerHTML =
+          "Please open this page through a local web server so questions.json can be loaded.";
+      }
     }
 
     function loadQuestion() {
+      if (!questions.length) {
+        return;
+      }
+
       const q = questions[current];
 
       document.getElementById("topic").innerText =
@@ -105,6 +358,10 @@
     }
 
     function checkAnswer() {
+      if (!questions.length) {
+        return;
+      }
+
       const selected = document.querySelector('input[name="answer"]:checked');
 
       if (!selected) {
@@ -132,6 +389,10 @@
     }
 
     function nextQuestion() {
+      if (!questions.length) {
+        return;
+      }
+
       current = (current + 1) % questions.length;
       loadQuestion();
     }
