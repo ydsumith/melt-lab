@@ -1,5 +1,25 @@
 [
   {
+    "chapter": "Chapter 1: Matter and Measurement",
+    "topic": "States of Matter",
+    "difficulty": "easy",
+    "question": "Which one is a physical change?",
+    "choices": [
+      "Burning paper",
+      "Melting ice",
+      "Rusting iron",
+      "Cooking an egg"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "A physical change does not create a new substance.",
+      "Melting ice changes solid water to liquid water.",
+      "The substance is still \\(\\ce{H2O}\\).",
+      "So the correct answer is melting ice."
+    ]
+  },
+  {
+    "chapter": "Chapter 2: Chemical Equations",
     "topic": "Balancing Equations",
     "difficulty": "easy",
     "question": "Balance this reaction: \\(\\ce{H2 + O2 -> H2O}\\)",
@@ -12,7 +32,7 @@
     "correct_index": 1,
     "explanation": [
       "Count atoms on both sides.",
-      "Oxygen is unbalanced because \\(\\ce{O2}\\) has 2 oxygen atoms but \\(\\ce{H2O}\\) has only 1.",
+      "Oxygen is unbalanced.",
       "Put 2 before \\(\\ce{H2O}\\).",
       "Put 2 before \\(\\ce{H2}\\).",
       "Final answer: \\(\\ce{2H2 + O2 -> 2H2O}\\)."
