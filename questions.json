@@ -1,41 +1,635 @@
 [
   {
-    "chapter": "Chapter 1: Matter and Measurement",
-    "topic": "States of Matter",
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Chemical Reactions",
     "difficulty": "easy",
-    "question": "Which one is a physical change?",
+    "question": "In a chemical reaction, what happens to reactants?",
     "choices": [
-      "Burning paper",
-      "Melting ice",
-      "Rusting iron",
-      "Cooking an egg"
+      "They disappear without forming anything",
+      "They are converted into products",
+      "They always become gases",
+      "They cannot change their chemical identity"
     ],
     "correct_index": 1,
     "explanation": [
-      "A physical change does not create a new substance.",
-      "Melting ice changes solid water to liquid water."
-      "The substance is still \\(\\ce{H2O}\\).",
-      "So the correct answer is melting ice."
+      "Reactants are the starting substances in a chemical reaction.",
+      "During the reaction, reactants are converted into products.",
+      "So the correct answer is: they are converted into products."
     ]
   },
   {
-    "chapter": "Chapter 2: Chemical Equations",
-    "topic": "Balancing Equations",
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Chemical Formulas",
     "difficulty": "easy",
-    "question": "Balance this reaction: \\(\\ce{H2 + O2 -> H2O}\\)",
+    "question": "In \\(\\ce{2H2}\\), what does the coefficient 2 mean?",
     "choices": [
-      "\\(\\ce{H2 + O2 -> H2O}\\)",
-      "\\(\\ce{2H2 + O2 -> 2H2O}\\)",
-      "\\(\\ce{H2 + 2O2 -> H2O}\\)",
-      "\\(\\ce{2H2 + 2O2 -> H2O}\\)"
+      "There are two hydrogen atoms in one molecule",
+      "There are two \\(\\ce{H2}\\) molecules",
+      "Hydrogen has a charge of +2",
+      "Hydrogen has two protons"
     ],
     "correct_index": 1,
     "explanation": [
-      "Count atoms on both sides.",
-      "Oxygen is unbalanced.",
-      "Put 2 before \\(\\ce{H2O}\\).",
-      "Put 2 before \\(\\ce{H2}\\).",
-      "Final answer: \\(\\ce{2H2 + O2 -> 2H2O}\\)."
+      "A coefficient is the number written before a chemical formula.",
+      "In \\(\\ce{2H2}\\), the coefficient 2 means two molecules of \\(\\ce{H2}\\).",
+      "Each \\(\\ce{H2}\\) molecule contains two hydrogen atoms."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Chemical Formulas",
+    "difficulty": "easy",
+    "question": "In \\(\\ce{H2}\\), what does the subscript 2 mean?",
+    "choices": [
+      "There are two separate hydrogen molecules",
+      "There are two hydrogen atoms in one molecule",
+      "Hydrogen has a mass of 2 grams",
+      "Hydrogen lost two electrons"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "A subscript is the small number written after an element symbol.",
+      "In \\(\\ce{H2}\\), the subscript 2 means one molecule contains two hydrogen atoms.",
+      "So \\(\\ce{H2}\\) means one hydrogen molecule made of two H atoms."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "easy",
+    "question": "Which equation correctly balances the combustion of propane? \\(\\ce{C3H8 + O2 -> CO2 + H2O}\\)",
+    "choices": [
+      "\\(\\ce{C3H8 + O2 -> CO2 + H2O}\\)",
+      "\\(\\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}\\)",
+      "\\(\\ce{C3H8 + 3O2 -> 3CO2 + 3H2O}\\)",
+      "\\(\\ce{2C3H8 + O2 -> CO2 + H2O}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Start with carbon: \\(\\ce{C3H8}\\) has 3 carbon atoms, so put 3 before \\(\\ce{CO2}\\).",
+      "Next balance hydrogen: \\(\\ce{C3H8}\\) has 8 hydrogen atoms, so put 4 before \\(\\ce{H2O}\\).",
+      "Now count oxygen on the product side: \\(\\ce{3CO2}\\) has 6 O atoms and \\(\\ce{4H2O}\\) has 4 O atoms, for a total of 10 O atoms.",
+      "So put 5 before \\(\\ce{O2}\\).",
+      "Final answer: \\(\\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "medium",
+    "question": "Balance this equation: \\(\\ce{Ca(OH)2 + HCl -> CaCl2 + H2O}\\)",
+    "choices": [
+      "\\(\\ce{Ca(OH)2 + HCl -> CaCl2 + H2O}\\)",
+      "\\(\\ce{Ca(OH)2 + 2HCl -> CaCl2 + 2H2O}\\)",
+      "\\(\\ce{2Ca(OH)2 + HCl -> CaCl2 + H2O}\\)",
+      "\\(\\ce{Ca(OH)2 + HCl -> 2CaCl2 + H2O}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "There is 1 calcium atom on both sides.",
+      "\\(\\ce{CaCl2}\\) has 2 chlorine atoms, so we need \\(\\ce{2HCl}\\).",
+      "\\(\\ce{Ca(OH)2}\\) has two hydroxide groups, so it forms \\(\\ce{2H2O}\\).",
+      "Final balanced equation: \\(\\ce{Ca(OH)2 + 2HCl -> CaCl2 + 2H2O}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "medium",
+    "question": "Which is the balanced equation for photosynthesis?",
+    "choices": [
+      "\\(\\ce{CO2 + H2O -> C6H12O6 + O2}\\)",
+      "\\(\\ce{6CO2 + 6H2O -> C6H12O6 + 6O2}\\)",
+      "\\(\\ce{6CO2 + H2O -> C6H12O6 + O2}\\)",
+      "\\(\\ce{CO2 + 6H2O -> C6H12O6 + 6O2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Glucose is \\(\\ce{C6H12O6}\\), so we need 6 carbon atoms from \\(\\ce{6CO2}\\).",
+      "Glucose has 12 hydrogen atoms, so we need \\(\\ce{6H2O}\\).",
+      "After balancing oxygen, the product side needs \\(\\ce{6O2}\\).",
+      "Final answer: \\(\\ce{6CO2 + 6H2O -> C6H12O6 + 6O2}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "easy",
+    "question": "What is oxidation?",
+    "choices": [
+      "Gain of electrons",
+      "Loss of electrons",
+      "Gain of protons",
+      "Loss of neutrons"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Oxidation means loss of electrons.",
+      "A helpful memory tool is OIL RIG: Oxidation Is Loss, Reduction Is Gain.",
+      "So oxidation is the loss of electrons."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "easy",
+    "question": "What is reduction?",
+    "choices": [
+      "Loss of electrons",
+      "Gain of electrons",
+      "Loss of oxygen only",
+      "Gain of neutrons"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Reduction means gain of electrons.",
+      "A helpful memory tool is LEO says GER: Loss of Electrons is Oxidation, Gain of Electrons is Reduction.",
+      "So reduction is the gain of electrons."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In the reaction \\(\\ce{Zn(s) + Cu^{2+}(aq) -> Zn^{2+}(aq) + Cu(s)}\\), which species is oxidized?",
+    "choices": [
+      "\\(\\ce{Zn}\\)",
+      "\\(\\ce{Cu^{2+}}\\)",
+      "\\(\\ce{Zn^{2+}}\\)",
+      "\\(\\ce{Cu}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "Oxidation means loss of electrons.",
+      "\\(\\ce{Zn}\\) becomes \\(\\ce{Zn^{2+}}\\).",
+      "That means zinc loses 2 electrons.",
+      "Therefore, \\(\\ce{Zn}\\) is oxidized."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Formula Weight",
+    "difficulty": "medium",
+    "question": "What is the formula weight of water, \\(\\ce{H2O}\\)? Use H = 1.0 amu and O = 16.0 amu.",
+    "choices": [
+      "16.0 amu",
+      "17.0 amu",
+      "18.0 amu",
+      "20.0 amu"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Water is \\(\\ce{H2O}\\).",
+      "There are 2 hydrogen atoms and 1 oxygen atom.",
+      "Hydrogen contributes \\(2 \\times 1.0 = 2.0\\) amu.",
+      "Oxygen contributes 16.0 amu.",
+      "Total formula weight = \\(2.0 + 16.0 = 18.0\\) amu."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "The Mole",
+    "difficulty": "easy",
+    "question": "What is Avogadro's number?",
+    "choices": [
+      "\\(\\ce{6.02 x 10^{20}}\\)",
+      "\\(\\ce{6.02 x 10^{21}}\\)",
+      "\\(\\ce{6.02 x 10^{22}}\\)",
+      "\\(\\ce{6.02 x 10^{23}}\\)"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "One mole contains Avogadro's number of particles.",
+      "Avogadro's number is \\(6.02 \\times 10^{23}\\).",
+      "This can refer to atoms, ions, molecules, or formula units."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molar Mass",
+    "difficulty": "medium",
+    "question": "How many moles of water are in 36.0 g of \\(\\ce{H2O}\\)? The molar mass of water is 18.0 g/mol.",
+    "choices": [
+      "0.500 mol",
+      "1.00 mol",
+      "2.00 mol",
+      "36.0 mol"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Use the formula: moles = grams divided by molar mass.",
+      "\\(36.0 \\text{ g} \\div 18.0 \\text{ g/mol} = 2.00 \\text{ mol}\\).",
+      "So 36.0 g of water contains 2.00 mol of water."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Stoichiometry",
+    "difficulty": "medium",
+    "question": "How many grams of \\(\\ce{N2}\\) are required to produce 7.50 g of \\(\\ce{NH3}\\)? Use \\(\\ce{N2 + 3H2 -> 2NH3}\\), molar mass \\(\\ce{NH3}\\) = 17.0 g/mol, and molar mass \\(\\ce{N2}\\) = 28.0 g/mol.",
+    "choices": [
+      "3.09 g \\(\\ce{N2}\\)",
+      "6.18 g \\(\\ce{N2}\\)",
+      "12.4 g \\(\\ce{N2}\\)",
+      "28.0 g \\(\\ce{N2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert grams of \\(\\ce{NH3}\\) to moles: \\(7.50 \\div 17.0 = 0.441\\) mol \\(\\ce{NH3}\\).",
+      "Use the mole ratio from the balanced equation: \\(2\\) mol \\(\\ce{NH3}\\) requires \\(1\\) mol \\(\\ce{N2}\\).",
+      "Moles of \\(\\ce{N2}\\) = \\(0.441 \\div 2 = 0.2205\\) mol.",
+      "Convert moles of \\(\\ce{N2}\\) to grams: \\(0.2205 \\times 28.0 = 6.18\\) g.",
+      "So the answer is 6.18 g \\(\\ce{N2}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "medium",
+    "question": "Balance the equation: \\(\\ce{Fe + CO2 -> Fe2O3 + CO}\\)",
+    "choices": [
+      "\\(\\ce{Fe + CO2 -> Fe2O3 + CO}\\)",
+      "\\(\\ce{2Fe + 3CO2 -> Fe2O3 + 3CO}\\)",
+      "\\(\\ce{3Fe + 2CO2 -> Fe2O3 + 2CO}\\)",
+      "\\(\\ce{2Fe + CO2 -> Fe2O3 + CO}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Start with iron. \\(\\ce{Fe2O3}\\) has 2 Fe atoms, so place 2 before \\(\\ce{Fe}\\).",
+      "Now balance oxygen and carbon using \\(\\ce{CO2}\\) and \\(\\ce{CO}\\).",
+      "Using 3 \\(\\ce{CO2}\\) gives 3 carbon atoms and 6 oxygen atoms on the reactant side.",
+      "On the product side, \\(\\ce{Fe2O3}\\) has 3 oxygen atoms and \\(\\ce{3CO}\\) has 3 oxygen atoms, for a total of 6 oxygen atoms.",
+      "Final balanced equation: \\(\\ce{2Fe + 3CO2 -> Fe2O3 + 3CO}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Balancing Equations",
+    "difficulty": "medium",
+    "question": "Balance the equation: \\(\\ce{P + O2 -> P2O5}\\)",
+    "choices": [
+      "\\(\\ce{P + O2 -> P2O5}\\)",
+      "\\(\\ce{2P + 5O2 -> P2O5}\\)",
+      "\\(\\ce{4P + 5O2 -> 2P2O5}\\)",
+      "\\(\\ce{4P + O2 -> 2P2O5}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "\\(\\ce{P2O5}\\) contains 2 phosphorus atoms and 5 oxygen atoms.",
+      "To avoid fractional oxygen coefficients, place 2 before \\(\\ce{P2O5}\\).",
+      "This gives 4 phosphorus atoms and 10 oxygen atoms on the product side.",
+      "Use 4 \\(\\ce{P}\\) and 5 \\(\\ce{O2}\\) on the reactant side.",
+      "Final balanced equation: \\(\\ce{4P + 5O2 -> 2P2O5}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "easy",
+    "question": "True or false: When a substance is oxidized, it loses electrons.",
+    "choices": ["True", "False"],
+    "correct_index": 0,
+    "explanation": [
+      "Oxidation means loss of electrons.",
+      "A useful memory aid is OIL RIG: Oxidation Is Loss, Reduction Is Gain.",
+      "So the statement is true."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "easy",
+    "question": "True or false: When a substance gains electrons, it is reduced.",
+    "choices": ["True", "False"],
+    "correct_index": 0,
+    "explanation": [
+      "Reduction means gain of electrons.",
+      "If a substance gains electrons, it is reduced.",
+      "So the statement is true."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "True or false: Oxidation can also be defined as the loss of oxygen atoms and/or the gain of hydrogen atoms.",
+    "choices": ["True", "False"],
+    "correct_index": 1,
+    "explanation": [
+      "Oxidation can be defined as loss of electrons.",
+      "It can also mean gain of oxygen and/or loss of hydrogen.",
+      "The statement says loss of oxygen and gain of hydrogen, which describes reduction instead.",
+      "So the statement is false."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "True or false: Reduction can also be defined as the gain of oxygen atoms and/or the loss of hydrogen atoms.",
+    "choices": ["True", "False"],
+    "correct_index": 1,
+    "explanation": [
+      "Reduction can mean gain of electrons.",
+      "It can also mean loss of oxygen and/or gain of hydrogen.",
+      "The statement says gain of oxygen and loss of hydrogen, which describes oxidation instead.",
+      "So the statement is false."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In the reaction \\(\\ce{C7H12(l) + 10O2(g) -> 7CO2(g) + 6H2O(l)}\\), which species is oxidized?",
+    "choices": [
+      "\\(\\ce{C7H12}\\)",
+      "\\(\\ce{O2}\\)",
+      "\\(\\ce{CO2}\\)",
+      "\\(\\ce{H2O}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{C7H12}\\) gains oxygen as it becomes \\(\\ce{CO2}\\).",
+      "Gain of oxygen is oxidation.",
+      "Therefore, \\(\\ce{C7H12}\\) is oxidized."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Oxidation and Reduction",
+    "difficulty": "medium",
+    "question": "In the reaction \\(\\ce{C7H12(l) + 10O2(g) -> 7CO2(g) + 6H2O(l)}\\), which species is the oxidizing agent?",
+    "choices": [
+      "\\(\\ce{C7H12}\\)",
+      "\\(\\ce{O2}\\)",
+      "\\(\\ce{CO2}\\)",
+      "\\(\\ce{H2O}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "The oxidizing agent causes another substance to be oxidized.",
+      "\\(\\ce{O2}\\) oxidizes \\(\\ce{C7H12}\\).",
+      "\\(\\ce{O2}\\) itself is reduced.",
+      "Therefore, \\(\\ce{O2}\\) is the oxidizing agent."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Formula Weight",
+    "difficulty": "medium",
+    "question": "Calculate the formula weight of \\(\\ce{KCl}\\).",
+    "choices": [
+      "39.1 amu",
+      "35.5 amu",
+      "74.6 amu",
+      "80.0 amu"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Formula weight is the sum of the atomic masses of all atoms in the formula.",
+      "\\(\\ce{K}\\) has atomic mass about 39.1 amu.",
+      "\\(\\ce{Cl}\\) has atomic mass about 35.5 amu.",
+      "Total = 39.1 + 35.5 = 74.6 amu."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Formula Weight",
+    "difficulty": "medium",
+    "question": "Calculate the formula weight of \\(\\ce{Na3PO4}\\).",
+    "choices": [
+      "119.0 amu",
+      "163.9 amu",
+      "142.1 amu",
+      "180.0 amu"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{Na3PO4}\\) contains 3 Na atoms, 1 P atom, and 4 O atoms.",
+      "Use approximate atomic masses: Na = 23.0, P = 30.9, O = 16.0.",
+      "Calculate: \\(3(23.0) + 30.9 + 4(16.0)\\).",
+      "Total = 69.0 + 30.9 + 64.0 = 163.9 amu."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Formula Weight",
+    "difficulty": "medium",
+    "question": "Calculate the formula weight of \\(\\ce{Fe(OH)2}\\).",
+    "choices": [
+      "72.0 amu",
+      "89.9 amu",
+      "107.9 amu",
+      "55.9 amu"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{Fe(OH)2}\\) contains 1 Fe, 2 O, and 2 H atoms.",
+      "Use approximate atomic masses: Fe = 55.9, O = 16.0, H = 1.0.",
+      "Calculate: \\(55.9 + 2(16.0) + 2(1.0)\\).",
+      "Total = 55.9 + 32.0 + 2.0 = 89.9 amu."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Molecular Weight",
+    "difficulty": "medium",
+    "question": "Calculate the molecular weight of sucrose, \\(\\ce{C12H22O11}\\).",
+    "choices": [
+      "180.0 amu",
+      "342.3 amu",
+      "354.5 amu",
+      "75.07 amu"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{C12H22O11}\\) contains 12 C atoms, 22 H atoms, and 11 O atoms.",
+      "Use approximate atomic masses: C = 12.01, H = 1.008, O = 16.00.",
+      "Calculate: \\(12(12.01) + 22(1.008) + 11(16.00)\\).",
+      "Total = 144.12 + 22.176 + 176.00 = 342.3 amu."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Moles",
+    "difficulty": "medium",
+    "question": "Calculate the number of moles in 32 g of methane, \\(\\ce{CH4}\\).",
+    "choices": [
+      "1.0 mol \\(\\ce{CH4}\\)",
+      "2.0 mol \\(\\ce{CH4}\\)",
+      "16.0 mol \\(\\ce{CH4}\\)",
+      "32.0 mol \\(\\ce{CH4}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Moles = grams divided by molar mass.",
+      "The molar mass of \\(\\ce{CH4}\\) is 16.0 g/mol.",
+      "Calculate: \\(32 \\text{ g} \\div 16.0 \\text{ g/mol} = 2.0 \\text{ mol}\\).",
+      "So there are 2.0 mol of \\(\\ce{CH4}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Moles",
+    "difficulty": "medium",
+    "question": "Calculate the number of moles in 345.6 g of nitric oxide, \\(\\ce{NO}\\).",
+    "choices": [
+      "5.76 mol \\(\\ce{NO}\\)",
+      "10.52 mol \\(\\ce{NO}\\)",
+      "11.52 mol \\(\\ce{NO}\\)",
+      "30.01 mol \\(\\ce{NO}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Moles = grams divided by molar mass.",
+      "The molar mass of \\(\\ce{NO}\\) is 30.01 g/mol.",
+      "Calculate: \\(345.6 \\text{ g} \\div 30.01 \\text{ g/mol} = 11.52 \\text{ mol}\\).",
+      "So there are 11.52 mol of \\(\\ce{NO}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Grams from Moles",
+    "difficulty": "medium",
+    "question": "Calculate the number of grams in 1.77 mol of nitrogen dioxide, \\(\\ce{NO2}\\).",
+    "choices": [
+      "46.0 g \\(\\ce{NO2}\\)",
+      "81.4 g \\(\\ce{NO2}\\)",
+      "91.2 g \\(\\ce{NO2}\\)",
+      "1.77 g \\(\\ce{NO2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Grams = moles multiplied by molar mass.",
+      "The molar mass of \\(\\ce{NO2}\\) is 46.0 g/mol.",
+      "Calculate: \\(1.77 \\text{ mol} \\times 46.0 \\text{ g/mol} = 81.4 \\text{ g}\\).",
+      "So the mass is 81.4 g of \\(\\ce{NO2}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Stoichiometry",
+    "difficulty": "medium",
+    "question": "For the reaction \\(\\ce{2N2(g) + 3O2(g) -> 2N2O3(g)}\\), how many moles of \\(\\ce{N2}\\) are required to react completely with 1 mol of \\(\\ce{O2}\\)?",
+    "choices": [
+      "0.33 mol \\(\\ce{N2}\\)",
+      "0.67 mol \\(\\ce{N2}\\)",
+      "1.50 mol \\(\\ce{N2}\\)",
+      "2.00 mol \\(\\ce{N2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Use the mole ratio from the balanced equation.",
+      "\\(\\ce{2N2}\\) reacts with \\(\\ce{3O2}\\).",
+      "For 1 mol \\(\\ce{O2}\\): \\(1 \\times \\frac{2}{3} = 0.67\\) mol \\(\\ce{N2}\\).",
+      "So 0.67 mol of \\(\\ce{N2}\\) is required."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Stoichiometry",
+    "difficulty": "medium",
+    "question": "For the reaction \\(\\ce{2N2(g) + 3O2(g) -> 2N2O3(g)}\\), how many moles of \\(\\ce{N2O3}\\) are produced from the complete reaction of 1 mol of \\(\\ce{O2}\\)?",
+    "choices": [
+      "0.33 mol \\(\\ce{N2O3}\\)",
+      "0.67 mol \\(\\ce{N2O3}\\)",
+      "1.50 mol \\(\\ce{N2O3}\\)",
+      "2.00 mol \\(\\ce{N2O3}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Use the mole ratio from the balanced equation.",
+      "\\(\\ce{3O2}\\) produces \\(\\ce{2N2O3}\\).",
+      "For 1 mol \\(\\ce{O2}\\): \\(1 \\times \\frac{2}{3} = 0.67\\) mol \\(\\ce{N2O3}\\).",
+      "So 0.67 mol of \\(\\ce{N2O3}\\) is produced."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Stoichiometry",
+    "difficulty": "medium",
+    "question": "For the reaction \\(\\ce{2N2(g) + 3O2(g) -> 2N2O3(g)}\\), how many moles of \\(\\ce{O2}\\) are required to produce 8 mol of \\(\\ce{N2O3}\\)?",
+    "choices": [
+      "6 mol \\(\\ce{O2}\\)",
+      "8 mol \\(\\ce{O2}\\)",
+      "12 mol \\(\\ce{O2}\\)",
+      "16 mol \\(\\ce{O2}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Use the mole ratio from the balanced equation.",
+      "\\(\\ce{2N2O3}\\) requires \\(\\ce{3O2}\\).",
+      "For 8 mol \\(\\ce{N2O3}\\): \\(8 \\times \\frac{3}{2} = 12\\) mol \\(\\ce{O2}\\).",
+      "So 12 mol of \\(\\ce{O2}\\) is required."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Stoichiometry",
+    "difficulty": "hard",
+    "question": "Chloroform, \\(\\ce{CHCl3}\\), is prepared industrially by the reaction \\(\\ce{CH4(g) + 3Cl2(g) -> CHCl3(l) + 3HCl(g)}\\). How many grams of \\(\\ce{Cl2}\\) are needed to produce 1.50 mol of chloroform?",
+    "choices": [
+      "106 g \\(\\ce{Cl2}\\)",
+      "213 g \\(\\ce{Cl2}\\)",
+      "319 g \\(\\ce{Cl2}\\)",
+      "426 g \\(\\ce{Cl2}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Use the balanced equation: \\(\\ce{CH4 + 3Cl2 -> CHCl3 + 3HCl}\\).",
+      "The mole ratio is \\(3\\) mol \\(\\ce{Cl2}\\) for every \\(1\\) mol \\(\\ce{CHCl3}\\).",
+      "Moles of \\(\\ce{Cl2}\\): \\(1.50 \\times 3 = 4.50\\) mol.",
+      "Molar mass of \\(\\ce{Cl2}\\) is 70.9 g/mol.",
+      "Mass = \\(4.50 \\times 70.9 = 319\\) g.",
+      "So 319 g of \\(\\ce{Cl2}\\) are needed."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Stoichiometry",
+    "difficulty": "hard",
+    "question": "Acetaldehyde is prepared by the reaction \\(\\ce{2C2H4(g) + O2(g) -> 2C2H4O(g)}\\). How many grams of acetaldehyde can be prepared from 81.7 g of ethylene, \\(\\ce{C2H4}\\)?",
+    "choices": [
+      "64.0 g \\(\\ce{C2H4O}\\)",
+      "81.7 g \\(\\ce{C2H4O}\\)",
+      "128 g \\(\\ce{C2H4O}\\)",
+      "256 g \\(\\ce{C2H4O}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Use the balanced equation: \\(\\ce{2C2H4 + O2 -> 2C2H4O}\\).",
+      "The mole ratio between \\(\\ce{C2H4}\\) and \\(\\ce{C2H4O}\\) is 1:1.",
+      "Convert 81.7 g \\(\\ce{C2H4}\\) to moles using 28.1 g/mol.",
+      "\\(81.7 \\div 28.1 = 2.91\\) mol \\(\\ce{C2H4}\\).",
+      "This produces 2.91 mol \\(\\ce{C2H4O}\\).",
+      "Molar mass of \\(\\ce{C2H4O}\\) is 44.1 g/mol.",
+      "Mass = \\(2.91 \\times 44.1 = 128\\) g.",
+      "So 128 g of acetaldehyde can be prepared."
+    ]
+  },
+  {
+    "chapter": "Chapter 4: Chemical Reactions",
+    "topic": "Percent Yield",
+    "difficulty": "hard",
+    "question": "Ethyl chloride is prepared by the reaction \\(\\ce{C2H6(g) + Cl2(g) -> C2H5Cl(l) + HCl(g)}\\). When 5.6 g of ethane is reacted with excess chlorine, 8.2 g of ethyl chloride forms. Calculate the percent yield of ethyl chloride.",
+    "choices": [
+      "48%",
+      "68%",
+      "82%",
+      "100%"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Use the balanced equation: \\(\\ce{C2H6 + Cl2 -> C2H5Cl + HCl}\\).",
+      "The mole ratio between ethane and ethyl chloride is 1:1.",
+      "Convert 5.6 g ethane to moles using 30.1 g/mol.",
+      "\\(5.6 \\div 30.1 = 0.186\\) mol ethane.",
+      "This gives 0.186 mol theoretical ethyl chloride.",
+      "Molar mass of ethyl chloride is 64.5 g/mol.",
+      "Theoretical yield = \\(0.186 \\times 64.5 \\approx 12\\) g.",
+      "Actual yield = 8.2 g.",
+      "Percent yield = \\(\\frac{8.2}{12} \\times 100 = 68\\%\\).",
+      "So the percent yield is 68%."
     ]
   }
 ]
