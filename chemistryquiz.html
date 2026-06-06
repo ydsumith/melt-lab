@@ -189,6 +189,19 @@
       margin-right: 8px;
     }
 
+    select,
+    input[type="file"] {
+      margin-top: 8px;
+      margin-bottom: 14px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(100,210,255,0.25);
+      background: #07111f;
+      color: #ffffff;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 1rem;
+    }
+
     button {
       padding: 10px 16px;
       margin: 10px 8px 10px 0;
@@ -283,10 +296,18 @@
     </div>
 
     <div class="quiz-card">
-      <label for="chapterSelect"><strong>Select Chapter:</strong></label>
-      <select id="chapterSelect" onchange="changeChapter()"></select>
-      
+
+      <label for="jsonFile"><strong>Load questions manually if needed:</strong></label><br>
+      <input type="file" id="jsonFile" accept=".json" onchange="loadLocalJSON(event)">
+      <br>
+
+      <label for="chapterSelect"><strong>Select Chapter:</strong></label><br>
+      <select id="chapterSelect" onchange="changeChapter()">
+        <option>Loading...</option>
+      </select>
+
       <p id="topic"></p>
+
       <h2>Question</h2>
       <div id="question" class="box"></div>
 
@@ -308,135 +329,179 @@
   </footer>
 
   <script>
-  let allQuestions = [];
-  let questions = [];
-  let current = 0;
-  let selectedChapter = "All Chapters";
+    let allQuestions = [];
+    let questions = [];
+    let current = 0;
+    let selectedChapter = "All Chapters";
 
-  async function loadQuestions() {
-    try {
-      const response = await fetch("questions.json");
+    async function loadQuestions() {
+      try {
+        const response = await fetch("questions.json");
 
-      if (!response.ok) {
-        throw new Error("Unable to load questions.json");
+        if (!response.ok) {
+          throw new Error("Unable to load questions.json");
+        }
+
+        allQuestions = await response.json();
+        setupChapterDropdown();
+        filterQuestions();
+        loadQuestion();
+
+      } catch (error) {
+        console.error(error);
+
+        document.getElementById("topic").innerText =
+          "Automatic question loading failed.";
+
+        document.getElementById("question").innerHTML =
+          "Use the file button above and select your questions.json file.";
+      }
+    }
+
+    function loadLocalJSON(event) {
+      const file = event.target.files[0];
+
+      if (!file) {
+        return;
       }
 
-      allQuestions = await response.json();
-      setupChapterDropdown();
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        try {
+          allQuestions = JSON.parse(e.target.result);
+          selectedChapter = "All Chapters";
+          current = 0;
+          setupChapterDropdown();
+          filterQuestions();
+          loadQuestion();
+        } catch (err) {
+          alert("Invalid JSON file. Please check your questions.json formatting.");
+          console.error(err);
+        }
+      };
+
+      reader.readAsText(file);
+    }
+
+    function setupChapterDropdown() {
+      const chapterSelect = document.getElementById("chapterSelect");
+
+      const chapters = [
+        "All Chapters",
+        ...new Set(allQuestions.map(q => q.chapter || "Uncategorized"))
+      ];
+
+      chapterSelect.innerHTML = "";
+
+      chapters.forEach(chapter => {
+        chapterSelect.innerHTML += `
+          <option value="${chapter}">${chapter}</option>
+        `;
+      });
+
+      chapterSelect.value = selectedChapter;
+    }
+
+    function changeChapter() {
+      selectedChapter = document.getElementById("chapterSelect").value;
+      current = 0;
       filterQuestions();
       loadQuestion();
-
-    } catch (error) {
-      document.getElementById("topic").innerText = "Question bank unavailable";
-      document.getElementById("question").innerHTML =
-        "Please open this page through a local web server so questions.json can be loaded.";
-    }
-  }
-
-  function setupChapterDropdown() {
-    const chapterSelect = document.getElementById("chapterSelect");
-
-    const chapters = [
-      "All Chapters",
-      ...new Set(allQuestions.map(q => q.chapter || "Uncategorized"))
-    ];
-
-    chapterSelect.innerHTML = "";
-
-    chapters.forEach(chapter => {
-      chapterSelect.innerHTML += `
-        <option value="${chapter}">${chapter}</option>
-      `;
-    });
-  }
-
-  function changeChapter() {
-    selectedChapter = document.getElementById("chapterSelect").value;
-    current = 0;
-    filterQuestions();
-    loadQuestion();
-  }
-
-  function filterQuestions() {
-    if (selectedChapter === "All Chapters") {
-      questions = allQuestions;
-    } else {
-      questions = allQuestions.filter(q => q.chapter === selectedChapter);
-    }
-  }
-
-  function loadQuestion() {
-    if (!questions.length) {
-      document.getElementById("topic").innerText = "No questions found.";
-      document.getElementById("question").innerHTML = "";
-      document.getElementById("choices").innerHTML = "";
-      return;
     }
 
-    const q = questions[current];
-
-    document.getElementById("topic").innerText =
-      `${q.chapter} | Topic: ${q.topic} | Difficulty: ${q.difficulty}`;
-
-    document.getElementById("question").innerHTML = q.question;
-
-    const choicesDiv = document.getElementById("choices");
-    choicesDiv.innerHTML = "";
-
-    q.choices.forEach((choice, index) => {
-      choicesDiv.innerHTML += `
-        <div class="choice">
-          <label>
-            <input type="radio" name="answer" value="${index}">
-            ${String.fromCharCode(65 + index)}. ${choice}
-          </label>
-        </div>
-      `;
-    });
-
-    document.getElementById("result").innerHTML = "";
-    document.getElementById("explanation").innerHTML = "";
-
-    MathJax.typesetPromise();
-  }
-
-  function checkAnswer() {
-    if (!questions.length) return;
-
-    const selected = document.querySelector('input[name="answer"]:checked');
-
-    if (!selected) {
-      alert("Please choose an answer.");
-      return;
+    function filterQuestions() {
+      if (selectedChapter === "All Chapters") {
+        questions = allQuestions;
+      } else {
+        questions = allQuestions.filter(q => {
+          return (q.chapter || "Uncategorized") === selectedChapter;
+        });
+      }
     }
 
-    const q = questions[current];
-    const answer = Number(selected.value);
+    function loadQuestion() {
+      if (!questions.length) {
+        document.getElementById("topic").innerText = "No questions found.";
+        document.getElementById("question").innerHTML = "";
+        document.getElementById("choices").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("explanation").innerHTML = "";
+        return;
+      }
 
-    if (answer === q.correct_index) {
-      document.getElementById("result").innerHTML =
-        "<span class='correct'>Correct!</span>";
-    } else {
-      document.getElementById("result").innerHTML =
-        "<span class='wrong'>Not correct. Review the steps.</span>";
+      const q = questions[current];
+
+      document.getElementById("topic").innerText =
+        `${q.chapter || "Uncategorized"} | Topic: ${q.topic} | Difficulty: ${q.difficulty}`;
+
+      document.getElementById("question").innerHTML = q.question;
+
+      const choicesDiv = document.getElementById("choices");
+      choicesDiv.innerHTML = "";
+
+      q.choices.forEach((choice, index) => {
+        choicesDiv.innerHTML += `
+          <div class="choice">
+            <label>
+              <input type="radio" name="answer" value="${index}">
+              ${String.fromCharCode(65 + index)}. ${choice}
+            </label>
+          </div>
+        `;
+      });
+
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("explanation").innerHTML = "";
+
+      if (window.MathJax) {
+        MathJax.typesetPromise();
+      }
     }
 
-    document.getElementById("explanation").innerHTML =
-      "<div class='box'><h3>Step-by-step explanation</h3>" +
-      q.explanation.map(step => `<p>${step}</p>`).join("") +
-      "</div>";
+    function checkAnswer() {
+      if (!questions.length) {
+        return;
+      }
 
-    MathJax.typesetPromise();
-  }
+      const selected = document.querySelector('input[name="answer"]:checked');
 
-  function nextQuestion() {
-    if (!questions.length) return;
+      if (!selected) {
+        alert("Please choose an answer.");
+        return;
+      }
 
-    current = (current + 1) % questions.length;
-    loadQuestion();
-  }
+      const q = questions[current];
+      const answer = Number(selected.value);
 
-  loadQuestions();
-</script>
+      if (answer === q.correct_index) {
+        document.getElementById("result").innerHTML =
+          "<span class='correct'>Correct!</span>";
+      } else {
+        document.getElementById("result").innerHTML =
+          "<span class='wrong'>Not correct. Review the steps.</span>";
+      }
+
+      document.getElementById("explanation").innerHTML =
+        "<div class='box'><h3>Step-by-step explanation</h3>" +
+        q.explanation.map(step => `<p>${step}</p>`).join("") +
+        "</div>";
+
+      if (window.MathJax) {
+        MathJax.typesetPromise();
+      }
+    }
+
+    function nextQuestion() {
+      if (!questions.length) {
+        return;
+      }
+
+      current = (current + 1) % questions.length;
+      loadQuestion();
+    }
+
+    loadQuestions();
+  </script>
 </body>
 </html>
