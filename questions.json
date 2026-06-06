@@ -1,0 +1,21 @@
+[
+  {
+    "topic": "Balancing Equations",
+    "difficulty": "easy",
+    "question": "Balance this reaction: \\(\\ce{H2 + O2 -> H2O}\\)",
+    "choices": [
+      "\\(\\ce{H2 + O2 -> H2O}\\)",
+      "\\(\\ce{2H2 + O2 -> 2H2O}\\)",
+      "\\(\\ce{H2 + 2O2 -> H2O}\\)",
+      "\\(\\ce{2H2 + 2O2 -> H2O}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Count atoms on both sides.",
+      "Oxygen is unbalanced because \\(\\ce{O2}\\) has 2 oxygen atoms but \\(\\ce{H2O}\\) has only 1.",
+      "Put 2 before \\(\\ce{H2O}\\).",
+      "Put 2 before \\(\\ce{H2}\\).",
+      "Final answer: \\(\\ce{2H2 + O2 -> 2H2O}\\)."
+    ]
+  }
+]
