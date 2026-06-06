@@ -1043,5 +1043,1732 @@
       "Mass = \\(0.407 \\times 16.04 = 6.53\\) g.",
       "So the mass is 6.53 g \\(\\ce{CH4}\\)."
     ]
+  },
+  
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "States of Matter",
+    "difficulty": "easy",
+    "question": "Which state of matter has a definite shape and a definite volume?",
+    "choices": ["Gas", "Liquid", "Solid", "Plasma"],
+    "correct_index": 2,
+    "explanation": [
+      "Solids have a definite shape and volume.",
+      "Particles are packed closely together.",
+      "Intermolecular attractions are strongest in solids."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "States of Matter",
+    "difficulty": "easy",
+    "question": "Which state of matter is highly compressible?",
+    "choices": ["Solid", "Liquid", "Gas", "All equally compressible"],
+    "correct_index": 2,
+    "explanation": [
+      "Gas particles are far apart.",
+      "Large empty spaces allow compression.",
+      "Therefore gases are highly compressible."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "States of Matter",
+    "difficulty": "easy",
+    "question": "Which state of matter has a definite volume but no definite shape?",
+    "choices": ["Solid", "Liquid", "Gas", "None"],
+    "correct_index": 1,
+    "explanation": [
+      "Liquids take the shape of their container.",
+      "However, liquids maintain a constant volume."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "easy",
+    "question": "Intermolecular forces occur between:",
+    "choices": [
+      "Atoms in the same molecule",
+      "Different molecules",
+      "Protons and neutrons",
+      "Only ions"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Intermolecular forces are attractions between different molecules.",
+      "They influence physical properties such as boiling point."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular vs Intramolecular",
+    "difficulty": "medium",
+    "question": "Which type of force is generally stronger?",
+    "choices": [
+      "Intermolecular forces",
+      "Intramolecular forces",
+      "They are equal",
+      "Depends only on temperature"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Intramolecular forces are chemical bonds within molecules.",
+      "They are much stronger than intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Boiling Point",
+    "difficulty": "medium",
+    "question": "As intermolecular forces become stronger, the boiling point generally:",
+    "choices": [
+      "Decreases",
+      "Remains constant",
+      "Increases",
+      "Becomes zero"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Stronger attractions require more energy to separate molecules.",
+      "More heat means a higher boiling point."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "London Dispersion Forces",
+    "difficulty": "easy",
+    "question": "London dispersion forces arise from:",
+    "choices": [
+      "Permanent dipoles",
+      "Temporary electron density fluctuations",
+      "Ionic bonds",
+      "Hydrogen atoms only"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Electrons move continuously.",
+      "Temporary unequal electron distributions create temporary dipoles.",
+      "These temporary dipoles attract nearby particles."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "London Dispersion Forces",
+    "difficulty": "easy",
+    "question": "London dispersion forces occur in:",
+    "choices": [
+      "Only polar molecules",
+      "Only ionic compounds",
+      "All atoms, molecules, and ions with electrons",
+      "Only noble gases"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Any species containing electrons experiences London forces.",
+      "They are universal intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "London Dispersion Forces",
+    "difficulty": "medium",
+    "question": "Which intermolecular force is the only attraction present in nonpolar Cl₂ molecules?",
+    "choices": [
+      "Hydrogen bonding",
+      "Ion-dipole attraction",
+      "Dipole-dipole attraction",
+      "London dispersion forces"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "Cl₂ is nonpolar.",
+      "Nonpolar molecules cannot exhibit dipole-dipole attraction.",
+      "Therefore only London dispersion forces exist."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "London Dispersion Forces",
+    "difficulty": "medium",
+    "question": "A more compact molecular shape generally produces:",
+    "choices": [
+      "Stronger London forces",
+      "More hydrogen bonding",
+      "Weaker London forces",
+      "More ionic bonding"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Compact molecules have less surface area for contact.",
+      "Less surface contact means weaker London attractions."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Dipole-Dipole Attractions",
+    "difficulty": "easy",
+    "question": "Dipole-dipole attractions occur between:",
+    "choices": [
+      "Nonpolar molecules",
+      "Permanent dipoles",
+      "Ions only",
+      "Metals only"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Polar molecules have permanent dipoles.",
+      "Opposite partial charges attract one another."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Dipole-Dipole Attractions",
+    "difficulty": "easy",
+    "question": "Which molecule from the lecture was used as an example of dipole-dipole attraction?",
+    "choices": [
+      "Cl₂",
+      "CH₄",
+      "HCl",
+      "He"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "HCl is polar.",
+      "The lecture showed dipole-dipole attractions between HCl molecules."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "easy",
+    "question": "Hydrogen bonding occurs when hydrogen is bonded to:",
+    "choices": [
+      "Na, K, Ca",
+      "F, O, or N",
+      "Cl, Br, I",
+      "Any metal"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Hydrogen bonding requires highly electronegative atoms.",
+      "The lecture emphasized F, O, and N."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "Hydrogen bonding is approximately how much stronger than ordinary dipole-dipole attractions?",
+    "choices": [
+      "Same strength",
+      "2 times stronger",
+      "5–10 times stronger",
+      "100 times stronger"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "The lecture states hydrogen bonding is approximately 5–10 times stronger than typical dipole-dipole attractions."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "The unusually high boiling point of water is primarily due to:",
+    "choices": [
+      "London forces",
+      "Ionic bonding",
+      "Hydrogen bonding",
+      "Covalent bonds breaking"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Water molecules form extensive hydrogen-bond networks.",
+      "More energy is needed to separate them."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "If water did not form hydrogen bonds, its boiling point would be approximately:",
+    "choices": [
+      "-80 °C",
+      "0 °C",
+      "25 °C",
+      "100 °C"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "The lecture notes that water would boil around -80 °C without hydrogen bonding."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "easy",
+    "question": "The DNA double helix is held together primarily by:",
+    "choices": [
+      "Ionic bonds",
+      "Metallic bonds",
+      "Hydrogen bonds",
+      "London forces only"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Hydrogen bonds connect complementary base pairs in DNA."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Ion-Dipole Attractions",
+    "difficulty": "easy",
+    "question": "Ion-dipole attractions occur between:",
+    "choices": [
+      "Two ions",
+      "Two nonpolar molecules",
+      "An ion and a polar molecule",
+      "Two metals"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Ion-dipole attractions occur when ions interact with the charged ends of polar molecules."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Ion-Dipole Attractions",
+    "difficulty": "medium",
+    "question": "Which example of ion-dipole attraction was discussed in the lecture?",
+    "choices": [
+      "HCl molecules attracting each other",
+      "Cl₂ molecules attracting each other",
+      "Na⁺ and Cl⁻ ions interacting with water molecules",
+      "DNA base pairs"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "The lecture used dissolved NaCl in water as the classic ion-dipole example."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces Summary",
+    "difficulty": "hard",
+    "question": "According to the lecture, which intermolecular force is generally strongest?",
+    "choices": [
+      "London dispersion",
+      "Dipole-dipole",
+      "Hydrogen bonding",
+      "Ion-dipole attraction"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "Lecture summary ranking:",
+      "London dispersion < Dipole-dipole < Hydrogen bonding < Ion-dipole attraction."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "easy",
+    "question": "For small molecules of comparable molecular weight, which choice lists the intermolecular forces in order of increasing strength?",
+    "choices": [
+      "Hydrogen bonds < dipole-dipole forces < London dispersion forces",
+      "Dipole-dipole forces < hydrogen bonds < London dispersion forces",
+      "London dispersion forces < hydrogen bonds < dipole-dipole forces",
+      "London dispersion forces < dipole-dipole forces < hydrogen bonds"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "London dispersion forces are usually the weakest.",
+      "Dipole-dipole forces are stronger than London dispersion forces for comparable small molecules.",
+      "Hydrogen bonding is a special, stronger type of dipole-dipole attraction.",
+      "So the increasing order is London dispersion < dipole-dipole < hydrogen bonds."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "What compound will not exhibit hydrogen bonding in the liquid state?",
+    "choices": [
+      "\\(\\ce{CH3CH2Br}\\)",
+      "\\(\\ce{CH3CH2NH2}\\)",
+      "\\(\\ce{CH3CH2CH2OH}\\)",
+      "\\(\\ce{CH3NHCH3}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "Hydrogen bonding requires H directly bonded to N, O, or F.",
+      "\\(\\ce{CH3CH2Br}\\) does not have an N-H, O-H, or F-H bond.",
+      "Therefore, \\(\\ce{CH3CH2Br}\\) will not exhibit hydrogen bonding in the liquid state."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "Which covalent compound will exhibit hydrogen bonding in the liquid state?",
+    "choices": [
+      "\\(\\ce{CCl2F2}\\)",
+      "\\(\\ce{NF3}\\)",
+      "\\(\\ce{HCl}\\)",
+      "\\(\\ce{NH2OH}\\)"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "Hydrogen bonding requires hydrogen directly bonded to N, O, or F.",
+      "\\(\\ce{NH2OH}\\) has N-H and O-H bonds.",
+      "Therefore, \\(\\ce{NH2OH}\\) can form hydrogen bonds."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Dipole-Dipole Attractions",
+    "difficulty": "medium",
+    "question": "Which one of the following exhibits dipole-dipole attraction between molecules?",
+    "choices": [
+      "\\(\\ce{CO2}\\)",
+      "\\(\\ce{AsH3}\\)",
+      "\\(\\ce{BCl3}\\)",
+      "\\(\\ce{Cl2}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Dipole-dipole attraction occurs between polar molecules.",
+      "\\(\\ce{CO2}\\) is linear and nonpolar.",
+      "\\(\\ce{BCl3}\\) is trigonal planar and nonpolar.",
+      "\\(\\ce{Cl2}\\) is nonpolar.",
+      "\\(\\ce{AsH3}\\) is trigonal pyramidal and polar, so it has dipole-dipole attractions."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Boiling Point",
+    "difficulty": "medium",
+    "question": "Which intermolecular force accounts for the difference in normal boiling points between \\(\\ce{ICl}\\) at 97 °C and \\(\\ce{Br2}\\) at 59 °C?",
+    "choices": [
+      "London dispersion forces",
+      "Dipole-dipole interactions",
+      "Hydrogen bonding",
+      "Both hydrogen bonding and dipole-dipole interactions"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{ICl}\\) is polar, so it has dipole-dipole interactions.",
+      "\\(\\ce{Br2}\\) is nonpolar, so it has London dispersion forces only.",
+      "The higher boiling point of \\(\\ce{ICl}\\) is explained by dipole-dipole interactions."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Ion-Dipole Attractions",
+    "difficulty": "easy",
+    "question": "When \\(\\ce{NaCl}\\) dissolves in water, the force of attraction between \\(\\ce{Na+}\\) and \\(\\ce{H2O}\\) is called what interaction?",
+    "choices": [
+      "Dipole-dipole",
+      "Ion-ion",
+      "Hydrogen bonding",
+      "Ion-dipole"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "\\(\\ce{Na+}\\) is an ion.",
+      "Water is a polar molecule.",
+      "The attraction between an ion and a polar molecule is called an ion-dipole interaction."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "medium",
+    "question": "What compound will have the strongest intermolecular forces?",
+    "choices": [
+      "\\(\\ce{CH3CH2H}\\)",
+      "\\(\\ce{CH3CH2OH}\\)",
+      "\\(\\ce{CH3CH2SH}\\)",
+      "\\(\\ce{CH3CH2SeH}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{CH3CH2OH}\\) has an O-H bond.",
+      "O-H bonds allow hydrogen bonding.",
+      "Hydrogen bonding is stronger than ordinary dipole-dipole and London dispersion forces.",
+      "Therefore, \\(\\ce{CH3CH2OH}\\) has the strongest intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "medium",
+    "question": "What compound will have the weakest intermolecular forces?",
+    "choices": [
+      "\\(\\ce{CH3CH2H}\\)",
+      "\\(\\ce{CH3CH2OH}\\)",
+      "\\(\\ce{CH3CH2SH}\\)",
+      "\\(\\ce{CH3CH2SeH}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{CH3CH2H}\\) is nonpolar and has only London dispersion forces.",
+      "\\(\\ce{CH3CH2OH}\\) has hydrogen bonding.",
+      "\\(\\ce{CH3CH2SH}\\) and \\(\\ce{CH3CH2SeH}\\) are more polarizable and have stronger dispersion forces than ethane.",
+      "Therefore, \\(\\ce{CH3CH2H}\\) has the weakest intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Dipole-Dipole Attractions",
+    "difficulty": "medium",
+    "question": "What is the strongest intermolecular force between molecules of \\(\\ce{HCl}\\)?",
+    "choices": [
+      "Covalent bonds",
+      "Dipole-dipole interactions",
+      "Ionic bonds",
+      "Hydrogen bonds"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "\\(\\ce{HCl}\\) is a polar molecule.",
+      "Polar molecules attract each other through dipole-dipole interactions.",
+      "Hydrogen bonding requires H bonded to N, O, or F, not Cl.",
+      "So the strongest intermolecular force between \\(\\ce{HCl}\\) molecules is dipole-dipole interaction."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "Which intermolecular force accounts for the difference in normal boiling points between \\(\\ce{H2O}\\) at 100 °C and \\(\\ce{H2}\\) at -253 °C?",
+    "choices": [
+      "London dispersion forces",
+      "Dipole-dipole interactions",
+      "Hydrogen bonding",
+      "Both hydrogen bonding and dipole-dipole interactions"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "\\(\\ce{H2O}\\) has O-H bonds, so it forms hydrogen bonds.",
+      "\\(\\ce{H2}\\) is nonpolar and has only London dispersion forces.",
+      "Hydrogen bonding explains the much higher boiling point of water."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Ion-Dipole Attractions",
+    "difficulty": "easy",
+    "question": "When \\(\\ce{KBr}\\) dissolves in water, the force of attraction between \\(\\ce{Br-}\\) and \\(\\ce{H2O}\\) is called what interaction?",
+    "choices": [
+      "Dipole-dipole",
+      "Ion-ion",
+      "Hydrogen bonding",
+      "Ion-dipole"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "\\(\\ce{Br-}\\) is an ion.",
+      "Water is a polar molecule.",
+      "The attraction between an ion and a polar molecule is an ion-dipole interaction."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "medium",
+    "question": "What compound will have the strongest intermolecular forces?",
+    "choices": [
+      "\\(\\ce{CH3CH2H}\\)",
+      "\\(\\ce{CH3CH2CH2NH}\\)",
+      "\\(\\ce{CH3CH2SeH}\\)",
+      "\\(\\ce{CH3CH2TeH}\\)"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Compounds with N-H bonds can form hydrogen bonds.",
+      "\\(\\ce{CH3CH2CH2NH}\\) contains an N-H bond as written.",
+      "Hydrogen bonding is stronger than ordinary dipole-dipole and London dispersion forces.",
+      "Therefore, the nitrogen-containing compound has the strongest intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "medium",
+    "question": "What compound will have the weakest intermolecular forces?",
+    "choices": [
+      "\\(\\ce{CH3CH3}\\)",
+      "\\(\\ce{CH3CH2OH}\\)",
+      "\\(\\ce{CH3CH2NH}\\)",
+      "\\(\\ce{CH3CH2SeH}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{CH3CH3}\\) is nonpolar and has only London dispersion forces.",
+      "\\(\\ce{CH3CH2OH}\\) can form hydrogen bonds.",
+      "\\(\\ce{CH3CH2NH}\\) can form hydrogen bonding if N-H is present.",
+      "\\(\\ce{CH3CH2SeH}\\) is heavier and more polarizable.",
+      "Therefore, \\(\\ce{CH3CH3}\\) has the weakest intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "easy",
+    "question": "What is the strongest intermolecular force between molecules of \\(\\ce{HF}\\)?",
+    "choices": [
+      "Covalent bonds",
+      "Dipole-dipole interactions",
+      "Ionic bonds",
+      "Hydrogen bonds"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "\\(\\ce{HF}\\) contains H directly bonded to F.",
+      "H-F bonds allow hydrogen bonding.",
+      "Therefore, the strongest intermolecular force between \\(\\ce{HF}\\) molecules is hydrogen bonding."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "London Dispersion Forces",
+    "difficulty": "medium",
+    "question": "Which intermolecular force accounts for the difference in normal boiling points between \\(\\ce{F2}\\) at -88 °C and \\(\\ce{Cl2}\\) at -34 °C?",
+    "choices": [
+      "London dispersion forces",
+      "Dipole-dipole interactions",
+      "Hydrogen bonding",
+      "Both hydrogen bonding and dipole-dipole interactions"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{F2}\\) and \\(\\ce{Cl2}\\) are both nonpolar molecules.",
+      "Nonpolar molecules have London dispersion forces.",
+      "\\(\\ce{Cl2}\\) is larger and more polarizable than \\(\\ce{F2}\\), so it has stronger London forces and a higher boiling point."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "When glucose, \\(\\ce{C6H12O6}\\), dissolves in water and does not break into ions, what force of attraction exists between glucose and water?",
+    "choices": [
+      "Dipole-dipole",
+      "Ion-ion",
+      "Hydrogen bonding",
+      "Ion-dipole"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Glucose does not form ions in water, so ion-dipole is not the best answer.",
+      "Glucose has many O-H groups.",
+      "Water also has O-H groups.",
+      "Therefore, glucose and water attract strongly by hydrogen bonding."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "London Dispersion Forces",
+    "difficulty": "medium",
+    "question": "What compound will have the strongest intermolecular forces?",
+    "choices": [
+      "\\(\\ce{CH3CH2CH2CH2CH2CH3}\\)",
+      "\\(\\ce{CH3CH3}\\)",
+      "\\(\\ce{CH3CH2CH3}\\)",
+      "\\(\\ce{CH3CH2CH2CH2CH3}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "These are nonpolar hydrocarbons, so London dispersion forces dominate.",
+      "London dispersion forces increase with molecular size and surface area.",
+      "Hexane, \\(\\ce{CH3CH2CH2CH2CH2CH3}\\), is the largest molecule listed.",
+      "Therefore, it has the strongest intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Intermolecular Forces",
+    "difficulty": "medium",
+    "question": "What compound will have the weakest intermolecular forces?",
+    "choices": [
+      "\\(\\ce{CH3CH2H}\\)",
+      "\\(\\ce{CH3CH2OH}\\)",
+      "\\(\\ce{CH3CH2FH}\\)",
+      "\\(\\ce{CH3CH2NH}\\)"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{CH3CH2H}\\) is nonpolar and only has London dispersion forces.",
+      "\\(\\ce{CH3CH2OH}\\) has hydrogen bonding.",
+      "Compounds with N-H bonds can hydrogen bond.",
+      "A C-F containing molecule is polar.",
+      "Therefore, \\(\\ce{CH3CH2H}\\) has the weakest intermolecular forces."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "easy",
+    "question": "What is the strongest intermolecular force between molecules of \\(\\ce{NH3}\\), ammonia?",
+    "choices": [
+      "Covalent bonds",
+      "Dipole-dipole interactions",
+      "Ionic bonds",
+      "Hydrogen bonds"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "\\(\\ce{NH3}\\) has N-H bonds.",
+      "Hydrogen bonding occurs when H is bonded to N, O, or F.",
+      "Therefore, the strongest intermolecular force between ammonia molecules is hydrogen bonding."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Ions and Interactions",
+    "difficulty": "medium",
+    "question": "What is the strongest force within the polyatomic ion \\(\\ce{PO4^{3-}}\\)?",
+    "choices": [
+      "Covalent bonds",
+      "Dipole-dipole interactions",
+      "Ionic bonds",
+      "Hydrogen bonds"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "\\(\\ce{PO4^{3-}}\\) is a polyatomic ion.",
+      "The phosphorus and oxygen atoms inside the ion are connected by covalent bonds.",
+      "Dipole-dipole and hydrogen bonding are intermolecular forces, not the main bonds inside the ion.",
+      "Therefore, the strongest force within \\(\\ce{PO4^{3-}}\\) is covalent bonding."
+    ]
+  },
+    {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "Will a molecule of water and a molecule of methanol, \\(\\ce{CH3OH}\\), form a hydrogen bond between them?",
+    "choices": [
+      "Yes, because both molecules contain O-H groups and can participate in hydrogen bonding",
+      "Yes, because all molecules form hydrogen bonds",
+      "No, because methanol is nonpolar",
+      "No, because water can hydrogen bond only with water"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "Hydrogen bonding occurs when H is bonded to O, N, or F and interacts with a lone pair on another O, N, or F atom.",
+      "Water contains O-H bonds.",
+      "Methanol, \\(\\ce{CH3OH}\\), also contains an O-H bond.",
+      "Water and methanol can both act in hydrogen bonding.",
+      "Therefore, a molecule of water and a molecule of methanol can form a hydrogen bond."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "easy",
+    "question": "Will two molecules of methane, \\(\\ce{CH4}\\), form hydrogen bonds between them?",
+    "choices": [
+      "Yes, because methane contains hydrogen",
+      "Yes, because all covalent molecules form hydrogen bonds",
+      "No, because C-H bonds do not normally form hydrogen bonds",
+      "No, because methane is ionic"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Hydrogen bonding requires hydrogen directly bonded to O, N, or F.",
+      "Methane, \\(\\ce{CH4}\\), contains only C-H bonds.",
+      "C-H bonds do not normally form hydrogen bonds.",
+      "Therefore, two methane molecules do not form hydrogen bonds."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Hydrogen Bonding",
+    "difficulty": "medium",
+    "question": "Can water and dimethyl sulfoxide, \\(\\ce{(CH3)2SO}\\), form hydrogen bonds between them?",
+    "choices": [
+      "Yes, water can donate a hydrogen bond to the oxygen atom in dimethyl sulfoxide",
+      "Yes, because dimethyl sulfoxide has an O-H bond",
+      "No, because dimethyl sulfoxide has no hydrogen atoms",
+      "No, because sulfur compounds cannot interact with water"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "Water has O-H bonds and can act as a hydrogen bond donor.",
+      "Dimethyl sulfoxide has an oxygen atom with lone pairs in the S=O group.",
+      "That oxygen can act as a hydrogen bond acceptor.",
+      "Therefore, water and dimethyl sulfoxide can form hydrogen bonds between them."
+    ]
+  },
+  {
+    "chapter": "Chapter 5: Gases, Liquids, and Solids",
+    "topic": "Boiling Point",
+    "difficulty": "medium",
+    "question": "Which compound has a higher boiling point: butane, \\(\\ce{C4H10}\\), or hexane, \\(\\ce{C6H14}\\)?",
+    "choices": [
+      "Butane, because it is smaller",
+      "Butane, because it has stronger hydrogen bonding",
+      "Hexane, because it is larger and has stronger London dispersion forces",
+      "They have the same boiling point"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Butane and hexane are nonpolar hydrocarbons.",
+      "Their main intermolecular force is London dispersion force.",
+      "Larger molecules have more electrons and greater surface area.",
+      "This gives stronger London dispersion forces.",
+      "Hexane is larger than butane, so hexane has the higher boiling point."
+    ]
+  },
+    {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Solute and Solvent",
+    "difficulty": "easy",
+    "question": "Suppose you prepare a solution by dissolving glucose in water. Which is the solvent and which is the solute?",
+    "choices": [
+      "Glucose is the solvent and water is the solute",
+      "Water is the solvent and glucose is the solute",
+      "Both are solvents",
+      "Both are solutes"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "The solute is the substance being dissolved.",
+      "The solvent is the substance doing the dissolving.",
+      "Glucose is dissolved in water.",
+      "Therefore glucose is the solute and water is the solvent."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Solubility",
+    "difficulty": "medium",
+    "question": "Based on polarity and hydrogen bonding, which solute would be most soluble in benzene, \\(\\ce{C6H6}\\)?",
+    "choices": [
+      "\\(\\ce{CH3OH}\\)",
+      "\\(\\ce{H2O}\\)",
+      "\\(\\ce{CH3CH2CH2CH3}\\)",
+      "\\(\\ce{H2SO4}\\)"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Benzene is nonpolar.",
+      "Like dissolves like.",
+      "The least polar substance listed is butane, \\(\\ce{CH3CH2CH2CH3}\\).",
+      "Therefore butane is most soluble in benzene."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "How many grams of NaCl are needed to prepare 250 mL of a 3.6% w/v NaCl solution?",
+    "choices": [
+      "3.6 g",
+      "6.0 g",
+      "9.0 g",
+      "12.5 g"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "A 3.6% w/v solution contains 3.6 g solute per 100 mL solution.",
+      "Multiply by 250 mL.",
+      "\\((3.6\\,g/100\\,mL)(250\\,mL)=9.0\\,g\\)",
+      "Therefore 9.0 g NaCl are required."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "What is the % w/v concentration of a solution containing 623 mg of casein in 15.0 mL of milk?",
+    "choices": [
+      "0.415%",
+      "4.15%",
+      "15.0%",
+      "41.5%"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert 623 mg to 0.623 g.",
+      "%w/v = (g solute ÷ mL solution) × 100.",
+      "\\((0.623/15.0)\\times100=4.15\\)",
+      "The concentration is 4.15% w/v."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "What is the % w/v concentration of a solution containing 74 mg vitamin C in 250 mL orange juice?",
+    "choices": [
+      "0.0030%",
+      "0.030%",
+      "0.30%",
+      "3.0%"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert 74 mg to 0.074 g.",
+      "%w/v = (0.074 ÷ 250) × 100.",
+      "Result = 0.030%.",
+      "Therefore the concentration is 0.030% w/v."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "How many grams of NH4Br are needed to prepare 175 mL of a 1.14 M NH4Br solution?",
+    "choices": [
+      "9.75 g",
+      "19.5 g",
+      "39.0 g",
+      "97.9 g"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert volume to liters: 0.175 L.",
+      "Moles = M × L = 1.14 × 0.175 = 0.1995 mol.",
+      "Molar mass NH4Br = 97.9 g/mol.",
+      "Mass = 0.1995 × 97.9 = 19.5 g."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "How many grams of NaI are needed to prepare 1.35 L of a 0.825 M NaI solution?",
+    "choices": [
+      "83.5 g",
+      "112 g",
+      "167 g",
+      "223 g"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Moles = 0.825 × 1.35 = 1.114 mol.",
+      "Molar mass NaI = 149.9 g/mol.",
+      "Mass = 1.114 × 149.9 = 167 g.",
+      "Therefore 167 g NaI are required."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "What is the molarity of a solution prepared by dissolving 47 g KCl and diluting to 375 mL?",
+    "choices": [
+      "0.85 M",
+      "1.2 M",
+      "1.7 M",
+      "2.4 M"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Moles KCl = 47 ÷ 74.6 = 0.630 mol.",
+      "Volume = 0.375 L.",
+      "Molarity = 0.630 ÷ 0.375.",
+      "Molarity = 1.68 ≈ 1.7 M."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "What is the molarity of a solution containing 82.6 g sucrose diluted to 725 mL?",
+    "choices": [
+      "0.166 M",
+      "0.333 M",
+      "0.725 M",
+      "1.14 M"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Moles sucrose = 82.6 ÷ 342.3 = 0.241 mol.",
+      "Volume = 0.725 L.",
+      "Molarity = 0.241 ÷ 0.725 = 0.333 M."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity Applications",
+    "difficulty": "hard",
+    "question": "Stomach acid is approximately 0.10 M HCl. What volume of stomach acid contains 0.25 mg HCl?",
+    "choices": [
+      "0.0068 mL",
+      "0.068 mL",
+      "0.68 mL",
+      "6.8 mL"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert 0.25 mg to grams.",
+      "Convert grams to moles using 36.5 g/mol.",
+      "Use M = mol/L and solve for volume.",
+      "The required volume is 0.068 mL."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "If 3.18 g BaCl2 is dissolved to make 500.0 mL solution, what is the molarity?",
+    "choices": [
+      "0.0153 M",
+      "0.0305 M",
+      "0.0635 M",
+      "0.305 M"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Moles BaCl2 = 3.18 ÷ 208.3 = 0.0153 mol.",
+      "Volume = 0.500 L.",
+      "Molarity = 0.0153 ÷ 0.500.",
+      "Molarity = 0.0305 M."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity to Grams",
+    "difficulty": "medium",
+    "question": "How many grams of HNO3 are present in 575 mL of a 2.00 M HNO3 solution?",
+    "choices": [
+      "36.2 g",
+      "57.5 g",
+      "72.5 g",
+      "115 g"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Convert volume to liters: 0.575 L.",
+      "Moles = 2.00 × 0.575 = 1.15 mol.",
+      "Mass = 1.15 × 63.0 g/mol.",
+      "Mass = 72.5 g."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity to Grams",
+    "difficulty": "medium",
+    "question": "How many grams of alanine are present in 1.65 L of a 0.286 M alanine solution?",
+    "choices": [
+      "21.0 g",
+      "42.0 g",
+      "63.0 g",
+      "89.1 g"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Moles = 0.286 × 1.65 = 0.472 mol.",
+      "Molar mass alanine = 89.1 g/mol.",
+      "Mass = 0.472 × 89.1 = 42.0 g."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Dilution",
+    "difficulty": "hard",
+    "question": "How would you prepare 250 mL of a 0.25% w/v H2O2 solution from a 30.0% w/v stock solution?",
+    "choices": [
+      "Use 0.21 mL stock",
+      "Use 2.1 mL stock",
+      "Use 21 mL stock",
+      "Use 25 mL stock"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Use the dilution equation: %1V1 = %2V2.",
+      "V1=(0.25×250)/30.0.",
+      "V1=2.1 mL.",
+      "Dilute to a final volume of 250 mL."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "ppm and ppb",
+    "difficulty": "medium",
+    "question": "One slice of bread weighing 80. g contains 70. μg folic acid. What is the concentration in ppm?",
+    "choices": [
+      "0.088 ppm",
+      "0.88 ppm",
+      "8.8 ppm",
+      "88 ppm"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Convert μg/g ratio to ppm.",
+      "(70 μg ÷ 80 g) × 10⁶.",
+      "Result = 0.88 ppm."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Electrolytes",
+    "difficulty": "easy",
+    "question": "KCl is classified as:",
+    "choices": [
+      "Strong electrolyte",
+      "Weak electrolyte",
+      "Nonelectrolyte",
+      "Colloid"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "KCl is an ionic compound.",
+      "Ionic compounds dissociate completely in water.",
+      "Therefore KCl is a strong electrolyte."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Electrolytes",
+    "difficulty": "easy",
+    "question": "Ethanol, \\(\\ce{C2H6O}\\), is classified as:",
+    "choices": [
+      "Strong electrolyte",
+      "Weak electrolyte",
+      "Nonelectrolyte",
+      "Strong acid"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Ethanol is a covalent compound.",
+      "It does not dissociate into ions in water.",
+      "Therefore it is a nonelectrolyte."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Electrolytes",
+    "difficulty": "easy",
+    "question": "NaOH is classified as:",
+    "choices": [
+      "Strong electrolyte",
+      "Weak electrolyte",
+      "Nonelectrolyte",
+      "Weak acid"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "NaOH is a strong base.",
+      "Strong bases dissociate completely in water.",
+      "Therefore NaOH is a strong electrolyte."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Solubility",
+    "difficulty": "medium",
+    "question": "Which of the following covalent compounds is NOT expected to be soluble in water?",
+    "choices": [
+      "\\(\\ce{CH3OH}\\)",
+      "\\(\\ce{HF}\\)",
+      "\\(\\ce{NH3}\\)",
+      "\\(\\ce{CCl4}\\)"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "\\(\\ce{CH3OH}\\), \\(\\ce{HF}\\), and \\(\\ce{NH3}\\) are polar and can hydrogen bond with water.",
+      "\\(\\ce{CCl4}\\) is nonpolar.",
+      "Nonpolar compounds are poorly soluble in water.",
+      "Therefore \\(\\ce{CCl4}\\) is not expected to be soluble."
+    ]
+  },
+    {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "How many grams of \\(\\ce{NaCl}\\) are needed to make 250 mL of a 0.90% w/v solution?",
+    "choices": ["0.90 g", "1.25 g", "2.25 g", "9.00 g"],
+    "correct_index": 2,
+    "explanation": [
+      "A 0.90% w/v solution means 0.90 g solute per 100 mL solution.",
+      "Use: \\(250\\,\\text{mL} \\times \\frac{0.90\\,\\text{g}}{100\\,\\text{mL}}\\).",
+      "Mass = 2.25 g.",
+      "So 2.25 g of \\(\\ce{NaCl}\\) are needed."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "An intravenous solution contains 5.0% w/v glucose, \\(\\ce{C6H12O6}\\). The bottle contains 750 mL solution. How many grams of glucose are in the bottle?",
+    "choices": ["5.0 g", "15.0 g", "37.5 g", "75.0 g"],
+    "correct_index": 2,
+    "explanation": [
+      "A 5.0% w/v solution means 5.0 g glucose per 100 mL solution.",
+      "Use: \\(750\\,\\text{mL} \\times \\frac{5.0\\,\\text{g}}{100\\,\\text{mL}}\\).",
+      "Mass = 37.5 g.",
+      "So the bottle contains 37.5 g glucose."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "If 12.3 g of sodium hydroxide, \\(\\ce{NaOH}\\), is dissolved in enough water to make \\(5.00 \\times 10^2\\) mL of solution, what is the % w/v of \\(\\ce{NaOH}\\)?",
+    "choices": ["1.23% w/v", "2.46% w/v", "5.00% w/v", "12.3% w/v"],
+    "correct_index": 1,
+    "explanation": [
+      "\\(5.00 \\times 10^2\\) mL = 500 mL.",
+      "% w/v = grams solute per 100 mL solution.",
+      "\\(\\frac{12.3\\,\\text{g}}{500\\,\\text{mL}} \\times 100 = 2.46\\%\\).",
+      "So the solution is 2.46% w/v \\(\\ce{NaOH}\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity to Grams",
+    "difficulty": "medium",
+    "question": "How many grams of \\(\\ce{CH3COONa}\\) are needed to prepare 1.50 L of a 0.25 M solution?",
+    "choices": ["12.3 g", "20.5 g", "30.8 g", "82.0 g"],
+    "correct_index": 2,
+    "explanation": [
+      "Moles = molarity × volume.",
+      "\\(0.25\\,M \\times 1.50\\,L = 0.375\\,mol\\).",
+      "Molar mass of \\(\\ce{CH3COONa}\\) is about 82.0 g/mol.",
+      "Mass = \\(0.375 \\times 82.0 = 30.8\\) g.",
+      "So 30.8 g are needed."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity Applications",
+    "difficulty": "hard",
+    "question": "Stomach acid is about 0.15 M \\(\\ce{HCl}\\). What volume of stomach acid contains 4.0 g of \\(\\ce{HCl}\\)?",
+    "choices": ["0.073 L", "0.731 L", "1.50 L", "3.65 L"],
+    "correct_index": 1,
+    "explanation": [
+      "First convert grams of \\(\\ce{HCl}\\) to moles.",
+      "Molar mass of \\(\\ce{HCl}\\) is about 36.5 g/mol.",
+      "Moles = \\(4.0 \\div 36.5 = 0.110\\) mol.",
+      "Volume = moles ÷ molarity.",
+      "\\(0.110 \\div 0.15 = 0.731\\,L\\).",
+      "So the volume is about 0.731 L."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity Applications",
+    "difficulty": "hard",
+    "question": "If 0.500 M potassium chloride solution is available, how many milliliters are needed to deliver 10.0 g of \\(\\ce{KCl}\\)?",
+    "choices": ["134 mL", "268 mL", "500 mL", "746 mL"],
+    "correct_index": 1,
+    "explanation": [
+      "Molar mass of \\(\\ce{KCl}\\) is about 74.6 g/mol.",
+      "Moles \\(\\ce{KCl}\\) = \\(10.0 \\div 74.6 = 0.134\\) mol.",
+      "Volume = moles ÷ molarity.",
+      "\\(0.134 \\div 0.500 = 0.268\\,L\\).",
+      "Convert to mL: \\(0.268\\,L = 268\\,mL\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity Applications",
+    "difficulty": "hard",
+    "question": "The glucose concentration in normal blood is 0.00556 M. How many liters of blood contain 20.0 g glucose, \\(\\ce{C6H12O6}\\)?",
+    "choices": ["2.00 L", "10.0 L", "20.0 L", "36.0 L"],
+    "correct_index": 2,
+    "explanation": [
+      "Molar mass of glucose is about 180.2 g/mol.",
+      "Moles glucose = \\(20.0 \\div 180.2 = 0.111\\) mol.",
+      "Volume = moles ÷ molarity.",
+      "\\(0.111 \\div 0.00556 = 20.0\\,L\\).",
+      "So about 20.0 L of blood contain 20.0 g glucose."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Concentration Conversion",
+    "difficulty": "medium",
+    "question": "The glucose concentration in normal blood is about 100 mg/dL. What is the molarity of glucose?",
+    "choices": ["0.000556 M", "0.00556 M", "0.0556 M", "0.556 M"],
+    "correct_index": 1,
+    "explanation": [
+      "100 mg/dL equals 1.00 g/L.",
+      "Molar mass of glucose is about 180.2 g/mol.",
+      "Molarity = \\(1.00 \\div 180.2 = 0.00555\\,M\\).",
+      "Rounded, this is about 0.00556 M."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Concentration Conversion",
+    "difficulty": "medium",
+    "question": "In diabetic patients, glucose can be as high as 0.0333 M. What is this concentration in mg/dL?",
+    "choices": ["60 mg/dL", "100 mg/dL", "300 mg/dL", "600 mg/dL"],
+    "correct_index": 3,
+    "explanation": [
+      "Molar mass of glucose is about 180.2 g/mol.",
+      "g/L = \\(0.0333 \\times 180.2 = 6.00\\,g/L\\).",
+      "6.00 g/L = 6000 mg/L.",
+      "Since 1 L = 10 dL, \\(6000\\,mg/L = 600\\,mg/dL\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v",
+    "difficulty": "medium",
+    "question": "The molarity of acetic acid, \\(\\ce{CH3COOH}\\), in vinegar is 0.883 M. What is the % w/v of acetic acid?",
+    "choices": ["0.530% w/v", "2.65% w/v", "5.30% w/v", "8.83% w/v"],
+    "correct_index": 2,
+    "explanation": [
+      "Molar mass of acetic acid is about 60.1 g/mol.",
+      "0.883 M means 0.883 mol per liter.",
+      "g/L = \\(0.883 \\times 60.1 = 53.0\\,g/L\\).",
+      "53.0 g/L = 5.30 g per 100 mL.",
+      "So the solution is 5.30% w/v acetic acid."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent w/v to Molarity",
+    "difficulty": "medium",
+    "question": "What is the molarity of a 5.0% w/v lactic acid, \\(\\ce{CH3CH(OH)COOH}\\), solution?",
+    "choices": ["0.0555 M", "0.555 M", "5.55 M", "9.01 M"],
+    "correct_index": 1,
+    "explanation": [
+      "5.0% w/v means 5.0 g per 100 mL.",
+      "That equals 50.0 g per liter.",
+      "Molar mass of lactic acid is about 90.1 g/mol.",
+      "Molarity = \\(50.0 \\div 90.1 = 0.555\\,M\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Dilution",
+    "difficulty": "medium",
+    "question": "A 12.0 M HCl stock solution is available. How much stock solution is needed to prepare 500 mL of 2.00 M HCl?",
+    "choices": ["8.33 mL", "41.7 mL", "83.3 mL", "250 mL"],
+    "correct_index": 2,
+    "explanation": [
+      "Use the dilution equation: \\(M_1V_1 = M_2V_2\\).",
+      "\\(M_1 = 12.0\\,M\\), \\(M_2 = 2.00\\,M\\), \\(V_2 = 500\\,mL\\).",
+      "\\(V_1 = \\frac{2.00 \\times 500}{12.0} = 83.3\\,mL\\).",
+      "Measure 83.3 mL of stock HCl and dilute to a total volume of 500 mL."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Dilution",
+    "difficulty": "medium",
+    "question": "If 200 mL of 12.0 M HCl is diluted to a final volume of 2.0 L, what is the molarity of the diluted solution?",
+    "choices": ["0.12 M", "1.20 M", "2.00 M", "12.0 M"],
+    "correct_index": 1,
+    "explanation": [
+      "Use \\(M_1V_1 = M_2V_2\\).",
+      "\\(M_1 = 12.0\\,M\\), \\(V_1 = 0.200\\,L\\), and \\(V_2 = 2.0\\,L\\).",
+      "\\(M_2 = \\frac{12.0 \\times 0.200}{2.0} = 1.20\\,M\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "ppm",
+    "difficulty": "medium",
+    "question": "A contaminated water supply contains 10.5 mg mercury in 100 L water. What is the concentration of mercury in ppm?",
+    "choices": ["0.0105 ppm", "0.105 ppm", "1.05 ppm", "10.5 ppm"],
+    "correct_index": 1,
+    "explanation": [
+      "For dilute water solutions, ppm is approximately mg/L.",
+      "\\(10.5\\,mg \\div 100\\,L = 0.105\\,mg/L\\).",
+      "Therefore the concentration is approximately 0.105 ppm."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "ppb",
+    "difficulty": "medium",
+    "question": "One serving of orange juice, 240 mL, contains 0.130 mg vitamin B6. Assuming density is 1 g/mL, what is this concentration in ppb?",
+    "choices": ["54.2 ppb", "542 ppb", "1080 ppb", "2400 ppb"],
+    "correct_index": 1,
+    "explanation": [
+      "Density is 1 g/mL, so 240 mL juice has mass about 240 g = 0.240 kg.",
+      "0.130 mg = 130 micrograms.",
+      "ppb is approximately micrograms per kg.",
+      "\\(130\\,\\mu g \\div 0.240\\,kg = 542\\,ppb\\)."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "ppb and EPA Limit",
+    "difficulty": "medium",
+    "question": "The EPA maximum concentration level for lead in drinking water is 0.005 mg/L. If a water sample has 1 ppb lead, is it higher or lower than the EPA limit?",
+    "choices": [
+      "Higher than the limit",
+      "Lower than the limit",
+      "Exactly equal to the limit",
+      "Cannot be compared"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "For water, 1 ppb is approximately 0.001 mg/L.",
+      "The EPA limit given is 0.005 mg/L.",
+      "0.001 mg/L is less than 0.005 mg/L.",
+      "Therefore, 1 ppb is lower than the EPA limit."
+    ]
+  },
+    {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Solutions",
+    "difficulty": "medium",
+    "question": "A solution is best defined as:",
+    "choices": [
+      "A heterogeneous mixture",
+      "A homogeneous mixture consisting of a solute and solvent",
+      "A pure substance",
+      "A suspension"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "A solution is a homogeneous mixture.",
+      "It contains a solute dissolved in a solvent.",
+      "The composition is uniform throughout."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Solutions",
+    "difficulty": "medium",
+    "question": "Which statement correctly identifies the solvent in a solution?",
+    "choices": [
+      "The component present in the smallest amount",
+      "The component that is dissolved",
+      "The component present in the greatest amount",
+      "The component with the highest molar mass"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "The solvent is usually present in the greatest amount.",
+      "The solvent is the medium in which the solute dissolves."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Solution Types",
+    "difficulty": "hard",
+    "question": "Which of the following is an example of a gas dissolved in a liquid?",
+    "choices": [
+      "Air",
+      "Brass",
+      "Carbonated water",
+      "Salt water"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Carbon dioxide gas is dissolved in water.",
+      "This is a gas-in-liquid solution."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Characteristics of Solutions",
+    "difficulty": "hard",
+    "question": "Which property distinguishes a true solution from a suspension?",
+    "choices": [
+      "Particles settle upon standing",
+      "Particles can be removed by simple filtration",
+      "Uniform distribution of particles that do not separate upon standing",
+      "Particles are visible to the naked eye"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Solutions remain uniform.",
+      "The particles do not settle out over time.",
+      "Simple filtration does not separate dissolved particles."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Concentration",
+    "difficulty": "medium",
+    "question": "A solution is described as concentrated when:",
+    "choices": [
+      "It contains little solute",
+      "It contains a large amount of solute relative to solution volume",
+      "The solvent has evaporated completely",
+      "The solution is saturated"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Concentration measures the amount of solute per amount of solution.",
+      "More solute means a more concentrated solution."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Percent Concentration",
+    "difficulty": "medium",
+    "question": "A 50.0% w/v glucose solution contains:",
+    "choices": [
+      "50.0 g glucose per 100 mL solution",
+      "50.0 g glucose per 1 L solution",
+      "50.0 mol glucose per liter",
+      "100 g glucose per 50 mL solution"
+    ],
+    "correct_index": 0,
+    "explanation": [
+      "% w/v means grams of solute per 100 mL of solution.",
+      "50.0% w/v means 50.0 g per 100 mL."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "Molarity is defined as:",
+    "choices": [
+      "Grams of solute per liter",
+      "Moles of solvent per liter",
+      "Moles of solute per liter of solution",
+      "Grams of solute per 100 mL solution"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Molarity (M) = moles of solute divided by liters of solution."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Molarity",
+    "difficulty": "hard",
+    "question": "Which action would double the molarity of a solution without changing the amount of solute?",
+    "choices": [
+      "Double the volume",
+      "Cut the volume in half",
+      "Add more solvent",
+      "Add pure water"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Molarity = moles ÷ volume.",
+      "If moles remain constant and volume is halved, molarity doubles."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Dilution",
+    "difficulty": "hard",
+    "question": "During a dilution process, which quantity remains constant?",
+    "choices": [
+      "Volume",
+      "Molarity",
+      "Number of moles of solute",
+      "Density"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Dilution adds solvent only.",
+      "The amount of solute remains unchanged.",
+      "This is the basis for M₁V₁ = M₂V₂."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Dilution",
+    "difficulty": "hard",
+    "question": "The dilution equation M₁V₁ = M₂V₂ is valid because:",
+    "choices": [
+      "Volume remains constant",
+      "Mass remains constant",
+      "Moles of solute remain constant",
+      "Density remains constant"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Before and after dilution, the amount of solute does not change.",
+      "Only the volume changes."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "ppm and ppb",
+    "difficulty": "hard",
+    "question": "A water sample contains 1 ppm lead. What is the equivalent concentration in ppb?",
+    "choices": [
+      "0.001 ppb",
+      "1 ppb",
+      "100 ppb",
+      "1000 ppb"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "1 ppm = 1000 ppb.",
+      "Parts per billion is 1000 times smaller than parts per million."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Electrolytes",
+    "difficulty": "medium",
+    "question": "An electrolyte is defined as a substance that:",
+    "choices": [
+      "Dissolves only in water",
+      "Forms ions that conduct electricity",
+      "Contains covalent bonds",
+      "Always forms precipitates"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Electrolytes produce ions in solution.",
+      "The ions allow electrical conductivity."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Strong Electrolytes",
+    "difficulty": "medium",
+    "question": "Which substance is most likely to be a strong electrolyte?",
+    "choices": [
+      "Sucrose",
+      "Glucose",
+      "KCl",
+      "Methanol"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "KCl is an ionic compound.",
+      "It dissociates completely into ions in water."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Weak Electrolytes",
+    "difficulty": "hard",
+    "question": "Which compound is a weak electrolyte?",
+    "choices": [
+      "KCl",
+      "NaOH",
+      "NH₃",
+      "Sucrose"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Ammonia only partially ionizes in water.",
+      "Weak electrolytes partially dissociate."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Non-Electrolytes",
+    "difficulty": "medium",
+    "question": "Which substance is classified as a non-electrolyte?",
+    "choices": [
+      "KCl",
+      "HCl",
+      "NaOH",
+      "Glucose"
+    ],
+    "correct_index": 3,
+    "explanation": [
+      "Glucose dissolves but does not form ions.",
+      "Therefore it does not conduct electricity."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Water as a Solvent",
+    "difficulty": "hard",
+    "question": "Why is water effective at dissolving ionic compounds?",
+    "choices": [
+      "Water is nonpolar",
+      "Water reacts chemically with all salts",
+      "Water's polar molecules surround and stabilize ions",
+      "Water breaks covalent bonds"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Water has positive and negative regions.",
+      "These interact strongly with ions.",
+      "The ions become hydrated."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Hydration",
+    "difficulty": "hard",
+    "question": "The term 'hydrated ion' refers to:",
+    "choices": [
+      "An ion bonded covalently to water",
+      "An ion surrounded by water molecules",
+      "An ion containing hydrogen",
+      "An ion that has reacted completely"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Hydration means water molecules surround dissolved ions."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Colligative Properties",
+    "difficulty": "hard",
+    "question": "Which statement best describes a colligative property?",
+    "choices": [
+      "Depends on the identity of the solute",
+      "Depends only on the number of dissolved particles",
+      "Depends only on temperature",
+      "Depends only on solvent polarity"
+    ],
+    "correct_index": 1,
+    "explanation": [
+      "Colligative properties depend on particle count, not chemical identity."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Freezing Point Depression",
+    "difficulty": "hard",
+    "question": "Why is ethylene glycol added to automobile radiators?",
+    "choices": [
+      "It lowers boiling point only",
+      "It raises freezing point",
+      "It lowers freezing point and raises boiling point",
+      "It increases electrical conductivity"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Antifreeze depresses freezing point.",
+      "It also elevates boiling point.",
+      "This protects engines in both cold and hot conditions."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Osmosis and Dialysis",
+    "difficulty": "hard",
+    "question": "In osmosis, solvent molecules move:",
+    "choices": [
+      "From concentrated solution to dilute solution",
+      "From low solvent concentration to high solvent concentration",
+      "From high solvent concentration to low solvent concentration",
+      "Only when pressure is applied"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Solvent moves from the more dilute side.",
+      "It moves toward the more concentrated solution.",
+      "This continues until equilibrium or osmotic pressure is reached."
+    ]
+  },
+  {
+    "chapter": "Chapter 6: Solutions and Colloids",
+    "topic": "Dialysis",
+    "difficulty": "hard",
+    "question": "Why can dialysis remove waste products from blood while retaining proteins?",
+    "choices": [
+      "Proteins are chemically destroyed",
+      "The membrane allows only positively charged species through",
+      "The membrane allows water and small solutes through but blocks large molecules",
+      "Proteins dissolve into the dialysate"
+    ],
+    "correct_index": 2,
+    "explanation": [
+      "Dialysis uses a semipermeable membrane.",
+      "Small waste molecules and water can pass through.",
+      "Large proteins cannot cross the membrane.",
+      "This selectively removes waste while retaining essential biomolecules."
+    ]
   }
 ]
