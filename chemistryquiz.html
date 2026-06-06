@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chemistry Practice</title>
+
+  <script>
+    MathJax = {
+      tex: { packages: {'[+]': ['mhchem']} },
+      loader: { load: ['[tex]/mhchem'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .choice {
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 10px 8px 10px 0;
+      cursor: pointer;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .wrong {
+      color: red;
+      font-weight: bold;
+    }
+
+    .box {
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Chemistry Practice</h1>
+
+  <p id="topic"></p>
+  <h2>Question</h2>
+  <div id="question" class="box"></div>
+
+  <h3>Choose the correct answer:</h3>
+  <div id="choices"></div>
+
+  <button onclick="checkAnswer()">Check Answer</button>
+  <button onclick="nextQuestion()">Next Question</button>
+
+  <p id="result"></p>
+  <div id="explanation"></div>
+
+  <script>
+    let questions = [];
+    let current = 0;
+
+    async function loadQuestions() {
+      const response = await fetch("questions.json");
+      questions = await response.json();
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      const q = questions[current];
+
+      document.getElementById("topic").innerText =
+        `Topic: ${q.topic} | Difficulty: ${q.difficulty}`;
+
+      document.getElementById("question").innerHTML = q.question;
+
+      const choicesDiv = document.getElementById("choices");
+      choicesDiv.innerHTML = "";
+
+      q.choices.forEach((choice, index) => {
+        choicesDiv.innerHTML += `
+          <div class="choice">
+            <label>
+              <input type="radio" name="answer" value="${index}">
+              ${String.fromCharCode(65 + index)}. ${choice}
+            </label>
+          </div>
+        `;
+      });
+
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("explanation").innerHTML = "";
+
+      MathJax.typesetPromise();
+    }
+
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+
+      if (!selected) {
+        alert("Please choose an answer.");
+        return;
+      }
+
+      const q = questions[current];
+      const answer = Number(selected.value);
+
+      if (answer === q.correct_index) {
+        document.getElementById("result").innerHTML =
+          "<span class='correct'>Correct!</span>";
+      } else {
+        document.getElementById("result").innerHTML =
+          "<span class='wrong'>Not correct. Review the steps.</span>";
+      }
+
+      document.getElementById("explanation").innerHTML =
+        "<div class='box'><h3>Step-by-step explanation</h3>" +
+        q.explanation.map(step => `<p>${step}</p>`).join("") +
+        "</div>";
+
+      MathJax.typesetPromise();
+    }
+
+    function nextQuestion() {
+      current = (current + 1) % questions.length;
+      loadQuestion();
+    }
+
+    loadQuestions();
+  </script>
+</body>
+</html>
