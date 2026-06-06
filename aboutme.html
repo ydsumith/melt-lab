@@ -146,6 +146,10 @@
       text-decoration: none;
     }
 
+    .nav-links a.active {
+      color: #14df41;
+    }
+
     /* =========================================================
        HERO SECTION
     ========================================================== */
@@ -346,6 +350,43 @@
       color: #14df41;
     }
 
+    .feature-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .feature-card h3 {
+      color: #14df41;
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(20,223,65,0.65);
+      background: rgba(20,223,65,0.12);
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .button-link:hover {
+      background: rgba(20,223,65,0.24);
+      box-shadow: 0 0 22px rgba(20,223,65,0.28);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     /* =========================================================
        EMPLOYER IMAGE
     ========================================================== */
@@ -397,6 +438,14 @@
       .hero {
         min-height: 280px;
       }
+
+      .feature-card {
+        grid-template-columns: 1fr;
+      }
+
+      .button-link {
+        width: 100%;
+      }
     }
 
   </style>
@@ -420,7 +469,8 @@
         <a href="index.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
-        <a href="aboutme.html">About me</a>
+        <a href="chemistryquiz.html">Chemistry Practice</a>
+        <a href="aboutme.html" class="active">About me</a>
       </div>
 
     </nav>
@@ -502,6 +552,35 @@
           learning while inspiring future generations of engineers and scientists
           to explore the beauty of science, computation, and innovation.
         </p>
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         CHEMISTRY PRACTICE
+    ======================================================== -->
+
+    <section>
+
+      <div class="section-title">
+        <h2>Chemistry Practice</h2>
+      </div>
+
+      <div class="card feature-card">
+
+        <div>
+          <h3>Interactive chemistry quiz</h3>
+
+          <p>
+            A lightweight practice page for chemistry concepts, equation
+            balancing, answer checking, and step-by-step review.
+          </p>
+        </div>
+
+        <a class="button-link" href="chemistryquiz.html">
+          Open Quiz
+        </a>
 
       </div>
 
