@@ -16,11 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
@@ -53,14 +49,8 @@
       background-size: 44px 44px;
     }
 
-    a {
-      color: #64d2ff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: #64d2ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     header {
       position: sticky;
@@ -110,7 +100,7 @@
     }
 
     main {
-      max-width: 920px;
+      max-width: 1200px;
       margin: auto;
       padding: 64px 24px;
     }
@@ -139,7 +129,15 @@
       text-transform: uppercase;
     }
 
-    .quiz-card {
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .quiz-card,
+    .question-list-card {
       background:
         linear-gradient(
           145deg,
@@ -148,12 +146,18 @@
         );
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: 24px;
-      padding: 30px;
+      padding: 24px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.28);
     }
 
-    h2,
-    h3 {
+    .question-list-card {
+      position: sticky;
+      top: 90px;
+      max-height: 82vh;
+      overflow-y: auto;
+    }
+
+    h2, h3 {
       color: #ffffff;
       margin-top: 18px;
       margin-bottom: 12px;
@@ -185,9 +189,7 @@
       background: rgba(20,223,65,0.07);
     }
 
-    input[type="radio"] {
-      margin-right: 8px;
-    }
+    input[type="radio"] { margin-right: 8px; }
 
     select,
     input[type="file"] {
@@ -200,6 +202,7 @@
       color: #ffffff;
       font-family: "Rajdhani", sans-serif;
       font-size: 1rem;
+      width: 100%;
     }
 
     button {
@@ -223,15 +226,8 @@
       box-shadow: 0 0 22px rgba(20,223,65,0.28);
     }
 
-    .correct {
-      color: #14df41;
-      font-weight: bold;
-    }
-
-    .wrong {
-      color: #ff6b6b;
-      font-weight: bold;
-    }
+    .correct { color: #14df41; font-weight: bold; }
+    .wrong { color: #ff6b6b; font-weight: bold; }
 
     .box {
       border: 1px solid rgba(100,210,255,0.16);
@@ -248,6 +244,48 @@
       font-size: 1.15rem;
     }
 
+    .question-list-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin: 8px 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(100,210,255,0.16);
+      background: rgba(255,255,255,0.035);
+      color: #e8eef8;
+      cursor: pointer;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .question-list-item:hover {
+      border-color: rgba(20,223,65,0.45);
+      background: rgba(20,223,65,0.08);
+    }
+
+    .question-list-item.active-question {
+      border-color: #14df41;
+      background: rgba(20,223,65,0.16);
+    }
+
+    .status {
+      display: inline-block;
+      margin-right: 6px;
+      font-weight: 700;
+    }
+
+    .status-unanswered { color: #98a7bb; }
+    .status-correct { color: #14df41; }
+    .status-wrong { color: #ff6b6b; }
+
+    .question-counter {
+      color: #d7f4ff;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
     footer {
       text-align: center;
       padding: 34px 24px;
@@ -256,7 +294,16 @@
       background: rgba(3,9,20,0.55);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .question-list-card {
+        position: static;
+        max-height: 360px;
+      }
+
       .nav-links {
         display: none;
       }
@@ -295,30 +342,40 @@
       <p>Interactive questions with worked explanations</p>
     </div>
 
-    <div class="quiz-card">
+    <div class="layout">
 
-      <label for="jsonFile"><strong>Load questions manually if needed:</strong></label><br>
-      <input type="file" id="jsonFile" accept=".json" onchange="loadLocalJSON(event)">
-      <br>
+      <aside class="question-list-card">
+        <label for="jsonFile"><strong>Load questions manually if needed:</strong></label>
+        <input type="file" id="jsonFile" accept=".json" onchange="loadLocalJSON(event)">
 
-      <label for="chapterSelect"><strong>Select Chapter:</strong></label><br>
-      <select id="chapterSelect" onchange="changeChapter()">
-        <option>Loading...</option>
-      </select>
+        <label for="chapterSelect"><strong>Select Chapter:</strong></label>
+        <select id="chapterSelect" onchange="changeChapter()">
+          <option>Loading...</option>
+        </select>
 
-      <p id="topic"></p>
+        <h3>Question List</h3>
+        <div id="questionList"></div>
+      </aside>
 
-      <h2>Question</h2>
-      <div id="question" class="box"></div>
+      <section class="quiz-card">
+        <p id="topic"></p>
 
-      <h3>Choose the correct answer:</h3>
-      <div id="choices"></div>
+        <div class="question-counter" id="questionCounter"></div>
 
-      <button onclick="checkAnswer()">Check Answer</button>
-      <button onclick="nextQuestion()">Next Question</button>
+        <h2 id="questionHeading">Question</h2>
+        <div id="question" class="box"></div>
 
-      <p id="result"></p>
-      <div id="explanation"></div>
+        <h3>Choose the correct answer:</h3>
+        <div id="choices"></div>
+
+        <button onclick="previousQuestion()">Previous Question</button>
+        <button onclick="checkAnswer()">Check Answer</button>
+        <button onclick="nextQuestion()">Next Question</button>
+
+        <p id="result"></p>
+        <div id="explanation"></div>
+      </section>
+
     </div>
   </main>
 
@@ -333,6 +390,7 @@
     let questions = [];
     let current = 0;
     let selectedChapter = "All Chapters";
+    let answerStatus = {};
 
     async function loadQuestions() {
       try {
@@ -343,9 +401,7 @@
         }
 
         allQuestions = await response.json();
-        setupChapterDropdown();
-        filterQuestions();
-        loadQuestion();
+        initializeQuiz();
 
       } catch (error) {
         console.error(error);
@@ -360,10 +416,7 @@
 
     function loadLocalJSON(event) {
       const file = event.target.files[0];
-
-      if (!file) {
-        return;
-      }
+      if (!file) return;
 
       const reader = new FileReader();
 
@@ -372,9 +425,8 @@
           allQuestions = JSON.parse(e.target.result);
           selectedChapter = "All Chapters";
           current = 0;
-          setupChapterDropdown();
-          filterQuestions();
-          loadQuestion();
+          answerStatus = {};
+          initializeQuiz();
         } catch (err) {
           alert("Invalid JSON file. Please check your questions.json formatting.");
           console.error(err);
@@ -382,6 +434,14 @@
       };
 
       reader.readAsText(file);
+    }
+
+    function initializeQuiz() {
+      setupChapterDropdown();
+      filterQuestions();
+      current = 0;
+      loadQuestion();
+      renderQuestionList();
     }
 
     function setupChapterDropdown() {
@@ -408,6 +468,7 @@
       current = 0;
       filterQuestions();
       loadQuestion();
+      renderQuestionList();
     }
 
     function filterQuestions() {
@@ -420,9 +481,61 @@
       }
     }
 
+    function getQuestionGlobalNumber(q) {
+      return allQuestions.indexOf(q) + 1;
+    }
+
+    function getQuestionStatusIcon(globalNumber) {
+      if (answerStatus[globalNumber] === "correct") {
+        return "<span class='status status-correct'>✓</span>";
+      }
+
+      if (answerStatus[globalNumber] === "wrong") {
+        return "<span class='status status-wrong'>✗</span>";
+      }
+
+      return "<span class='status status-unanswered'>○</span>";
+    }
+
+    function renderQuestionList() {
+      const questionList = document.getElementById("questionList");
+      questionList.innerHTML = "";
+
+      if (!questions.length) {
+        questionList.innerHTML = "<p>No questions found.</p>";
+        return;
+      }
+
+      questions.forEach((q, index) => {
+        const globalNumber = getQuestionGlobalNumber(q);
+        const shortQuestion = q.question
+          .replace(/\\\(.*?\\\)/g, "[formula]")
+          .replace(/<[^>]*>/g, "")
+          .slice(0, 90);
+
+        const activeClass = index === current ? "active-question" : "";
+
+        questionList.innerHTML += `
+          <button class="question-list-item ${activeClass}" onclick="goToQuestion(${index})">
+            ${getQuestionStatusIcon(globalNumber)}
+            <strong>Q${globalNumber}.</strong> ${shortQuestion}${q.question.length > 90 ? "..." : ""}
+          </button>
+        `;
+      });
+    }
+
+    function goToQuestion(index) {
+      current = index;
+      loadQuestion();
+      renderQuestionList();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     function loadQuestion() {
       if (!questions.length) {
         document.getElementById("topic").innerText = "No questions found.";
+        document.getElementById("questionCounter").innerText = "";
+        document.getElementById("questionHeading").innerText = "Question";
         document.getElementById("question").innerHTML = "";
         document.getElementById("choices").innerHTML = "";
         document.getElementById("result").innerHTML = "";
@@ -431,9 +544,16 @@
       }
 
       const q = questions[current];
+      const globalNumber = getQuestionGlobalNumber(q);
 
       document.getElementById("topic").innerText =
         `${q.chapter || "Uncategorized"} | Topic: ${q.topic} | Difficulty: ${q.difficulty}`;
+
+      document.getElementById("questionCounter").innerText =
+        `Question ${current + 1} of ${questions.length} in this selection`;
+
+      document.getElementById("questionHeading").innerText =
+        `Question ${globalNumber}`;
 
       document.getElementById("question").innerHTML = q.question;
 
@@ -460,9 +580,7 @@
     }
 
     function checkAnswer() {
-      if (!questions.length) {
-        return;
-      }
+      if (!questions.length) return;
 
       const selected = document.querySelector('input[name="answer"]:checked');
 
@@ -472,12 +590,15 @@
       }
 
       const q = questions[current];
+      const globalNumber = getQuestionGlobalNumber(q);
       const answer = Number(selected.value);
 
       if (answer === q.correct_index) {
+        answerStatus[globalNumber] = "correct";
         document.getElementById("result").innerHTML =
           "<span class='correct'>Correct!</span>";
       } else {
+        answerStatus[globalNumber] = "wrong";
         document.getElementById("result").innerHTML =
           "<span class='wrong'>Not correct. Review the steps.</span>";
       }
@@ -487,18 +608,27 @@
         q.explanation.map(step => `<p>${step}</p>`).join("") +
         "</div>";
 
+      renderQuestionList();
+
       if (window.MathJax) {
         MathJax.typesetPromise();
       }
     }
 
     function nextQuestion() {
-      if (!questions.length) {
-        return;
-      }
+      if (!questions.length) return;
 
       current = (current + 1) % questions.length;
       loadQuestion();
+      renderQuestionList();
+    }
+
+    function previousQuestion() {
+      if (!questions.length) return;
+
+      current = (current - 1 + questions.length) % questions.length;
+      loadQuestion();
+      renderQuestionList();
     }
 
     loadQuestions();
