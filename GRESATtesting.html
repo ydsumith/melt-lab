@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRE + SAT Vocabulary Quiz</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --good: #15803d;
+      --bad: #b91c1c;
+      --border: #d1d5db;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 22px;
+    }
+    header h1 { margin: 0 0 6px; font-size: 24px; }
+    header p { margin: 0; color: var(--muted); }
+    main {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      margin-bottom: 18px;
+    }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    label { font-weight: 600; }
+    input[type="file"], select, button {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 15px;
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button.secondary { background: #374151; }
+    button.ghost { background: #eef2ff; color: #1e40af; }
+    button:disabled { background: #9ca3af; cursor: not-allowed; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .stat {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .stat strong { display: block; font-size: 22px; }
+    #word {
+      font-size: 38px;
+      font-weight: 800;
+      margin: 8px 0 4px;
+    }
+    #meta { color: var(--muted); margin-bottom: 16px; }
+    .choices { display: grid; gap: 10px; }
+    .choice {
+      width: 100%;
+      text-align: left;
+      background: #f9fafb;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .choice:hover { background: #eef2ff; }
+    .choice.correct { border-color: var(--good); background: #dcfce7; }
+    .choice.wrong { border-color: var(--bad); background: #fee2e2; }
+    #feedback {
+      margin-top: 16px;
+      padding: 15px;
+      border-radius: 12px;
+      display: none;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+    }
+    #feedback.correct { border-color: var(--good); background: #f0fdf4; }
+    #feedback.wrong { border-color: var(--bad); background: #fef2f2; }
+    .feedback-title { font-weight: 800; margin-bottom: 8px; }
+    .muted { color: var(--muted); }
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      font-family: Consolas, monospace;
+      font-size: 13px;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GRE + SAT Vocabulary Quiz</h1>
+    <p>Load a JSON word bank, answer multiple-choice questions, and review detailed feedback with sentence usage.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="row">
+        <label for="jsonFile">Upload vocabulary JSON:</label>
+        <input type="file" id="jsonFile" accept=".json,application/json" />
+        <button id="loadSample" class="ghost">Use sample words</button>
+        <button id="downloadTemplate" class="secondary">Download JSON template</button>
+      </div>
+      <p class="muted">Your JSON should be an array of objects: word, meaning, detailedMeaning, sentence, choices.</p>
+      <div class="row">
+        <label for="mode">Quiz mode:</label>
+        <select id="mode">
+          <option value="random">Random</option>
+          <option value="sequential">Sequential</option>
+          <option value="missed">Missed words only</option>
+        </select>
+        <button id="startBtn" disabled>Start / Restart</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Total Words</span><strong id="totalWords">0</strong></div>
+        <div class="stat"><span>Answered</span><strong id="answered">0</strong></div>
+        <div class="stat"><span>Correct</span><strong id="correct">0</strong></div>
+        <div class="stat"><span>Accuracy</span><strong id="accuracy">0%</strong></div>
+      </div>
+    </section>
+
+    <section class="card" id="quizCard">
+      <div id="word">Load a JSON file</div>
+      <div id="meta">The quiz will appear here.</div>
+      <div class="choices" id="choices"></div>
+      <div id="feedback"></div>
+      <div class="row" style="margin-top:16px;">
+        <button id="nextBtn" disabled>Next Question</button>
+        <button id="showAnswerBtn" class="secondary" disabled>Show Answer</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>JSON format</h2>
+      <textarea readonly id="schemaBox"></textarea>
+    </section>
+  </main>
+
+  <script>
+    let words = [];
+    let current = null;
+    let currentIndex = 0;
+    let answeredCount = 0;
+    let correctCount = 0;
+    let locked = false;
+    const missedWords = new Set();
+
+    const sampleWords = [
+      {
+        "word": "abate",
+        "meaning": "to lessen or become less intense",
+        "detailedMeaning": "Abate means to decrease in amount, force, intensity, or severity. It is often used for pain, storms, anger, noise, or pressure.",
+        "sentence": "The heavy rain finally began to abate after midnight.",
+        "choices": ["to lessen or become less intense", "to praise publicly", "to hide the truth", "to make something sacred"]
+      },
+      {
+        "word": "cogent",
+        "meaning": "clear, logical, and convincing",
+        "detailedMeaning": "Cogent describes an argument, explanation, or reason that is well organized, strongly supported, and persuasive.",
+        "sentence": "Her cogent explanation convinced the committee to approve the proposal.",
+        "choices": ["clear, logical, and convincing", "careless and impulsive", "secret and mysterious", "extremely wealthy"]
+      },
+      {
+        "word": "ephemeral",
+        "meaning": "lasting for a very short time",
+        "detailedMeaning": "Ephemeral refers to something brief, temporary, or short-lived, such as fame, beauty, trends, feelings, or moments.",
+        "sentence": "The popularity of many internet trends is ephemeral.",
+        "choices": ["lasting for a very short time", "deeply loyal", "open to many interpretations", "impossible to avoid"]
+      },
+      {
+        "word": "mitigate",
+        "meaning": "to make less severe or harmful",
+        "detailedMeaning": "Mitigate means to reduce the seriousness, pain, danger, or negative effect of something.",
+        "sentence": "The city planted trees to mitigate the effects of extreme heat.",
+        "choices": ["to make less severe or harmful", "to copy exactly", "to speak with anger", "to reject completely"]
+      },
+      {
+        "word": "ubiquitous",
+        "meaning": "present or found everywhere",
+        "detailedMeaning": "Ubiquitous describes something so common or widespread that it seems to be everywhere.",
+        "sentence": "Smartphones have become ubiquitous in modern life.",
+        "choices": ["present or found everywhere", "very old-fashioned", "difficult to understand", "friendly and cheerful"]
+      }
+    ];
+
+    const schema = `[
+  {
+    "word": "abate",
+    "meaning": "to lessen or become less intense",
+    "detailedMeaning": "Abate means to decrease in amount, force, intensity, or severity.",
+    "sentence": "The heavy rain finally began to abate after midnight.",
+    "choices": [
+      "to lessen or become less intense",
+      "to praise publicly",
+      "to hide the truth",
+      "to make something sacred"
+    ]
+  }
+]`;
+    document.getElementById('schemaBox').value = schema;
+
+    function shuffle(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function normalizeWordBank(data) {
+      if (!Array.isArray(data)) throw new Error('JSON must be an array of word objects.');
+      data.forEach((item, i) => {
+        const required = ['word', 'meaning', 'detailedMeaning', 'sentence', 'choices'];
+        required.forEach(k => {
+          if (!(k in item)) throw new Error(`Entry ${i + 1} is missing: ${k}`);
+        });
+        if (!Array.isArray(item.choices) || item.choices.length < 4) {
+          throw new Error(`Entry ${i + 1} must have at least 4 choices.`);
+        }
+        if (!item.choices.includes(item.meaning)) {
+          item.choices[0] = item.meaning;
+        }
+      });
+      return data;
+    }
+
+    function updateStats() {
+      document.getElementById('totalWords').textContent = words.length;
+      document.getElementById('answered').textContent = answeredCount;
+      document.getElementById('correct').textContent = correctCount;
+      document.getElementById('accuracy').textContent = answeredCount ? Math.round(correctCount / answeredCount * 100) + '%' : '0%';
+    }
+
+    function startQuiz() {
+      answeredCount = 0;
+      correctCount = 0;
+      currentIndex = 0;
+      missedWords.clear();
+      updateStats();
+      nextQuestion();
+    }
+
+    function getPool() {
+      const mode = document.getElementById('mode').value;
+      if (mode === 'missed') {
+        const pool = words.filter(w => missedWords.has(w.word));
+        return pool.length ? pool : words;
+      }
+      return words;
+    }
+
+    function nextQuestion() {
+      const pool = getPool();
+      if (!pool.length) return;
+      locked = false;
+      document.getElementById('nextBtn').disabled = true;
+      document.getElementById('showAnswerBtn').disabled = false;
+      document.getElementById('feedback').style.display = 'none';
+      document.getElementById('feedback').className = '';
+      const mode = document.getElementById('mode').value;
+      if (mode === 'sequential') {
+        current = pool[currentIndex % pool.length];
+        currentIndex++;
+      } else {
+        current = pool[Math.floor(Math.random() * pool.length)];
+      }
+      document.getElementById('word').textContent = current.word;
+      document.getElementById('meta').textContent = 'Choose the best meaning.';
+      const choicesBox = document.getElementById('choices');
+      choicesBox.innerHTML = '';
+      shuffle(current.choices).slice(0, 4).forEach(choice => {
+        const btn = document.createElement('button');
+        btn.className = 'choice';
+        btn.textContent = choice;
+        btn.onclick = () => checkAnswer(btn, choice);
+        choicesBox.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(button, choice) {
+      if (locked) return;
+      locked = true;
+      answeredCount++;
+      const isCorrect = choice === current.meaning;
+      if (isCorrect) {
+        correctCount++;
+        missedWords.delete(current.word);
+      } else {
+        missedWords.add(current.word);
+      }
+      document.querySelectorAll('.choice').forEach(btn => {
+        if (btn.textContent === current.meaning) btn.classList.add('correct');
+        if (btn === button && !isCorrect) btn.classList.add('wrong');
+      });
+      showFeedback(isCorrect);
+      document.getElementById('nextBtn').disabled = false;
+      document.getElementById('showAnswerBtn').disabled = true;
+      updateStats();
+    }
+
+    function showFeedback(isCorrectOverride = null) {
+      if (!current) return;
+      const fb = document.getElementById('feedback');
+      const isCorrect = isCorrectOverride === true;
+      fb.className = isCorrect ? 'correct' : 'wrong';
+      fb.style.display = 'block';
+      fb.innerHTML = `
+        <div class="feedback-title">${isCorrect ? 'Correct.' : 'Review this word.'}</div>
+        <p><strong>${current.word}</strong>: ${current.meaning}</p>
+        <p><strong>Detailed meaning:</strong> ${current.detailedMeaning}</p>
+        <p><strong>Sentence:</strong> ${current.sentence}</p>
+      `;
+      document.querySelectorAll('.choice').forEach(btn => {
+        if (btn.textContent === current.meaning) btn.classList.add('correct');
+      });
+      locked = true;
+      document.getElementById('nextBtn').disabled = false;
+      document.getElementById('showAnswerBtn').disabled = true;
+    }
+
+    document.getElementById('jsonFile').addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      try {
+        const text = await file.text();
+        words = normalizeWordBank(JSON.parse(text));
+        document.getElementById('startBtn').disabled = false;
+        document.getElementById('word').textContent = 'JSON loaded';
+        document.getElementById('meta').textContent = `${words.length} words loaded. Click Start / Restart.`;
+        updateStats();
+      } catch (err) {
+        alert('Could not load JSON: ' + err.message);
+      }
+    });
+
+    document.getElementById('loadSample').onclick = () => {
+      words = normalizeWordBank(sampleWords);
+      document.getElementById('startBtn').disabled = false;
+      document.getElementById('word').textContent = 'Sample loaded';
+      document.getElementById('meta').textContent = `${words.length} sample words loaded. Click Start / Restart.`;
+      updateStats();
+    };
+
+    document.getElementById('downloadTemplate').onclick = () => {
+      const blob = new Blob([schema], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'vocab_template.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+
+    document.getElementById('startBtn').onclick = startQuiz;
+    document.getElementById('nextBtn').onclick = nextQuestion;
+    document.getElementById('showAnswerBtn').onclick = () => showFeedback(false);
+    updateStats();
+  </script>
+</body>
+</html>
