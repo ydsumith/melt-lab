@@ -308,7 +308,7 @@
   <section class="page-hero">
     <div class="page-hero-inner">
       <h1>GRE + SAT Vocabulary Quiz</h1>
-      <p>Multiple-choice vocabulary practice with feedback and sentence usage.</p>
+      <p>Multiple-choice vocabulary practice with pronunciation, detailed feedback, and sentence usage.</p>
     </div>
   </section>
 
@@ -342,7 +342,7 @@
 
     <section class="card" id="quizCard">
       <div id="word">Loading database...</div>
-      <div id="meta">Trying to load database/gresatwords.json.</div>
+      <div id="meta">Trying to load database/gresatwords.json. Feedback will include pronunciation, meaning, and sentence usage.</div>
       <div class="choices" id="choices"></div>
       <div id="feedback"></div>
 
@@ -382,6 +382,42 @@
         .replaceAll("'", "&#039;");
     }
 
+
+    function cleanMeaningText(value) {
+      return String(value ?? "")
+        .replace(/\s*This card is designed for recognition practice in reading-comprehension vocabulary\.?/gi, "")
+        .replace(/\bTo to\b/g, "To")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function cleanSentenceText(value, word, meaning) {
+      let text = String(value ?? "").trim();
+
+      if (!text) {
+        return `The word "${word}" means ${meaning}.`;
+      }
+
+      text = text
+        .replace(/\bTo to\b/g, "To")
+        .replace(/^In the passage,\s*'[^']+'\s*was used to describe something that means\s*/i, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      if (!/[.!?]$/.test(text)) text += ".";
+      return text;
+    }
+
+    function simplePronunciationFallback(word) {
+      const cleaned = String(word ?? "")
+        .replace(/\s*[—-]\s*context\s*\d+$/i, "")
+        .replace(/\s+(quality|concept|based)$/i, "")
+        .trim();
+
+      return cleaned ? cleaned : "Not available";
+    }
+
+
     function normalizeWordBank(data) {
       if (!Array.isArray(data)) {
         throw new Error("JSON must be an array of word objects.");
@@ -390,6 +426,7 @@
       return data.map((raw, i) => {
         const item = {
           word: raw.word ?? raw.term ?? raw.vocab ?? raw.name,
+          pronunciation: raw.pronunciation ?? raw.pronounce ?? raw.ipa ?? raw.phonetic ?? "",
           meaning: raw.meaning ?? raw.definition ?? raw.correctAnswer ?? raw.answer,
           detailedMeaning: raw.detailedMeaning ?? raw.detail ?? raw.explanation ?? raw.meaning ?? raw.definition,
           sentence: raw.sentence ?? raw.example ?? raw.exampleSentence ?? "",
@@ -431,12 +468,19 @@
           throw new Error(`Entry ${i + 1} must have at least 4 choices after normalization.`);
         }
 
+        const cleanWord = String(item.word);
+        const cleanDef = cleanMeaningText(item.meaning);
+        const cleanDetail = cleanMeaningText(item.detailedMeaning || item.meaning);
+        const cleanPronunciation = String(item.pronunciation || simplePronunciationFallback(cleanWord));
+        const cleanSentence = cleanSentenceText(item.sentence, cleanWord, cleanDef);
+
         return {
-          word: String(item.word),
-          meaning: String(item.meaning),
-          detailedMeaning: String(item.detailedMeaning || item.meaning),
-          sentence: String(item.sentence || `The word "${item.word}" means ${item.meaning}.`),
-          choices: item.choices.slice(0, 8)
+          word: cleanWord,
+          pronunciation: cleanPronunciation,
+          meaning: cleanDef,
+          detailedMeaning: cleanDetail,
+          sentence: cleanSentence,
+          choices: item.choices.map(cleanMeaningText).slice(0, 8)
         };
       });
     }
@@ -543,6 +587,7 @@
       fb.innerHTML = `
         <div class="feedback-title">${isCorrect ? "Correct." : "Review this word."}</div>
         <p><strong>${escapeHTML(current.word)}</strong>: ${escapeHTML(current.meaning)}</p>
+        <p><strong>Pronunciation:</strong> ${escapeHTML(current.pronunciation || "Not available")}</p>
         <p><strong>Detailed meaning:</strong> ${escapeHTML(current.detailedMeaning)}</p>
         <p><strong>Sentence:</strong> ${escapeHTML(current.sentence)}</p>
       `;
