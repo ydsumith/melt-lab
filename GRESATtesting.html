@@ -342,6 +342,7 @@
 
     <section class="card" id="quizCard">
       <div id="word">Loading database...</div>
+      <div id="meta">Trying to load database/gresatwords.json.</div>
       <div class="choices" id="choices"></div>
       <div id="feedback"></div>
 
@@ -361,7 +362,14 @@
     let locked = false;
 
     const missedWords = new Set();
-    const DATABASE_URL = "database/gresatwords.json";
+    const DATABASE_URLS = [
+      "database/gresatwords.json",
+      "./database/gresatwords.json",
+      "database/gresatwords_upgraded.json",
+      "./database/gresatwords_upgraded.json",
+      "gresatwords.json",
+      "./gresatwords.json"
+    ];
 
     function shuffle(array) {
       const copy = [...array];
@@ -380,7 +388,6 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
     }
-
 
     function cleanMeaningText(value) {
       return String(value ?? "")
@@ -413,9 +420,8 @@
         .replace(/\s+(quality|concept|based)$/i, "")
         .trim();
 
-      return cleaned ? cleaned : "Not available";
+      return cleaned || "Not available";
     }
-
 
     function normalizeWordBank(data) {
       if (!Array.isArray(data)) {
@@ -601,29 +607,41 @@
     }
 
     async function loadDatabaseWords() {
+      let lastError = "";
+
       try {
         document.getElementById("word").textContent = "Loading database...";
-        document.getElementById("meta").textContent = `Trying to load ${DATABASE_URL}.`;
+        document.getElementById("meta").textContent = "Trying to load vocabulary JSON from the database folder.";
 
-        const response = await fetch(DATABASE_URL, { cache: "no-store" });
+        for (const url of DATABASE_URLS) {
+          try {
+            const response = await fetch(url, { cache: "no-store" });
 
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+            if (!response.ok) {
+              lastError = `${url}: HTTP ${response.status}`;
+              continue;
+            }
+
+            const data = await response.json();
+            words = normalizeWordBank(data);
+
+            document.getElementById("startBtn").disabled = false;
+            document.getElementById("word").textContent = "Database loaded";
+            document.getElementById("meta").textContent = `${words.length} words loaded from ${url}. Click Start / Restart.`;
+            updateStats();
+            return;
+          } catch (err) {
+            lastError = `${url}: ${err.message}`;
+          }
         }
 
-        const data = await response.json();
-        words = normalizeWordBank(data);
-
-        document.getElementById("startBtn").disabled = false;
-        document.getElementById("word").textContent = "Database loaded";
-        document.getElementById("meta").textContent = `${words.length} words loaded. Click Start / Restart.`;
-        updateStats();
+        throw new Error(lastError || "No valid JSON file found.");
       } catch (err) {
         words = [];
         document.getElementById("startBtn").disabled = true;
         document.getElementById("word").textContent = "Database not loaded";
         document.getElementById("meta").textContent =
-          `Could not load ${DATABASE_URL}. On GitHub Pages, confirm the file path is exactly database/gresatwords.json. Error: ${err.message}`;
+          "Could not load the JSON automatically. On GitHub Pages, confirm that the file is exactly here: database/gresatwords.json. File names are case-sensitive. If you opened this HTML directly from your computer, browser security may block fetch(); use a local server or the manual upload button. Last error: " + err.message;
         updateStats();
       }
     }
