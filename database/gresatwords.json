@@ -1,0 +1,26 @@
+[
+  {
+    "word": "abate",
+    "meaning": "to lessen or become less intense",
+    "detailedMeaning": "Abate means to decrease in amount, force, intensity, or severity. It is often used for pain, storms, anger, noise, or pressure.",
+    "sentence": "The heavy rain finally began to abate after midnight.",
+    "choices": [
+      "to lessen or become less intense",
+      "to praise publicly",
+      "to hide the truth",
+      "to make something sacred"
+    ]
+  },
+  {
+    "word": "cogent",
+    "meaning": "clear, logical, and convincing",
+    "detailedMeaning": "Cogent describes an argument, explanation, or reason that is well organized, strongly supported, and persuasive.",
+    "sentence": "Her cogent explanation convinced the committee to approve the proposal.",
+    "choices": [
+      "clear, logical, and convincing",
+      "careless and impulsive",
+      "secret and mysterious",
+      "extremely wealthy"
+    ]
+  }
+]
