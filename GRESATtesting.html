@@ -122,18 +122,19 @@
 <body>
   <header>
     <h1>GRE + SAT Vocabulary Quiz</h1>
-    <p>Load a JSON word bank, answer multiple-choice questions, and review detailed feedback with sentence usage.</p>
+    <p>Automatically loads <code>database/gresatwords.json</code>, then lets you answer multiple-choice questions with detailed feedback and sentence usage.</p>
   </header>
 
   <main>
     <section class="card">
       <div class="row">
-        <label for="jsonFile">Upload vocabulary JSON:</label>
+        <label for="jsonFile">Optional manual upload:</label>
         <input type="file" id="jsonFile" accept=".json,application/json" />
+        <button id="loadDatabase" class="ghost">Reload database/gresatwords.json</button>
         <button id="loadSample" class="ghost">Use sample words</button>
         <button id="downloadTemplate" class="secondary">Download JSON template</button>
       </div>
-      <p class="muted">Your JSON should be an array of objects: word, meaning, detailedMeaning, sentence, choices.</p>
+      <p class="muted">Default path: <strong>database/gresatwords.json</strong>. This works when the HTML is served from a website or local server. Manual upload still works if you open the HTML directly from your computer.</p>
       <div class="row">
         <label for="mode">Quiz mode:</label>
         <select id="mode">
@@ -152,8 +153,8 @@
     </section>
 
     <section class="card" id="quizCard">
-      <div id="word">Load a JSON file</div>
-      <div id="meta">The quiz will appear here.</div>
+      <div id="word">Loading database...</div>
+      <div id="meta">Trying to load database/gresatwords.json.</div>
       <div class="choices" id="choices"></div>
       <div id="feedback"></div>
       <div class="row" style="margin-top:16px;">
@@ -176,6 +177,7 @@
     let correctCount = 0;
     let locked = false;
     const missedWords = new Set();
+    const DATABASE_URL = 'database/gresatwords.json';
 
     const sampleWords = [
       {
@@ -351,6 +353,27 @@
       document.getElementById('showAnswerBtn').disabled = true;
     }
 
+
+    async function loadDatabaseWords() {
+      try {
+        document.getElementById('word').textContent = 'Loading database...';
+        document.getElementById('meta').textContent = `Trying to load ${DATABASE_URL}.`;
+        const response = await fetch(DATABASE_URL, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status} while loading ${DATABASE_URL}`);
+        const data = await response.json();
+        words = normalizeWordBank(data);
+        document.getElementById('startBtn').disabled = false;
+        document.getElementById('word').textContent = 'Database loaded';
+        document.getElementById('meta').textContent = `${words.length} words loaded from ${DATABASE_URL}. Click Start / Restart.`;
+        updateStats();
+      } catch (err) {
+        document.getElementById('startBtn').disabled = true;
+        document.getElementById('word').textContent = 'Database not loaded';
+        document.getElementById('meta').textContent = `Could not load ${DATABASE_URL}. If you opened this file directly, use a local server or upload the JSON manually. Error: ${err.message}`;
+        updateStats();
+      }
+    }
+
     document.getElementById('jsonFile').addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (!file) return;
@@ -365,6 +388,8 @@
         alert('Could not load JSON: ' + err.message);
       }
     });
+
+    document.getElementById('loadDatabase').onclick = loadDatabaseWords;
 
     document.getElementById('loadSample').onclick = () => {
       words = normalizeWordBank(sampleWords);
@@ -390,6 +415,7 @@
     document.getElementById('nextBtn').onclick = nextQuestion;
     document.getElementById('showAnswerBtn').onclick = () => showFeedback(false);
     updateStats();
+    loadDatabaseWords();
   </script>
 </body>
 </html>
