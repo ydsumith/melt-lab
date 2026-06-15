@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,11 +127,11 @@
       letter-spacing: 0.08em;
       color: #14df41;
       line-height: 0.95;
-		text-shadow:
-		  0 0 8px rgba(20, 223, 65, 0.95),
-		  0 0 18px rgba(20, 223, 65, 0.85),
-		  0 0 40px rgba(20, 223, 65, 0.70),
-		  0 0 80px rgba(20, 223, 65, 0.50);
+      text-shadow:
+        0 0 8px rgba(20, 223, 65, 0.95),
+        0 0 18px rgba(20, 223, 65, 0.85),
+        0 0 40px rgba(20, 223, 65, 0.70),
+        0 0 80px rgba(20, 223, 65, 0.50);
       animation: meltThrob 2.2s ease-in-out infinite;
     }
 
@@ -149,19 +150,19 @@
       0%, 100% {
         transform: scale(1);
         text-shadow:
-		  0 0 8px rgba(20, 223, 65, 0.95),
-		  0 0 18px rgba(20, 223, 65, 0.85),
-		  0 0 40px rgba(20, 223, 65, 0.70),
-		  0 0 80px rgba(20, 223, 65, 0.50);
+          0 0 8px rgba(20, 223, 65, 0.95),
+          0 0 18px rgba(20, 223, 65, 0.85),
+          0 0 40px rgba(20, 223, 65, 0.70),
+          0 0 80px rgba(20, 223, 65, 0.50);
       }
 
       50% {
         transform: scale(1.045);
         text-shadow:
-		  0 0 8px rgba(20, 223, 65, 0.95),
-		  0 0 18px rgba(20, 223, 65, 0.85),
-		  0 0 40px rgba(20, 223, 65, 0.70),
-		  0 0 80px rgba(20, 223, 65, 0.50);
+          0 0 8px rgba(20, 223, 65, 0.95),
+          0 0 18px rgba(20, 223, 65, 0.85),
+          0 0 40px rgba(20, 223, 65, 0.70),
+          0 0 80px rgba(20, 223, 65, 0.50);
       }
     }
 
@@ -233,27 +234,26 @@
         linear-gradient(145deg, rgba(100,210,255,0.10), rgba(255,255,255,0.045));
     }
 
-
     .grant-list li {
       margin-bottom: 14px;
     }
 
     .funding-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-  align-items: center;
-}
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
 
-.funding-logos img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: contain;
-  background: rgba(255,255,255,0.96);
-  border-radius: 18px;
-  padding: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+    .funding-logos img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      padding: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
     .funding-logos img:hover {
       transform: translateY(-5px) scale(1.03);
@@ -279,39 +279,40 @@
       color: #98a7bb;
     }
 
-   .nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #64d2ff;
-  font-size: 1.6rem;
-  cursor: pointer;
-  padding: 4px 8px;
-}
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #64d2ff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
 
-@media (max-width: 850px) {
-  .nav-toggle {
-    display: block;
-  }
+    @media (max-width: 850px) {
+      .nav-toggle {
+        display: block;
+      }
 
-  nav {
-    flex-wrap: wrap;
-  }
+      nav {
+        flex-wrap: wrap;
+      }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 12px;
-  }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+      }
 
-  .nav-links.open {
-    display: flex;
-  }
+      .nav-links.open {
+        display: flex;
+      }
 
-  .nav-links a {
-    margin: 8px 0;
-  }
+      .nav-links a {
+        margin: 8px 0;
+      }
+
       .two-column {
         grid-template-columns: 1fr;
       }
@@ -333,130 +334,125 @@
         max-width: 92%;
       }
     }
-	
-	.morse-box {
-  margin-top: 28px;
-  padding: 24px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(100,210,255,0.18);
-}
 
-.equation {
-  overflow-x: auto;
-  margin: 22px 0;
-  padding: 18px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(100,210,255,0.16);
+    .morse-box {
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(100,210,255,0.18);
+    }
 
-  font-size: 1.6rem;   /* increase equation size */
-  font-weight: 700;    /* bold */
-}
+    .equation {
+      overflow-x: auto;
+      margin: 22px 0;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(100,210,255,0.16);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
 
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 24px;
+      border-radius: 18px;
+      border: 1px solid rgba(100, 210, 255, 0.22);
+      box-shadow: 0 0 24px rgba(20, 223, 65, 0.10);
+    }
 
-.table-wrap {
-  overflow-x: auto;
-  margin-top: 24px;
-  border-radius: 18px;
-  border: 1px solid rgba(100, 210, 255, 0.22);
-  box-shadow: 0 0 24px rgba(20, 223, 65, 0.10);
-}
+    .morse-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(5, 11, 20, 0.92);
+      color: #e8eef8;
+      overflow: hidden;
+    }
 
-.morse-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(5, 11, 20, 0.92);
-  color: #e8eef8;
-  overflow: hidden;
-}
+    .morse-table th,
+    .morse-table td {
+      border: 1px solid rgba(100, 210, 255, 0.18);
+      padding: 16px 18px;
+      text-align: center;
+      font-size: 1rem;
+    }
 
-.morse-table th,
-.morse-table td {
-  border: 1px solid rgba(100, 210, 255, 0.18);
-  padding: 16px 18px;
-  text-align: center;
-  font-size: 1rem;
-}
+    .morse-table th {
+      font-weight: 800;
+      color: #14df41;
+      background: rgba(20, 223, 65, 0.10);
+      text-shadow: 0 0 10px rgba(20, 223, 65, 0.45);
+    }
 
-.morse-table th {
-  font-weight: 800;
-  color: #14df41;
-  background: rgba(20, 223, 65, 0.10);
-  text-shadow: 0 0 10px rgba(20, 223, 65, 0.45);
-}
+    .morse-table td {
+      color: #d7f4ff;
+      background: rgba(255, 255, 255, 0.035);
+    }
 
-.morse-table td {
-  color: #d7f4ff;
-  background: rgba(255, 255, 255, 0.035);
-}
+    .morse-table tbody tr:hover td {
+      background: rgba(20, 223, 65, 0.08);
+    }
 
-.morse-table tbody tr:hover td {
-  background: rgba(20, 223, 65, 0.08);
-}
+    .image-feature-section {
+      margin-bottom: 52px;
+    }
 
-.image-feature-section {
-  margin-bottom: 52px;
-}
+    .image-feature-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      border: 1px solid rgba(100, 210, 255, 0.18);
+      box-shadow: 0 0 35px rgba(20, 223, 65, 0.12);
+    }
 
-.image-feature-section img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 24px;
-  border: 1px solid rgba(100, 210, 255, 0.18);
-  box-shadow: 0 0 35px rgba(20, 223, 65, 0.12);
-}
+    .vision-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
 
-.vision-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 24px;
-  align-items: stretch;
-}
+    .vision-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+      border: 1px solid rgba(100, 210, 255, 0.18);
+      box-shadow: 0 0 35px rgba(20, 223, 65, 0.12);
+    }
 
-.vision-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 24px;
-  border: 1px solid rgba(100, 210, 255, 0.18);
-  box-shadow: 0 0 35px rgba(20, 223, 65, 0.12);
-}
+    @media (max-width: 950px) {
+      .vision-layout {
+        grid-template-columns: 1fr;
+      }
 
-@media (max-width: 950px) {
-  .vision-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .vision-image img {
-    height: auto;
-  }
-}
+      .vision-image img {
+        height: auto;
+      }
+    }
   </style>
-  
-  
+
   <script>
-  window.MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-    svg: { fontCache: 'global' }
-  };
-</script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
 
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
 </head>
-
-
 
 <body>
 
   <header>
     <nav>
       <div class="logo"><span>MELT</span> Laboratory</div>
-		<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-		
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+
       <div class="nav-links">
         <a href="index.html">Research</a>
         <a href="publications.html">Publications</a>
@@ -473,15 +469,11 @@
 
   <main>
 
-
-
-	<section class="image-feature-section">
-  <img src="images/main_banner2.png" alt="MELT Laboratory research overview banner">
-</section>
-
+    <section class="image-feature-section">
+      <img src="images/main_banner2.png" alt="MELT Laboratory research overview banner">
+    </section>
 
     <section>
-	
       <div class="section-title">
         <h2>Research Vision</h2>
       </div>
@@ -508,76 +500,75 @@
         </p>
       </div>
     </section>
-	
 
     <section>
-  <div class="section-title">
-    <h2>Notable work: Force Field Development for Water</h2>
-  </div>
+      <div class="section-title">
+        <h2>Notable work: Force Field Development for Water</h2>
+      </div>
 
-  <div class="morse-box">
-  <h3>Morse-D Parameters</h3>
-    <p>
-      Morse-D is an upgraded CGMD model for water that I developed based on an optimization
-      technique. A detailed discussion is given in the paper:
-      Yesudasan, S., Averett, R., & Chacko, S. (2020). Machine Learned Coarse Grain Water
-      Models for Evaporation Studies. Preprints.
-      <a href="https://doi.org/10.20944/preprints202007.0126.v1">DOI link</a>.
-    </p>
-	
- <div class="equation">
-  \[
-  \phi = D_0 \left[e^{-2\alpha(r-r_0)} - 2e^{-\alpha(r-r_0)}\right]
-  \]
-</div>
+      <div class="morse-box">
+        <h3>Morse-D Parameters</h3>
+        <p>
+          Morse-D is an upgraded CGMD model for water that I developed based on an optimization
+          technique. A detailed discussion is given in the paper:
+          Yesudasan, S., Averett, R., & Chacko, S. (2020). Machine Learned Coarse Grain Water
+          Models for Evaporation Studies. Preprints.
+          <a href="https://doi.org/10.20944/preprints202007.0126.v1">DOI link</a>.
+        </p>
 
-<div class="equation">
-  \[
-  E = \phi(r) - \phi(r_{cut}) - (r-r_{cut})
-  \left.\frac{d\phi}{dr}\right|_{r=r_{cut}}
-  \]
-</div>
+        <div class="equation">
+          \[
+          \phi = D_0 \left[e^{-2\alpha(r-r_0)} - 2e^{-\alpha(r-r_0)}\right]
+          \]
+        </div>
 
-  <div class="table-wrap">
-    <table class="morse-table">
-      <thead>
-        <tr>
-          <th>CGMD Model</th>
-          <th>D<sub>0</sub> (kcal/mol)</th>
-          <th>α (1/Å)</th>
-          <th>r<sub>0</sub> (Å)</th>
-          <th>r<sub>cut</sub> (nm)</th>
-          <th>dt (fs)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Morse-D</td>
-          <td>1.686345</td>
-          <td>0.625349</td>
-          <td>5.8106</td>
-          <td>1.2</td>
-          <td>30</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</section>
+        <div class="equation">
+          \[
+          E = \phi(r) - \phi(r_{cut}) - (r-r_{cut})
+          \left.\frac{d\phi}{dr}\right|_{r=r_{cut}}
+          \]
+        </div>
 
-<section>
-  <div class="section-title">
-    <h2>Funding Agencies</h2>
-  </div>
+        <div class="table-wrap">
+          <table class="morse-table">
+            <thead>
+              <tr>
+                <th>CGMD Model</th>
+                <th>D<sub>0</sub> (kcal/mol)</th>
+                <th>α (1/Å)</th>
+                <th>r<sub>0</sub> (Å)</th>
+                <th>r<sub>cut</sub> (nm)</th>
+                <th>dt (fs)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Morse-D</td>
+                <td>1.686345</td>
+                <td>0.625349</td>
+                <td>5.8106</td>
+                <td>1.2</td>
+                <td>30</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-  <div class="card funding-logos">
-    <img src="images/1215.png" alt="12-15 Molecular Diagnostics">
-    <img src="images/ctspace.png" alt="NASA CT Space Grant">
-    <img src="images/nrc.png" alt="US Nuclear Regulatory Commission">
-    <img src="images/shsu.png" alt="Sam Houston State University">
-    <img src="images/stem.png" alt="STEM Center">
-  </div>
-</section>
+    <section>
+      <div class="section-title">
+        <h2>Funding Agencies</h2>
+      </div>
+
+      <div class="card funding-logos">
+        <img src="images/1215.png" alt="12-15 Molecular Diagnostics">
+        <img src="images/ctspace.png" alt="NASA CT Space Grant">
+        <img src="images/nrc.png" alt="US Nuclear Regulatory Commission">
+        <img src="images/shsu.png" alt="Sam Houston State University">
+        <img src="images/stem.png" alt="STEM Center">
+      </div>
+    </section>
 
     <section>
       <div class="section-title">
@@ -676,13 +667,13 @@
     <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
   </footer>
 
-	<script>
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-</script>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
 </body>
 </html>
