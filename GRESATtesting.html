@@ -82,6 +82,16 @@
       color: var(--accent);
     }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
     .page-hero {
       background: var(--card);
       border-bottom: 1px solid var(--border);
@@ -269,13 +279,29 @@
       border-radius: 5px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 980px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        min-width: 44px;
+        min-height: 44px;
+      }
+
       .site-nav {
         align-items: flex-start;
       }
 
       .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
         gap: 10px;
+      }
+
+      .nav-links.open {
+        display: flex;
       }
 
       .nav-links a {
@@ -293,14 +319,14 @@
   <header class="site-header">
     <nav class="site-nav">
       <a href="index.html" class="logo"><span>MELT</span> Laboratory</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
       <div class="nav-links">
         <a href="index.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
-        <a href="aboutme.html" class="active">About me</a>
-        <a href="chemistryquiz.html">Chemistry Practice</a>
-        <a href="GRESATtesting.html">GRE/SAT Testing</a>
+        <a href="aboutme.html">About me</a>
+        <a href="miscellaneous.html" class="active">Miscellaneous</a>
       </div>
     </nav>
   </header>
@@ -354,6 +380,13 @@
   </main>
 
   <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+
     let words = [];
     let current = null;
     let currentIndex = 0;

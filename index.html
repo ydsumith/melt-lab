@@ -101,7 +101,8 @@
       transition: 0.25s;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: #64d2ff;
       text-decoration: none;
     }
@@ -289,9 +290,14 @@
       padding: 4px 8px;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 980px) {
       .nav-toggle {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        min-width: 44px;
+        min-height: 44px;
       }
 
       nav {
@@ -332,6 +338,17 @@
       .melt-subtitle {
         letter-spacing: 0.12em;
         max-width: 92%;
+      }
+
+      .card,
+      .mini-card,
+      .morse-box {
+        padding: 22px;
+        border-radius: 18px;
+      }
+
+      .funding-logos {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -454,10 +471,11 @@
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
       <div class="nav-links">
-        <a href="index.html">Research</a>
+        <a href="index.html" class="active">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
         <a href="aboutme.html">About me</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
       </div>
     </nav>
   </header>

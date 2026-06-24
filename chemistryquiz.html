@@ -99,6 +99,16 @@
       text-decoration: none;
     }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #14df41;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
     main {
       max-width: 1200px;
       margin: auto;
@@ -294,7 +304,35 @@
       background: rgba(3,9,20,0.55);
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        min-width: 44px;
+        min-height: 44px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 8px 0;
+      }
+
       .layout {
         grid-template-columns: 1fr;
       }
@@ -304,16 +342,19 @@
         max-height: 360px;
       }
 
-      .nav-links {
-        display: none;
-      }
-
       main {
         padding: 44px 18px;
       }
 
-      .quiz-card {
+      .quiz-card,
+      .question-list-card {
         padding: 22px;
+        border-radius: 18px;
+      }
+
+      main button {
+        width: 100%;
+        margin-right: 0;
       }
     }
   </style>
@@ -325,13 +366,14 @@
       <div class="logo">
         <span>MELT</span> Laboratory
       </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
       <div class="nav-links">
         <a href="index.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
-        <a href="chemistryquiz.html" class="active">Chemistry Practice</a>
         <a href="aboutme.html">About me</a>
+        <a href="miscellaneous.html" class="active">Miscellaneous</a>
       </div>
     </nav>
   </header>
@@ -386,6 +428,13 @@
   </footer>
 
   <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+
     let allQuestions = [];
     let questions = [];
     let current = 0;

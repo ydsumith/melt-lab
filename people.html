@@ -113,7 +113,8 @@
       transition: 0.25s;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: #14df41;
       text-decoration: none;
     }
@@ -312,12 +313,46 @@
       color: #98a7bb;
     }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #14df41;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
     /* =========================================================
        MOBILE RESPONSIVENESS
     ========================================================== */
-    @media (max-width: 850px) {
+    @media (max-width: 980px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        min-width: 44px;
+        min-height: 44px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
       .nav-links {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        margin: 8px 0;
       }
 
       main {
@@ -326,6 +361,12 @@
 
       .page-hero {
         min-height: 210px;
+      }
+
+      .card,
+      .person-card {
+        padding: 22px;
+        border-radius: 18px;
       }
     }
 
@@ -350,12 +391,14 @@
   <header>
     <nav>
       <div class="logo"><span>MELT</span> Laboratory</div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
       <div class="nav-links">
         <a href="index.html">Research</a>
         <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
+        <a href="people.html" class="active">People</a>
         <a href="aboutme.html">About me</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
       </div>
     </nav>
   </header>
@@ -618,5 +661,13 @@
     <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
   </footer>
 
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
 </body>
 </html>
