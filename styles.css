@@ -1,9 +1,13 @@
 :root {
   --bg: #ffffff;
-  --text: #333333;
-  --muted: #555555;
-  --border: #dddddd;
-  --link: #0056a6;
+  --text: #1f2933;
+  --muted: #4b5563;
+  --border: #d8dee8;
+  --link: #003366;
+  --unh-blue: #003366;
+  --unh-gold: #ffcc33;
+  --unh-light-blue: #eef4fb;
+  --unh-pale-gold: #fff7d7;
   --max: 1170px;
 }
 
@@ -32,14 +36,14 @@ a {
 }
 
 a:hover {
-  color: #003d73;
+  color: #001f3f;
   text-decoration: underline;
 }
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #f2c14e;
+  outline: 3px solid var(--unh-gold);
   outline-offset: 3px;
 }
 
@@ -60,9 +64,9 @@ img {
   margin: 0 0 22px;
   padding: 0;
   display: block;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #c8d3e0;
   border-radius: 4px;
-  background: linear-gradient(#ffffff, #f2f2f2);
+  background: linear-gradient(#ffffff, #eef4fb);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
@@ -79,8 +83,8 @@ img {
 .nav-links a {
   margin: 0;
   padding: 10px 15px;
-  border-right: 1px solid #d4d4d4;
-  color: #333333;
+  border-right: 1px solid #c8d3e0;
+  color: var(--text);
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -88,14 +92,14 @@ img {
 
 .nav-links a:hover {
   color: #111111;
-  background: #eeeeee;
+  background: var(--unh-pale-gold);
   text-decoration: none;
 }
 
 .nav-links a.active,
 .nav-links a[aria-current="page"] {
   color: #ffffff;
-  background: #555555;
+  background: var(--unh-blue);
   text-decoration: none;
 }
 
@@ -104,9 +108,9 @@ img {
   margin: 8px 10px;
   min-width: 44px;
   min-height: 44px;
-  color: #333333;
+  color: var(--text);
   background: #f7f7f7;
-  border: 1px solid #cccccc;
+  border: 1px solid #c9b458;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -124,7 +128,7 @@ img {
   content: "University of New Haven";
   display: block;
   margin-bottom: 8px;
-  color: #777777;
+  color: var(--muted);
   font-size: 21px;
   font-weight: 300;
   line-height: 30px;
@@ -139,7 +143,7 @@ img {
 .page-hero h1,
 .identity-card h1 {
   margin: 0;
-  color: #333333;
+  color: var(--text);
   font-size: 38.5px;
   font-weight: 700;
   line-height: 40px;
@@ -149,7 +153,7 @@ img {
 .melt-subtitle,
 .page-hero p {
   margin: 8px 0 0;
-  color: #777777;
+  color: var(--muted);
   font-size: 21px;
   font-weight: 300;
   line-height: 30px;
@@ -167,7 +171,7 @@ main,
 section {
   margin-bottom: 28px;
   padding-top: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #e6ebf2;
 }
 
 section:first-child,
@@ -189,7 +193,7 @@ section:first-child,
 h1,
 h2,
 h3 {
-  color: #333333;
+  color: var(--text);
   font-family: inherit;
   font-weight: 700;
 }
@@ -208,7 +212,7 @@ h3 {
 
 p,
 li {
-  color: #333333;
+  color: var(--text);
   font-size: 14px;
   line-height: 20px;
 }
@@ -274,10 +278,10 @@ ul {
   display: inline-block;
   min-height: 0;
   padding: 6px 12px;
-  border: 1px solid #cccccc;
+  border: 1px solid #c9b458;
   border-radius: 4px;
-  color: #333333;
-  background: linear-gradient(#ffffff, #e6e6e6);
+  color: var(--text);
+  background: linear-gradient(#ffffff, #fff0b0);
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -288,8 +292,8 @@ ul {
 .button-link:hover,
 .primary-button:hover,
 .secondary-button:hover {
-  color: #333333;
-  background: #e6e6e6;
+  color: var(--text);
+  background: var(--unh-gold);
   text-decoration: none;
 }
 
@@ -317,7 +321,7 @@ ul {
 .role,
 .meta,
 .caption {
-  color: #555555;
+  color: var(--muted);
 }
 
 .pillar-card img {
@@ -336,7 +340,7 @@ ul {
 }
 
 .method-list li::before {
-  content: "? ";
+  content: none;
 }
 
 .logo-grid {
@@ -362,21 +366,21 @@ ul {
   padding: 0;
   border: 0;
   border-radius: 0;
-  color: #0056a6;
+  color: var(--unh-blue);
   background: transparent;
   font-size: 14px;
   font-weight: normal;
 }
 
 .doi-link:hover {
-  color: #003d73;
+  color: #001f3f;
   background: transparent;
   text-decoration: underline;
 }
 
 .equation {
   padding: 8px 0;
-  color: #333333;
+  color: var(--text);
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -385,7 +389,7 @@ ul {
 
 .table-wrap {
   overflow-x: auto;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border);
   border-radius: 0;
 }
 
@@ -395,7 +399,7 @@ table {
 }
 
 caption {
-  color: #333333;
+  color: var(--text);
   font-weight: 700;
   text-align: left;
   padding: 8px 0;
@@ -404,22 +408,22 @@ caption {
 th,
 td {
   padding: 8px;
-  border: 1px solid #dddddd;
-  color: #333333;
+  border: 1px solid var(--border);
+  color: var(--text);
   background: #ffffff;
   text-align: left;
   vertical-align: top;
 }
 
 th {
-  background: #f5f5f5;
+  background: var(--unh-light-blue);
 }
 
 .quick-nav {
   margin: 0 0 18px;
   padding: 8px 0;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #e6ebf2;
+  border-bottom: 1px solid #e6ebf2;
 }
 
 .quick-nav a {
@@ -427,7 +431,7 @@ th {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #0056a6;
+  color: var(--unh-blue);
 }
 
 .quick-nav a:not(:last-child)::after {
@@ -437,7 +441,7 @@ th {
 }
 
 .quick-nav a:hover {
-  color: #003d73;
+  color: #001f3f;
   background: transparent;
   text-decoration: underline;
 }
@@ -449,15 +453,15 @@ th {
 
 .publication-card {
   padding-bottom: 10px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #e6ebf2;
 }
 
 .pub-title {
-  color: #333333;
+  color: var(--text);
 }
 
 .year-group summary {
-  color: #333333;
+  color: var(--text);
   font-size: 17.5px;
   font-weight: 700;
   line-height: 24px;
@@ -492,9 +496,9 @@ th {
   max-width: var(--max);
   margin: 0 auto;
   padding: 24px 0;
-  color: #333333;
+  color: var(--text);
   background: #ffffff;
-  border-top: 1px solid #eeeeee;
+  border-top: 4px solid var(--unh-gold);
 }
 
 .footer-inner {
@@ -510,12 +514,12 @@ th {
 
 .site-footer p,
 .footer-links a {
-  color: #333333;
+  color: var(--text);
 }
 
 .footer-links a.active,
 .footer-links a[aria-current="page"] {
-  color: #0056a6;
+  color: var(--unh-blue);
 }
 
 .back-to-top {
@@ -524,9 +528,9 @@ th {
   bottom: 16px;
   display: none;
   padding: 6px 10px;
-  color: #333333;
-  background: #f5f5f5;
-  border: 1px solid #cccccc;
+  color: var(--text);
+  background: var(--unh-light-blue);
+  border: 1px solid #c9b458;
   border-radius: 4px;
 }
 
@@ -592,4 +596,21 @@ th {
     width: 150px;
     height: 150px;
   }
+}
+
+.site-nav {
+  border-top: 4px solid var(--unh-blue);
+}
+
+.melt-banner,
+.page-hero {
+  border-bottom: 4px solid var(--unh-gold);
+}
+
+.pub-title {
+  font-weight: 700;
+}
+
+.publication-card p:last-child {
+  margin-bottom: 0;
 }
