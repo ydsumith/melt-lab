@@ -560,7 +560,7 @@ footer:not(.site-footer) {
 
     function simplePronunciationFallback(word) {
       const cleaned = String(word ?? "")
-        .replace(/\s*[â€”-]\s*context\s*\d+$/i, "")
+        .replace(/\s*[-\u2014]\s*context\s*\d+$/i, "")
         .replace(/\s+(quality|concept|based)$/i, "")
         .trim();
 

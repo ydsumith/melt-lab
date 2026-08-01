@@ -612,14 +612,14 @@ footer:not(.site-footer) {
 
     function getQuestionStatusIcon(globalNumber) {
       if (answerStatus[globalNumber] === "correct") {
-        return "<span class='status status-correct'>âœ“</span>";
+        return "<span class='status status-correct'>&#10003;</span>";
       }
 
       if (answerStatus[globalNumber] === "wrong") {
-        return "<span class='status status-wrong'>âœ—</span>";
+        return "<span class='status status-wrong'>&#10007;</span>";
       }
 
-      return "<span class='status status-unanswered'>â—‹</span>";
+      return "<span class='status status-unanswered'>&#9675;</span>";
     }
 
     function renderQuestionList() {
