@@ -264,6 +264,20 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.pi-card p,
+.person-card p {
+  margin-bottom: 6px;
+  line-height: 18px;
+}
+
+.person-card h3 {
+  margin-bottom: 4px;
+}
+
+.alumni-grid {
+  gap: 16px 24px;
+}
+
 .button-row,
 .profile-links {
   display: flex;
