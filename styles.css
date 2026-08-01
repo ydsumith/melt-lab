@@ -359,10 +359,16 @@ ul {
   padding: 8px;
   border: 0;
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-tile img {
+  width: auto;
+  max-width: 100%;
   max-height: 90px;
+  object-fit: contain;
 }
 
 .status-badge,
