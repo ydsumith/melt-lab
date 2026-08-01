@@ -124,14 +124,30 @@ img {
   background: #ffffff;
 }
 
-.melt-banner::before {
-  content: "University of New Haven";
-  display: block;
+.melt-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
+  gap: 28px;
+  align-items: center;
+}
+
+.melt-affiliation {
   margin-bottom: 8px;
   color: var(--muted);
   font-size: 21px;
   font-weight: 300;
   line-height: 30px;
+}
+
+.melt-banner-image {
+  width: 100%;
+  max-width: 430px;
+  aspect-ratio: 1600 / 520;
+  object-fit: cover;
+  justify-self: end;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .page-hero-inner {
@@ -625,9 +641,19 @@ th {
     line-height: 36px;
   }
 
+  .melt-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .melt-banner-image {
+    max-width: 100%;
+    justify-self: start;
+  }
+
   .melt-subtitle,
   .page-hero p,
-  .melt-banner::before {
+  .melt-affiliation {
     font-size: 18px;
     line-height: 26px;
   }
