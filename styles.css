@@ -332,6 +332,11 @@ ul {
   background: transparent;
 }
 
+.method-list {
+  padding-left: 18px;
+  list-style: disc;
+}
+
 .method-list li {
   padding: 0;
   border: 0;
@@ -339,8 +344,8 @@ ul {
   background: transparent;
 }
 
-.method-list li::before {
-  content: none;
+.method-list li::marker {
+  color: var(--unh-gold);
 }
 
 .logo-grid {
@@ -450,9 +455,28 @@ th {
   display: grid;
   gap: 12px;
 }
+.reference-list {
+  margin: 0;
+  padding-left: 32px;
+}
+
+.reference-list .publication-card {
+  padding-left: 10px;
+}
+
+.reference-list .publication-card::marker {
+  color: var(--unh-blue);
+  font-weight: 700;
+}
+
+.compact-list {
+  display: grid;
+  gap: 12px;
+}
+
 
 .publication-card {
-  padding-bottom: 10px;
+  padding: 0 0 10px 0;
   border-bottom: 1px solid #e6ebf2;
 }
 
@@ -608,9 +632,26 @@ th {
 }
 
 .pub-title {
+  color: var(--unh-blue);
   font-weight: 700;
 }
 
 .publication-card p:last-child {
   margin-bottom: 0;
+}
+
+.section-title h2 {
+  border-bottom: 2px solid var(--unh-gold);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.site-footer strong,
+.melt-title {
+  color: var(--unh-blue);
+}
+
+.page-hero h1,
+.identity-card h1 {
+  color: var(--unh-blue);
 }
