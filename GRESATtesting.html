@@ -23,7 +23,7 @@
       --bad: #b91c1c;
       --border: #d1d5db;
       --dark: #0b1220;
-      --accent: #14df41;
+      --accent: #041e42;
     }
 
     * {
@@ -65,9 +65,9 @@
     .logo span {
       color: var(--accent);
       text-shadow:
-        0 0 8px rgba(20,223,65,0.95),
-        0 0 18px rgba(20,223,65,0.85),
-        0 0 40px rgba(20,223,65,0.60);
+        0 0 8px rgba(4,30,66,0.95),
+        0 0 18px rgba(4,30,66,0.85),
+        0 0 40px rgba(4,30,66,0.60);
     }
 
     .nav-links {
@@ -289,7 +289,7 @@
     .site-footer { padding: 34px 24px; color: #98a7bb; border-top: 1px solid rgba(255,196,37,0.18); background: rgba(4,30,66,0.72); }
     .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; gap: 16px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 12px; }
-    .footer-links a { color: #d7f4ff; font-weight: 700; }
+    .footer-links a { color: #334155; font-weight: 700; }
     .footer-links a.active { color: #ffc425; text-decoration: underline; text-decoration-thickness: 3px; }
 
 
@@ -326,6 +326,96 @@
         padding: 16px;
       }
     }
+  
+
+    /* Professional University-style theme override. */
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #435169;
+      --primary: #041e42;
+      --good: #0f6b2f;
+      --bad: #b42318;
+      --border: #d8dee8;
+      --dark: #ffffff;
+      --accent: #ffc425;
+    }
+
+    .site-header {
+      box-shadow: 0 2px 10px rgba(4, 30, 66, 0.06);
+    }
+
+    .logo,
+    .logo span {
+      color: #041e42;
+      text-shadow: none;
+    }
+
+    .logo span {
+      color: #004b8d;
+    }
+
+    .nav-links a {
+      color: #24324a;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #041e42;
+      background: #fff7dc;
+      box-shadow: inset 0 -3px 0 #ffc425;
+    }
+
+    .nav-toggle {
+      color: #041e42;
+      background: #fff7dc;
+      border: 1px solid #e4b63b;
+      border-radius: 8px;
+    }
+
+    .page-hero {
+      background: linear-gradient(180deg, #ffffff 0%, #eef4fb 100%);
+    }
+
+    .page-hero h1,
+    h2,
+    h3,
+    #word {
+      color: #041e42;
+    }
+
+    .card,
+    .stat,
+    #feedback,
+    .choice {
+      box-shadow: 0 12px 28px rgba(4, 30, 66, 0.09);
+    }
+
+    button {
+      background: #041e42;
+    }
+
+    button.ghost {
+      color: #041e42;
+      background: #fff7dc;
+    }
+
+    .site-footer {
+      color: #dbe4f0;
+      background: #041e42;
+      border-top: 4px solid #ffc425;
+    }
+
+    .site-footer p,
+    .footer-links a {
+      color: #e8eef8;
+    }
+
+    .footer-links a.active {
+      color: #ffc425;
+    }
+
   </style>
 </head>
 
