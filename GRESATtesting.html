@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GRE/SAT Testing | MELT Laboratory</title>
+  <title>GRE/SAT Testing | Educational Tools</title>
+  <meta name="description" content="Educational GRE and SAT vocabulary practice tool with feedback and missed-word review." />
+  <link rel="canonical" href="https://sumith.uk/GRESATtesting.html" />
+  <meta property="og:title" content="GRE/SAT Testing | Educational Tools" />
+  <meta property="og:description" content="Educational GRE and SAT vocabulary practice tool with feedback and missed-word review." />
+  <meta property="og:image" content="https://sumith.uk/images/main_banner2.png" />
+
+  <link rel="icon" href="images/main_banner2.png" />
 
   <style>
     :root {
@@ -279,6 +286,13 @@
       border-radius: 5px;
     }
 
+    .site-footer { padding: 34px 24px; color: #98a7bb; border-top: 1px solid rgba(255,196,37,0.18); background: rgba(4,30,66,0.72); }
+    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; gap: 16px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .footer-links a { color: #d7f4ff; font-weight: 700; }
+    .footer-links a.active { color: #ffc425; text-decoration: underline; text-decoration-thickness: 3px; }
+
+
     @media (max-width: 980px) {
       .nav-toggle {
         display: inline-flex;
@@ -322,11 +336,10 @@
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
       <div class="nav-links">
-        <a href="index.html">Research</a>
+        <a href="index.html">Home</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
-        <a href="aboutme.html">About me</a>
-        <a href="miscellaneous.html" class="active">Miscellaneous</a>
+        <a href="aboutme.html">About</a>
       </div>
     </nav>
   </header>
@@ -379,6 +392,24 @@
     </section>
   </main>
 
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p><strong>MELT Laboratory</strong> | Multiscale Engineering Lab for Thermofluids</p>
+        <p>Sumith Yesudasan, Ph.D. | University of New Haven</p>
+        <p>&copy; <span data-current-year></span> Sumith Yesudasan. All rights reserved.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="miscellaneous.html" class="active" aria-current="page">Educational Tools</a>
+        <a href="https://scholar.google.com/citations?user=P9SuMksAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="http://orcid.org/0000-0001-6379-2138" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://www.linkedin.com/in/ydsumith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ydsumith" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -386,6 +417,9 @@
       const open = navLinks.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', open);
     });
+
+    const year = document.querySelector("[data-current-year]");
+    if (year) year.textContent = String(new Date().getFullYear());
 
     let words = [];
     let current = null;
