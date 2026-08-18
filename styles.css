@@ -385,7 +385,7 @@ ul {
 }
 
 .logo-tile {
-  min-height: 138px;
+  min-height: 152px;
   padding: 10px;
   border: 0;
   background: transparent;
@@ -396,9 +396,13 @@ ul {
 
 .logo-tile img {
   width: 100%;
-  height: 118px;
+  height: 128px;
   max-width: 100%;
   object-fit: contain;
+}
+
+.logo-tile-emphasis img {
+  height: 140px;
 }
 
 .status-badge,
@@ -678,11 +682,15 @@ th {
   }
 
   .logo-tile {
-    min-height: 118px;
+    min-height: 128px;
   }
 
   .logo-tile img {
-    height: 96px;
+    height: 104px;
+  }
+
+  .logo-tile-emphasis img {
+    height: 116px;
   }
 
   .pi-card {
@@ -735,10 +743,14 @@ th {
   }
 
   .logo-tile {
-    min-height: 112px;
+    min-height: 120px;
   }
 
   .logo-tile img {
-    height: 92px;
+    height: 98px;
+  }
+
+  .logo-tile-emphasis img {
+    height: 108px;
   }
 }
