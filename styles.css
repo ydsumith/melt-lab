@@ -395,14 +395,32 @@ ul {
 }
 
 .logo-tile img {
-  width: 100%;
-  height: 128px;
-  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-width: 245px;
+  max-height: 116px;
   object-fit: contain;
 }
 
-.logo-tile-emphasis img {
-  height: 140px;
+.logo-tile-wide img {
+  width: min(100%, 260px);
+  max-width: 260px;
+  max-height: 112px;
+}
+
+.logo-tile-seal img {
+  max-width: 136px;
+  max-height: 136px;
+}
+
+.logo-tile-nih img {
+  max-width: 195px;
+  max-height: 144px;
+}
+
+.logo-tile-nrc img {
+  max-width: 152px;
+  max-height: 152px;
 }
 
 .status-badge,
@@ -686,11 +704,29 @@ th {
   }
 
   .logo-tile img {
-    height: 104px;
+    max-width: 220px;
+    max-height: 100px;
   }
 
-  .logo-tile-emphasis img {
-    height: 116px;
+  .logo-tile-wide img {
+    width: min(100%, 235px);
+    max-width: 235px;
+    max-height: 98px;
+  }
+
+  .logo-tile-seal img {
+    max-width: 118px;
+    max-height: 118px;
+  }
+
+  .logo-tile-nih img {
+    max-width: 178px;
+    max-height: 126px;
+  }
+
+  .logo-tile-nrc img {
+    max-width: 132px;
+    max-height: 132px;
   }
 
   .pi-card {
@@ -747,10 +783,28 @@ th {
   }
 
   .logo-tile img {
-    height: 98px;
+    max-width: 210px;
+    max-height: 92px;
   }
 
-  .logo-tile-emphasis img {
-    height: 108px;
+  .logo-tile-wide img {
+    width: min(100%, 225px);
+    max-width: 225px;
+    max-height: 90px;
+  }
+
+  .logo-tile-seal img {
+    max-width: 112px;
+    max-height: 112px;
+  }
+
+  .logo-tile-nih img {
+    max-width: 170px;
+    max-height: 118px;
+  }
+
+  .logo-tile-nrc img {
+    max-width: 124px;
+    max-height: 124px;
   }
 }
