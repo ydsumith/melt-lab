@@ -147,6 +147,7 @@ button{font-family:inherit}
  <button class="tab" role="tab" data-tab="sheet" aria-selected="true">📘 Equation Sheet</button>
  <button class="tab" role="tab" data-tab="explorer" aria-selected="false">🧩 Term Explorer</button>
  <button class="tab" role="tab" data-tab="visualizer" aria-selected="false">🌊 Field Visualizer</button>
+ <button class="tab" role="tab" data-tab="resources" aria-selected="false">Visual Resources</button>
 </div></nav>
 <main class="wrap">
 
@@ -204,6 +205,21 @@ button{font-family:inherit}
      <label class="lab" style="margin-top:12px">Display</label><div class="seg" id="dispSeg"></div></div>
    <div class="ctl probecard"><label class="lab">Probe</label><div id="probeOut"></div></div>
   </div>
+ </div>
+</section>
+
+<section id="resources" class="hidden" role="tabpanel">
+ <div class="panel">
+  <h2>Visual Resources</h2>
+  <p class="muted">Illustrated explanations of fluid mechanics concepts.</p>
+  <details style="border:1px solid #cbd5e1;border-radius:10px;padding:16px;margin-top:16px">
+   <summary style="cursor:pointer;font-weight:600">Material Derivative of Velocity — 2D Flow</summary>
+   <p class="muted">Local and convective acceleration and their Cartesian components in two-dimensional flow.</p>
+   <a href="images/convective_derivative.png" target="_blank" rel="noopener">
+    <img src="images/convective_derivative.png" alt="Material derivative of velocity in two-dimensional fluid flow" loading="lazy" style="display:block;width:100%;max-width:1200px;height:auto;margin:16px auto;border-radius:8px">
+   </a>
+   <a class="btn ghost" href="images/convective_derivative.png" target="_blank" rel="noopener">View full-size image</a>
+  </details>
  </div>
 </section>
 
@@ -771,7 +787,7 @@ const fitAll=root=>root.querySelectorAll('.eqblock').forEach(fit);
 /* ───────── tabs ───────── */
 let activeTab='sheet';
 function showTab(t,noHash){activeTab=t;document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
- ['sheet','explorer','visualizer'].forEach(id=>$(id).classList.toggle('hidden',id!==t));
+ ['sheet','explorer','visualizer','resources'].forEach(id=>$(id).classList.toggle('hidden',id!==t));
  if(!noHash)history.replaceState(null,'','#'+t);
  requestAnimationFrame(()=>{fitAll($(t));if(t==='visualizer'){VZ.resize();VZ.start()}else VZ.stop()});}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{showTab(b.dataset.tab);window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'})});
@@ -1016,8 +1032,8 @@ function openViz(t){const v=t.viz;VZ.S.flow=v.flow;VZ.S.qty=v.qty;VZ.S.arrows=v.
 
 document.querySelectorAll('.rt').forEach(e=>e.innerHTML=richText(e.textContent));
 /* initial tab from URL hash */
-const h0=location.hash.slice(1);showTab(['sheet','explorer','visualizer'].includes(h0)?h0:'sheet',true);
-window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['sheet','explorer','visualizer'].includes(h)&&h!==activeTab)showTab(h,true)});
+const h0=location.hash.slice(1);showTab(['sheet','explorer','visualizer','resources'].includes(h0)?h0:'sheet',true);
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['sheet','explorer','visualizer','resources'].includes(h)&&h!==activeTab)showTab(h,true)});
 </script>
 </body>
 </html>
