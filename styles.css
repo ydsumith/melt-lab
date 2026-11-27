@@ -115,6 +115,46 @@ img {
   cursor: pointer;
 }
 
+.learning-resource {
+  border: 1px solid #d5dce5;
+  border-radius: 10px;
+  margin: 20px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.learning-resource summary {
+  padding: 18px 22px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #17365d;
+  background: #f1f5f9;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.learning-resource summary:hover {
+  background: #e2e8f0;
+}
+
+.resource-content {
+  padding: 24px;
+  text-align: center;
+}
+
+.resource-image {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.resource-content p {
+  margin-bottom: 20px;
+}
+
 .melt-banner,
 .page-hero {
   max-width: var(--max);
